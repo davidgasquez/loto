@@ -1,0 +1,22 @@
+
+import os
+
+
+appname = 'loto'
+libs = ['sfml-graphics', 'sfml-window', 'sfml-system']
+flags = ['-Werror', '-Wall', '-g']
+
+
+srcs = '''
+  main.cc
+  tile-map.cc
+'''
+
+
+apppath = '#bin'
+include_paths = ['#src']
+lib_paths = []
+
+
+Program(os.path.join(apppath, appname), Split(srcs), CPPPATH=include_paths,
+    LIBS=libs, LIBPATH=lib_paths, CPPFLAGS=flags)
