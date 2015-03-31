@@ -4,13 +4,13 @@
 Yet another Tower Defense game set in the epic world of [Insert some Epic
 name here]. Defend your realm against hordes of orcs, trolls, evil wizards
 and other nasty fiends; armed with a mighty arsenal of warriors and your
-powerfull Orb!
+powerful Orb!
 
 The castle needs a hero, and you can be that hero. Hordes of enemies are
 surrounding it! Build towers, save money, learn spells - don't let the
 enemy take your Magical Orb!
 
-#### Inmense
+#### Immense
 **Unleash Your Power.** *A mystical bond connects you and The Orb, a magical
 artifact too powerful for a single mortal to possess. Protect your Orb as your
 armies charges across the battlefield, then release his epic power and see it
@@ -20,7 +20,7 @@ crush your enemies.*
 #### Tactical
 **Unleash Your Creativity.** *New abilities let you invent new ways to defend
 your castle and destroy your enemies. The element of surprise is key as you use
-the battlefied to build structures to defend your army*
+the battlefield to build structures to defend your army*
 
 
 #### Fantastic
