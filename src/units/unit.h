@@ -4,8 +4,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "engine/instance.h"
 
-class Unit : public sf::Drawable {
+
+class Unit : public Instance {
 public:
   Unit();
   virtual ~Unit();
@@ -19,13 +21,9 @@ public:
   }
 
 protected:
-  sf::Sprite sprite_;
-
   unsigned life_;
   unsigned damage_;
   float moveSpeed_;
-
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates  states) const;
 };
 
 #endif  // UNITS_UNIT_H_

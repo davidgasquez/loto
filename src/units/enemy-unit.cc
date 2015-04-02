@@ -1,7 +1,7 @@
 
 #include "units/enemy-unit.h"
 
-#include "managers/game-manager.h"
+#include "engine/game-manager.h"
 
 
 void EnemyUnit::Load() {

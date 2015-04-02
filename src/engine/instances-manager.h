@@ -6,16 +6,19 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "engine/instance.h"
+
 
 class InstancesManager {
 public:
-  void AddInstance(sf::Drawable* instance);
-  void RemoveInstance(sf::Drawable* instance);
+  void AddInstance(Instance* instance);
+  void RemoveInstance(Instance* instance);
 
   void Draw(sf::RenderTarget* target);
+  void Step(sf::Time elapsed);
 
 private:
-  std::vector<sf::Drawable*> instances_;
+  std::vector<Instance*> instances_;
 };
 
 #endif  // BASE_INSTANCES_MANAGER_H_

@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "managers/game-manager.h"
+#include "engine/game-manager.h"
 #include "structures/tower.h"
 #include "tilemaps/map.h"
 #include "units/enemy-unit.h"
@@ -38,6 +38,10 @@ int main(int argc, char const *argv[]) {
   enemy->Load();
   instances->AddInstance(enemy);
 
+  window.setFramerateLimit(60);
+
+  sf::Clock clock;
+
   while (window.isOpen()) {
     sf::Event event;
 
@@ -52,6 +56,9 @@ int main(int argc, char const *argv[]) {
       window.close();
       break;
     }
+
+    sf::Time elapsed = clock.restart();
+    instances->Step(elapsed);
 
     window.clear(sf::Color::Black);
 

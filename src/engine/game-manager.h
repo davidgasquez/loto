@@ -2,8 +2,8 @@
 #ifndef BASE_GAME_MANAGER_H_
 #define BASE_GAME_MANAGER_H_
 
-#include "managers/resources-manager.h"
-#include "managers/instances-manager.h"
+#include "engine/resources-manager.h"
+#include "engine/instances-manager.h"
 
 
 class GameManager {

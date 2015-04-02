@@ -4,8 +4,10 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "engine/instance.h"
 
-class Tower : public sf::Drawable {
+
+class Tower : public Instance {
 public:
   void Load();
 

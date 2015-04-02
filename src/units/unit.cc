@@ -10,7 +10,3 @@ Unit::Unit()
 Unit::~Unit() {
   // empty
 }
-
-void Unit::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
-  target.draw(sprite_);
-}

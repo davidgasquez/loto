@@ -6,10 +6,11 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "engine/instance.h"
 #include "tilemaps/tile-map.h"
 
 
-class Map : public sf::Drawable {
+class Map : public Instance {
 public:
   bool Load(std::string tilemapPath);
 

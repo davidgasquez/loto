@@ -1,7 +1,7 @@
 
 #include "tilemaps/tile-map.h"
 
-#include "managers/game-manager.h"
+#include "engine/game-manager.h"
 
 
 void TileMap::Load(std::ifstream* f, sf::Vector2u size) {
