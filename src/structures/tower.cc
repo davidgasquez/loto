@@ -1,20 +1,18 @@
 
 #include "structures/tower.h"
 
-#include "engine/game-manager.h"
 #include "base/debug.h"
 
 
-void Tower::Load() {
-  sprite_.setTexture(*GameManager::GetResourcesManager()->Tower());
+Tower::Tower()
+  : life_(0), damage_(0), attack_speed_(0) {
+  // empty
 }
 
-void Tower::SetTilePosition(sf::Vector2u pos) {
-  sf::Vector2u tileSize = GameManager::GetTileSize();
-
-  sprite_.setPosition(tileSize.x * pos.x, tileSize.y * pos.y);
+Tower::~Tower() {
+  // empty
 }
 
-void Tower::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
-  target.draw(sprite_);
+void Tower::Step(sf::Time elapsed) {
+  // empty
 }

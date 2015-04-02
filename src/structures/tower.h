@@ -10,16 +10,32 @@
 class Tower : public Instance {
 public:
 
-  void Load();
+  Tower();
+  virtual ~Tower();
 
-  void SetTilePosition(sf::Vector2u pos);
+  virtual void Step(sf::Time elapsed);
 
-private:
+  void         set_life(unsigned life) {
+    life_ = life;
+  }
 
-  sf::Sprite sprite_;
+  unsigned life() {
+    return life_;
+  }
 
-  virtual void draw(sf::RenderTarget& target,
-                    sf::RenderStates  states) const;
+  void set_position(sf::Vector2f pos) {
+    sprite_.setPosition(pos);
+  }
+
+  void set_attack_speed(unsigned attack_speed) {
+    attack_speed_ = attack_speed;
+  }
+
+protected:
+
+  unsigned life_;
+  unsigned damage_;
+  unsigned attack_speed_;
 };
 
 #endif // STRUCTURES_TOWER_H_

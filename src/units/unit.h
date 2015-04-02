@@ -27,15 +27,20 @@ public:
     sprite_.setPosition(pos);
   }
 
-  void set_moveSpeed(sf::Vector2f moveSpeed) {
-    moveSpeed_ = moveSpeed;
+  void set_movement_speed(sf::Vector2f movement_speed) {
+    movement_speed_ = movement_speed;
+  }
+
+  void set_attack_speed(unsigned attack_speed) {
+    attack_speed_ = attack_speed;
   }
 
 protected:
 
   unsigned life_;
   unsigned damage_;
-  sf::Vector2f moveSpeed_;
+  unsigned attack_speed_;
+  sf::Vector2f movement_speed_;
 };
 
 #endif // UNITS_UNIT_H_

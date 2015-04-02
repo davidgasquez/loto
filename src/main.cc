@@ -4,7 +4,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "engine/game-manager.h"
-#include "structures/tower.h"
+#include "structures/sample-tower.h"
 #include "tilemaps/map.h"
 #include "units/enemy-unit.h"
 
@@ -30,15 +30,15 @@ int main(int argc, char const *argv[]) {
   }
   instances->AddInstance(map);
 
-  auto tower = new Tower();
+  auto tower = new SampleTower();
   tower->Load();
-  tower->SetTilePosition(sf::Vector2u(7, 5));
+  tower->set_tile_position(sf::Vector2u(7, 5));
   instances->AddInstance(tower);
 
   auto enemy = new EnemyUnit();
   enemy->Load();
   enemy->set_position(sf::Vector2f(1200.f, 352.f));
-  enemy->set_moveSpeed(sf::Vector2f(-100.f, 0.f));
+  enemy->set_movement_speed(sf::Vector2f(-100.f, 0.f));
   instances->AddInstance(enemy);
 
   window.setFramerateLimit(60);
