@@ -11,6 +11,7 @@ srcs = '''
   main.cc
   managers/game-manager.cc
   managers/resources-manager.cc
+  managers/instances-manager.cc
   structures/tower.cc
   tilemaps/map.cc
   tilemaps/tile-map.cc

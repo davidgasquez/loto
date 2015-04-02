@@ -13,21 +13,25 @@ int main(int argc, char const *argv[]) {
                           "Lord of the Orb",
                           sf::Style::None);
 
+  InstancesManager* instances = GameManager::GetInstancesManager();
   ResourcesManager* resources = GameManager::GetResourcesManager();
+
   if (!resources->Load()) {
     std::cerr << "Cannot load game resources!" << std::endl;
     return 1;
   }
 
-  Map map;
-  if (!map.Load("assets/tilemaps/map.txt")) {
+  auto map = new Map();
+  if (!map->Load("assets/tilemaps/map.txt")) {
     std::cerr << "Cannot load tilemap" << std::endl;
     return 1;
   }
+  instances->AddInstance(map);
 
-  Tower tower;
-  tower.Load();
-  tower.SetTilePosition(sf::Vector2u(7, 5));
+  auto tower = new Tower();
+  tower->Load();
+  tower->SetTilePosition(sf::Vector2u(7, 5));
+  instances->AddInstance(tower);
 
   while (window.isOpen()) {
     sf::Event event;
@@ -46,8 +50,7 @@ int main(int argc, char const *argv[]) {
 
     window.clear(sf::Color::Black);
 
-    window.draw(map);
-    window.draw(tower);
+    instances->Draw(&window);
 
     window.display();
   }
