@@ -9,7 +9,8 @@ flags = ['-Werror', '-Wall', '-g']
 
 srcs = '''
   main.cc
-  tile-map.cc
+  tilemaps/map.cc
+  tilemaps/tile-map.cc
 '''
 
 

@@ -1,10 +1,12 @@
 
-#include "tile-map.h"
+#include "tilemaps/tile-map.h"
+
+#include "base/debug.h"
 
 
 TileMap::TileMap(const std::string& tilesetPath, sf::Vector2u tileSize,
-                 const int *tiles, sf::Vector2u size)
-  : tilesetPath_(tilesetPath), tileSize_(tileSize), tiles_(tiles), size_(size)
+                 const unsigned *tiles, sf::Vector2u size)
+: tilesetPath_(tilesetPath), tileSize_(tileSize), tiles_(tiles), size_(size)
 {
   // empty
 }
@@ -24,7 +26,7 @@ bool TileMap::Load() {
 
   for (unsigned int i = 0; i < width; ++i) {
     for (unsigned int j = 0; j < height; ++j) {
-      int tile = tiles_[i + j * width];
+      int tile = tiles_[j * width + i];
 
       sf::Vertex *quad = &vertices_[(i + j * width) * 4];
 
