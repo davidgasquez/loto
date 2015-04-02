@@ -9,14 +9,17 @@
 
 class Tower : public Instance {
 public:
+
   void Load();
 
   void SetTilePosition(sf::Vector2u pos);
 
 private:
+
   sf::Sprite sprite_;
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates  states) const;
+  virtual void draw(sf::RenderTarget& target,
+                    sf::RenderStates  states) const;
 };
 
-#endif  // STRUCTURES_TOWER_H_
+#endif // STRUCTURES_TOWER_H_

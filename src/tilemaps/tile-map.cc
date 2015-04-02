@@ -4,13 +4,14 @@
 #include "engine/game-manager.h"
 
 
-void TileMap::Load(std::ifstream* f, sf::Vector2u size) {
+void TileMap::Load(std::ifstream *f, sf::Vector2u size) {
   unsigned int width  = size.x;
   unsigned int height = size.y;
   unsigned int wTile  = GameManager::GetTileSize().x;
   unsigned int hTile  = GameManager::GetTileSize().y;
 
   tiles_ = new unsigned[width * height];
+
   for (unsigned j = 0; j < height; ++j) {
     for (unsigned i = 0; i < width; ++i) {
       unsigned tile;
@@ -33,9 +34,9 @@ void TileMap::Load(std::ifstream* f, sf::Vector2u size) {
       quad[2].position = sf::Vector2f((i + 1) * wTile, (j + 1) * hTile);
       quad[3].position = sf::Vector2f(i * wTile, (j + 1) * hTile);
 
-      sf::Texture* tileset = GameManager::GetResourcesManager()->Map();
-      int tu = tile % (tileset->getSize().x / wTile);
-      int tv = tile / (tileset->getSize().x / wTile);
+      sf::Texture *tileset = GameManager::GetResourcesManager()->Map();
+      int tu               = tile % (tileset->getSize().x / wTile);
+      int tv               = tile / (tileset->getSize().x / wTile);
 
       quad[0].texCoords = sf::Vector2f(tu * wTile, tv * hTile);
       quad[1].texCoords = sf::Vector2f((tu + 1) * wTile, tv * hTile);

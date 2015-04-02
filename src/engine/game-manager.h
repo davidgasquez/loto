@@ -8,12 +8,13 @@
 
 class GameManager {
 public:
+
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();
 
-  static sf::Vector2u GetTileSize() {
+  static sf::Vector2u      GetTileSize() {
     return sf::Vector2u(64, 64);
   }
 };
 
-#endif  // BASE_GAME_MANAGER_H_
+#endif // BASE_GAME_MANAGER_H_

@@ -14,8 +14,8 @@ int main(int argc, char const *argv[]) {
                           "Lord of the Orb",
                           sf::Style::None);
 
-  InstancesManager* instances = GameManager::GetInstancesManager();
-  ResourcesManager* resources = GameManager::GetResourcesManager();
+  InstancesManager *instances = GameManager::GetInstancesManager();
+  ResourcesManager *resources = GameManager::GetResourcesManager();
 
   if (!resources->Load()) {
     std::cerr << "Cannot load game resources!" << std::endl;
@@ -23,6 +23,7 @@ int main(int argc, char const *argv[]) {
   }
 
   auto map = new Map();
+
   if (!map->Load("assets/tilemaps/map.txt")) {
     std::cerr << "Cannot load tilemap" << std::endl;
     return 1;

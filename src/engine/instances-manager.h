@@ -11,14 +11,16 @@
 
 class InstancesManager {
 public:
-  void AddInstance(Instance* instance);
-  void RemoveInstance(Instance* instance);
 
-  void Draw(sf::RenderTarget* target);
+  void AddInstance(Instance *instance);
+  void RemoveInstance(Instance *instance);
+
+  void Draw(sf::RenderTarget *target);
   void Step(sf::Time elapsed);
 
 private:
-  std::vector<Instance*> instances_;
+
+  std::vector < Instance * > instances_;
 };
 
-#endif  // BASE_INSTANCES_MANAGER_H_
+#endif // BASE_INSTANCES_MANAGER_H_

@@ -9,13 +9,17 @@
 
 class TileMap : public sf::Drawable, public sf::Transformable {
 public:
-  void Load(std::ifstream* f, sf::Vector2u size);
+
+  void Load(std::ifstream *f,
+            sf::Vector2u   size);
 
 private:
-  unsigned   *tiles_;
+
+  unsigned *tiles_;
   sf::VertexArray vertices_;
 
-  virtual void draw(sf::RenderTarget& target, sf::RenderStates  states) const;
+  virtual void draw(sf::RenderTarget& target,
+                    sf::RenderStates  states) const;
 };
 
-#endif  // TILES_TILE_MAP_H_
+#endif // TILES_TILE_MAP_H_

@@ -2,11 +2,11 @@
 #include "engine/game-manager.h"
 
 
-ResourcesManager* resources_ = NULL;
-InstancesManager* instances_ = NULL;
+ResourcesManager *resources_ = NULL;
+InstancesManager *instances_ = NULL;
 
 
-ResourcesManager* GameManager::GetResourcesManager() {
+ResourcesManager * GameManager::GetResourcesManager() {
   if (resources_ == NULL) {
     resources_ = new ResourcesManager();
   }
@@ -14,7 +14,7 @@ ResourcesManager* GameManager::GetResourcesManager() {
   return resources_;
 }
 
-InstancesManager* GameManager::GetInstancesManager() {
+InstancesManager * GameManager::GetInstancesManager() {
   if (instances_ == NULL) {
     instances_ = new InstancesManager();
   }

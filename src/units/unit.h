@@ -9,12 +9,13 @@
 
 class Unit : public Instance {
 public:
+
   Unit();
   virtual ~Unit();
 
   virtual void Step(sf::Time elapsed);
 
-  void set_life(unsigned life) {
+  void         set_life(unsigned life) {
     life_ = life;
   }
 
@@ -31,9 +32,10 @@ public:
   }
 
 protected:
+
   unsigned life_;
   unsigned damage_;
   sf::Vector2f moveSpeed_;
 };
 
-#endif  // UNITS_UNIT_H_
+#endif // UNITS_UNIT_H_

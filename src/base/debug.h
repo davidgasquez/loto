@@ -7,4 +7,4 @@
 using std::cout;
 using std::endl;
 
-#endif  // BASE_DEBUG_H_
+#endif // BASE_DEBUG_H_

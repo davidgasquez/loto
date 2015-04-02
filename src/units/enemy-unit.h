@@ -7,7 +7,8 @@
 
 class EnemyUnit : public Unit {
 public:
+
   void Load();
 };
 
-#endif  // UNITS_ENEMY_H_
+#endif // UNITS_ENEMY_H_

@@ -7,7 +7,8 @@
 
 class ResourcesManager {
 public:
-  bool Load();
+
+  bool         Load();
 
   sf::Texture* Map() {
     return &map_;
@@ -22,9 +23,10 @@ public:
   }
 
 private:
+
   sf::Texture map_;
   sf::Texture tower_;
   sf::Texture enemy_;
 };
 
-#endif  // BASE_RESOURCES_MANAGER_H_
+#endif // BASE_RESOURCES_MANAGER_H_

@@ -8,6 +8,7 @@
 
 bool Map::Load(std::string tilemapPath) {
   std::ifstream f(tilemapPath.c_str());
+
   if (!f) {
     return false;
   }
