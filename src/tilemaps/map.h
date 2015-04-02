@@ -11,19 +11,10 @@
 
 class Map : public sf::Drawable {
 public:
-  Map(const std::string & tilesetPath, const std::string& tilemapPath,
-      sf::Vector2u tileSize);
-
-  bool Load();
+  bool Load(std::string tilemapPath, sf::Vector2u tileSize);
 
 private:
-  std::string tilesetPath_;
-  std::string tilemapPath_;
-  sf::Vector2u tileSize_;
-
-  TileMap* ground_;
-  TileMap* mid_;
-  TileMap* ceil_;
+  TileMap ground_, mid_, ceil_;
 
   virtual void draw(sf::RenderTarget& target, sf::RenderStates  states) const;
 };
