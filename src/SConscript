@@ -10,11 +10,13 @@ flags = ['-Werror', '-Wall', '-g', '-std=c++0x']
 srcs = '''
   main.cc
   managers/game-manager.cc
-  managers/resources-manager.cc
   managers/instances-manager.cc
+  managers/resources-manager.cc
   structures/tower.cc
   tilemaps/map.cc
   tilemaps/tile-map.cc
+  units/enemy-unit.cc
+  units/unit.cc
 '''
 
 

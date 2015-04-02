@@ -6,6 +6,7 @@
 #include "managers/game-manager.h"
 #include "structures/tower.h"
 #include "tilemaps/map.h"
+#include "units/enemy-unit.h"
 
 
 int main(int argc, char const *argv[]) {
@@ -32,6 +33,10 @@ int main(int argc, char const *argv[]) {
   tower->Load();
   tower->SetTilePosition(sf::Vector2u(7, 5));
   instances->AddInstance(tower);
+
+  auto enemy = new EnemyUnit();
+  enemy->Load();
+  instances->AddInstance(enemy);
 
   while (window.isOpen()) {
     sf::Event event;
