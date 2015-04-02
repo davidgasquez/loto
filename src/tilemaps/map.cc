@@ -6,7 +6,7 @@
 #include "base/debug.h"
 
 
-bool Map::Load(std::string tilemapPath, sf::Vector2u tileSize) {
+bool Map::Load(std::string tilemapPath) {
   std::ifstream f(tilemapPath.c_str());
   if (!f) {
     return false;
@@ -16,9 +16,9 @@ bool Map::Load(std::string tilemapPath, sf::Vector2u tileSize) {
   f >> width >> height;
   sf::Vector2u size(width, height);
 
-  ground_.Load(&f, size, tileSize);
-  mid_.Load(&f, size, tileSize);
-  ceil_.Load(&f, size, tileSize);
+  ground_.Load(&f, size);
+  mid_.Load(&f, size);
+  ceil_.Load(&f, size);
 
   return true;
 }

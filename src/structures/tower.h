@@ -5,9 +5,11 @@
 #include <SFML/Graphics.hpp>
 
 
-class Tower : public sf::Drawable, public sf::Transformable {
+class Tower : public sf::Drawable {
 public:
   void Load();
+
+  void SetTilePosition(sf::Vector2u pos);
 
 private:
   sf::Sprite sprite_;

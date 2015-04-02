@@ -20,13 +20,14 @@ int main(int argc, char const *argv[]) {
   }
 
   Map map;
-  if (!map.Load("assets/tilemaps/map.txt", sf::Vector2u(64, 64))) {
+  if (!map.Load("assets/tilemaps/map.txt")) {
     std::cerr << "Cannot load tilemap" << std::endl;
     return 1;
   }
 
   Tower tower;
   tower.Load();
+  tower.SetTilePosition(sf::Vector2u(7, 5));
 
   while (window.isOpen()) {
     sf::Event event;

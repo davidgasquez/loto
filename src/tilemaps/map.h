@@ -11,7 +11,7 @@
 
 class Map : public sf::Drawable {
 public:
-  bool Load(std::string tilemapPath, sf::Vector2u tileSize);
+  bool Load(std::string tilemapPath);
 
 private:
   TileMap ground_, mid_, ceil_;

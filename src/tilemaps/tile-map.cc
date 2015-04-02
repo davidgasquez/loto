@@ -4,11 +4,11 @@
 #include "managers/game-manager.h"
 
 
-void TileMap::Load(std::ifstream* f, sf::Vector2u size, sf::Vector2u tileSize) {
+void TileMap::Load(std::ifstream* f, sf::Vector2u size) {
   unsigned int width  = size.x;
   unsigned int height = size.y;
-  unsigned int wTile  = tileSize.x;
-  unsigned int hTile  = tileSize.y;
+  unsigned int wTile  = GameManager::GetTileSize().x;
+  unsigned int hTile  = GameManager::GetTileSize().y;
 
   tiles_ = new unsigned[width * height];
   for (unsigned j = 0; j < height; ++j) {
