@@ -12,6 +12,8 @@ public:
   Unit();
   virtual ~Unit();
 
+  virtual void Step(sf::Time elapsed);
+
   void set_life(unsigned life) {
     life_ = life;
   }
@@ -20,10 +22,18 @@ public:
     return life_;
   }
 
+  void set_position(sf::Vector2f pos) {
+    sprite_.setPosition(pos);
+  }
+
+  void set_moveSpeed(sf::Vector2f moveSpeed) {
+    moveSpeed_ = moveSpeed;
+  }
+
 protected:
   unsigned life_;
   unsigned damage_;
-  float moveSpeed_;
+  sf::Vector2f moveSpeed_;
 };
 
 #endif  // UNITS_UNIT_H_
