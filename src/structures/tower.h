@@ -10,10 +10,10 @@ public:
 
   void Load();
 
-  void set_tile_position(sf::Vector2u pos);
+  void set_position(sf::Vector2u pos);
 
   void draw(sf::RenderTarget& target,
-            sf::RenderStates  states);
+            sf::RenderStates  states) const;
 };
 
 #endif // STRUCTURES_TOWER_H_

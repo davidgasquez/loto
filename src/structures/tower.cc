@@ -8,7 +8,7 @@ void Tower::Load() {
   sprite_.setTexture(*GameManager::GetResourcesManager()->Tower());
 }
 
-void Tower::set_tile_position(sf::Vector2u pos) {
+void Tower::set_position(sf::Vector2u pos) {
   sf::Vector2u tile_size = GameManager::GetTileSize();
 
   sprite_.setPosition(tile_size.x * pos.x, tile_size.y * pos.y);
