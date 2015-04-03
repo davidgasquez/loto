@@ -1,17 +1,17 @@
 
-#ifndef STRUCTURES_TOWER_H_
-#define STRUCTURES_TOWER_H_
+#ifndef STRUCTURES_STRUCTURE_H_
+#define STRUCTURES_STRUCTURE_H_
 
 #include <SFML/Graphics.hpp>
 
 #include "engine/instance.h"
 
 
-class Tower : public Instance {
+class Structure : public Instance {
 public:
 
-  Tower();
-  virtual ~Tower();
+  Structure();
+  virtual ~Structure();
 
   virtual void Step(sf::Time elapsed);
 
@@ -38,4 +38,4 @@ protected:
   unsigned attack_speed_;
 };
 
-#endif // STRUCTURES_TOWER_H_
+#endif // STRUCTURES_STRUCTURE_H_
