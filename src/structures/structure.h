@@ -27,6 +27,10 @@ public:
     sprite_.setPosition(pos);
   }
 
+  void set_range(unsigned range) {
+    range_ = range;
+  }
+
   void set_attack_speed(unsigned attack_speed) {
     attack_speed_ = attack_speed;
   }
@@ -36,6 +40,7 @@ protected:
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
+  unsigned range_;
 };
 
 #endif // STRUCTURES_STRUCTURE_H_
