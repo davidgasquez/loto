@@ -38,10 +38,10 @@ int main(int argc, char const *argv[]) {
   auto enemy = new EnemyUnit();
   enemy->Load();
   enemy->set_position(sf::Vector2f(1200.f, 352.f));
-  enemy->set_movement_speed(sf::Vector2f(-100.f, 0.f));
+  enemy->set_movement_speed(sf::Vector2f(-50.f, 0.f));
   instances->AddInstance(enemy);
 
-  window.setFramerateLimit(60);
+  // window.setFramerateLimit(60);
 
   sf::Clock clock;
 

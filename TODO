@@ -1,1 +1,5 @@
-- Split movement_speed in direction and speed?
+- Collisions
+- Player Manager
+- Wave Manager
+- Click to place tower
+- Split movement_speed in direction and speed
