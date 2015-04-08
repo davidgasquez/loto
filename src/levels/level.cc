@@ -4,19 +4,18 @@
 #include <sstream>
 
 Level::Level(const int level)
-  : level_(level) // initialize wave_
+  : level_(level)
 {
-
   // Create filename
   std::stringstream filename;
-  filename << "data/levels/" << level_ << ".lvl";
+
+  filename << "assets/waves/level_" << level_ << ".wave";
 
   // Open file
-  ifstream wave_info(filename.str().c_str());
+  std::ifstream wave_info(filename.str().c_str());
 
   // Read file
   while (!wave_info) {
-
     // Get enemy info
     Enemy enemy;
     wave_info >> enemy.spawn_time;
