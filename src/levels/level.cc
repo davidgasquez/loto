@@ -9,12 +9,12 @@ Level::Level(const int level)
   // Create filename
   std::stringstream filename;
 
-  filename << "assets/waves/level_" << level_ << ".wave";
+    filename << "assets/waves/level_" << level_ << ".wave";
 
   // Open file
   std::ifstream wave_info(filename.str().c_str());
 
-  // Read file
+  // Read filenamee
   while (!wave_info) {
     // Get enemy info
     Enemy enemy;
