@@ -14,7 +14,7 @@ Level::Level(const int level)
   // Open file
   std::ifstream wave_info(filename.str().c_str());
 
-  // Read filenamee
+  // Read filename
   while (!wave_info) {
     // Get enemy info
     Enemy enemy;
