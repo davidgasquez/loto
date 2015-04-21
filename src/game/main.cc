@@ -16,9 +16,9 @@ int main(int argc, char const *argv[]) {
                           "Lord of the Orb",
                           sf::Style::None);
 
-  InstancesManager *instances = GameManager::GetInstancesManager();
-  ResourcesManager *resources = GameManager::GetResourcesManager();
+  auto instances = GameManager::GetInstancesManager();
 
+  auto resources = GameManager::GetResourcesManager();
   if (!resources->Load()) {
     std::cerr << "Cannot load game resources!" << std::endl;
     return 1;
@@ -50,20 +50,8 @@ int main(int argc, char const *argv[]) {
   sf::Clock clock;
 
   while (window.isOpen()) {
-    sf::Event event;
-
-    while (window.pollEvent(event)) {
-      if (event.type == sf::Event::Closed) {
-        window.close();
-        break;
-      }
-    }
-
-    if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
-      window.close();
-      break;
-    }
-
+    GameManager::GetEventsManager()->EventsLoop(&window);
+    
     sf::Time elapsed = clock.restart();
     instances->Step(elapsed);
 

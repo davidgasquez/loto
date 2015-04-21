@@ -4,6 +4,7 @@
 
 ResourcesManager *resources_ = NULL;
 InstancesManager *instances_ = NULL;
+EventsManager *events_ = NULL;
 
 
 ResourcesManager * GameManager::GetResourcesManager() {
@@ -20,4 +21,12 @@ InstancesManager * GameManager::GetInstancesManager() {
   }
 
   return instances_;
+}
+
+EventsManager * GameManager::GetEventsManager() {
+  if (events_ == NULL) {
+    events_ = new EventsManager();
+  }
+
+  return events_;
 }

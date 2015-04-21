@@ -4,6 +4,7 @@
 
 #include "engine/resources-manager.h"
 #include "engine/instances-manager.h"
+#include "engine/events-manager.h"
 
 
 class GameManager {
@@ -11,6 +12,7 @@ public:
 
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();
+  static EventsManager* GetEventsManager();
 
   static sf::Vector2u      GetTileSize() {
     return sf::Vector2u(64, 64);

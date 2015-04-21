@@ -12,6 +12,7 @@ srcs = '''
   engine/instance.cc
   engine/instances-manager.cc
   engine/resources-manager.cc
+  engine/events-manager.cc
   game/ingame-ui.cc
   game/main.cc
   structures/structure.cc

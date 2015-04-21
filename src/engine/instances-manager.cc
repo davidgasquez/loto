@@ -21,3 +21,15 @@ void InstancesManager::Step(sf::Time elapsed) {
     instance->Step(elapsed);
   }
 }
+
+void InstancesManager::KeyPressed(sf::Event::KeyEvent event) {
+  for (Instance *instance : instances_) {
+    instance->KeyPressed(event);
+  }
+}
+
+void InstancesManager::KeyReleased(sf::Event::KeyEvent event) {
+  for (Instance *instance : instances_) {
+    instance->KeyReleased(event);
+  }
+}

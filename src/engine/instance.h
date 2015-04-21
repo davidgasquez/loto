@@ -11,7 +11,9 @@ public:
   Instance();
   virtual ~Instance();
 
-  virtual void Step(sf::Time elapsed) {}
+  virtual void Step(sf::Time elapsed) { }
+  virtual void KeyPressed(sf::Event::KeyEvent event) { }
+  virtual void KeyReleased(sf::Event::KeyEvent event) { }
 
 protected:
 

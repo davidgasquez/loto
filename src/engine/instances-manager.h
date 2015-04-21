@@ -17,6 +17,8 @@ public:
 
   void Draw(sf::RenderTarget *target);
   void Step(sf::Time elapsed);
+  void KeyPressed(sf::Event::KeyEvent event);
+  void KeyReleased(sf::Event::KeyEvent event);
 
 private:
 
