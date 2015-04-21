@@ -6,23 +6,25 @@
 
 #include <SFML/Graphics.hpp>
 
-class Enemy
-{
+#include "engine/instance.h"
+
+class Enemy {
 public:
-  EnemyUnit enemy;
-  sf::time spawn_time;
+  EnemyUnit *enemy;
+  sf::Time spawn_time;
 };
 
-class Wave {
+class Wave : public Instance {
 public:
   Wave(unsigned level)
     : level_(level) { }
 
   void Load();
 
-private:
+  void Step(sf::Time elapsed);
 
-  std::vector <Enemy *> wave_;
+private:
+  std::vector <Enemy> wave_;
   unsigned level_;
 };
 

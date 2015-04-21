@@ -37,12 +37,6 @@ int main(int argc, char const *argv[]) {
   tower->set_position(sf::Vector2u(7, 5));
   instances->AddInstance(tower);
 
-  auto enemy = new EnemyUnit();
-  enemy->Load();
-  enemy->set_position(sf::Vector2f(1200.f, 352.f));
-  enemy->set_movement_speed(sf::Vector2f(-50.f, 0.f));
-  instances->AddInstance(enemy);
-
   auto ui = new InGameUI();
   ui->Load();
   instances->AddInstance(ui);
