@@ -7,6 +7,7 @@
 #include "structures/tower.h"
 #include "tilemaps/map.h"
 #include "units/enemy-unit.h"
+#include "game/ingame-ui.h"
 
 
 int main(int argc, char const *argv[]) {
@@ -41,7 +42,9 @@ int main(int argc, char const *argv[]) {
   enemy->set_movement_speed(sf::Vector2f(-50.f, 0.f));
   instances->AddInstance(enemy);
 
-  // window.setFramerateLimit(60);
+  auto ui = new InGameUI();
+  ui->Load();
+  instances->AddInstance(ui);
 
   sf::Clock clock;
 

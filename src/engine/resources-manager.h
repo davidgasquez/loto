@@ -22,11 +22,16 @@ public:
     return &enemy_;
   }
 
+  sf::Texture* UITowerButton() {
+    return &ui_tower_button_;
+  }
+
 private:
 
   sf::Texture map_;
   sf::Texture tower_;
   sf::Texture enemy_;
+  sf::Texture ui_tower_button_;
 };
 
 #endif // BASE_RESOURCES_MANAGER_H_

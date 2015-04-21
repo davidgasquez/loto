@@ -15,5 +15,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!ui_tower_button_.loadFromFile("assets/textures/ui/tower-button.png")) {
+    return false;
+  }
+
   return true;
 }
