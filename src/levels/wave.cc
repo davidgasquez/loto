@@ -37,6 +37,10 @@ void Wave::Load() {
   }
 }
 
+void Wave::Start(){
+  clock_.restart();
+}
+
 void Wave::Step(sf::Time elapsed){
-  
+  // Handle wave 
 }
