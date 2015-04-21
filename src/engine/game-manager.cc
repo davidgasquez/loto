@@ -7,7 +7,7 @@ InstancesManager *instances_ = NULL;
 EventsManager *events_ = NULL;
 
 
-ResourcesManager * GameManager::GetResourcesManager() {
+ResourcesManager *GameManager::GetResourcesManager() {
   if (resources_ == NULL) {
     resources_ = new ResourcesManager();
   }
@@ -15,7 +15,7 @@ ResourcesManager * GameManager::GetResourcesManager() {
   return resources_;
 }
 
-InstancesManager * GameManager::GetInstancesManager() {
+InstancesManager *GameManager::GetInstancesManager() {
   if (instances_ == NULL) {
     instances_ = new InstancesManager();
   }
@@ -23,7 +23,7 @@ InstancesManager * GameManager::GetInstancesManager() {
   return instances_;
 }
 
-EventsManager * GameManager::GetEventsManager() {
+EventsManager *GameManager::GetEventsManager() {
   if (events_ == NULL) {
     events_ = new EventsManager();
   }

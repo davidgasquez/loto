@@ -7,8 +7,13 @@
 
 class EnemyUnit : public Unit {
 public:
+  EnemyUnit(std::string name)
+    : name_(name) { }
 
   void Load();
+
+private:
+  std::string name_;
 };
 
 #endif // UNITS_ENEMY_H_

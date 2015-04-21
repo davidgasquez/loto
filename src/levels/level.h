@@ -5,21 +5,15 @@
 #include <SFML/Graphics.hpp>
 
 
-struct Enemy
-{
-  float spawn_time; // sf::time??
-  float start_position;
-  std::string name;
-};
-
 class Level {
 public:
-  Level(int level);
-  virtual ~Level();
+  Level(unsigned level)
+  : level_(level)
+
+  void Load();
 
 private:
-  std::vector<Enemy> wave_;
-  int level_;
+  unsigned level_;
 };
 
 #endif // LEVELS_LEVEL_H_
