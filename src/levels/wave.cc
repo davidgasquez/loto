@@ -17,7 +17,7 @@ void Wave::Load() {
   std::ifstream wave_info(filename.str().c_str());
 
   // Read filenamee
-  while (!wave_info) {
+  while (wave_info) {
     Enemy new_enemy;
 
     // Get spawn time

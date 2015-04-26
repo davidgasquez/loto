@@ -38,8 +38,9 @@ int main(int argc, char const *argv[]) {
   tower->set_position(sf::Vector2u(7, 5));
   instances->AddInstance(tower);
 
-  // auto level = new Level(1);
-  // level->Load();
+  auto level = new Level(1);
+  level->Load();
+  // instances->AddInstance(level);
 
   auto ui = new InGameUI();
   ui->Load();
