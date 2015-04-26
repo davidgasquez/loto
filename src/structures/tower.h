@@ -6,8 +6,7 @@
 
 
 class Tower : public Structure {
-public:
-
+ public:
   void Load();
 
   void set_position(sf::Vector2u pos);
@@ -16,4 +15,4 @@ public:
             sf::RenderStates  states) const;
 };
 
-#endif // STRUCTURES_TOWER_H_
+#endif  // STRUCTURES_TOWER_H_

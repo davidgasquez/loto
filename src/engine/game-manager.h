@@ -8,8 +8,7 @@
 
 
 class GameManager {
-public:
-
+ public:
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();
   static EventsManager* GetEventsManager();
@@ -23,4 +22,4 @@ public:
   }
 };
 
-#endif // BASE_GAME_MANAGER_H_
+#endif  // BASE_GAME_MANAGER_H_

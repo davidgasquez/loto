@@ -6,10 +6,10 @@
 
 
 class EventsManager {
-public:
+ public:
   void EventsLoop(sf::RenderWindow* window);
 
-private:
+ private:
 };
 
-#endif // BASE_EVENTS_MANAGER_H_
+#endif  // BASE_EVENTS_MANAGER_H_

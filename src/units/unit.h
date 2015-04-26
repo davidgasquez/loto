@@ -8,8 +8,7 @@
 
 
 class Unit : public Instance {
-public:
-
+ public:
   Unit();
   virtual ~Unit();
 
@@ -35,12 +34,11 @@ public:
     attack_speed_ = attack_speed;
   }
 
-protected:
-
+ protected:
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
   sf::Vector2f movement_speed_;
 };
 
-#endif // UNITS_UNIT_H_
+#endif  // UNITS_UNIT_H_

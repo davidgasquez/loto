@@ -8,8 +8,7 @@
 
 
 class Structure : public Instance {
-public:
-
+ public:
   Structure();
   virtual ~Structure();
 
@@ -35,12 +34,11 @@ public:
     attack_speed_ = attack_speed;
   }
 
-protected:
-
+ protected:
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
   unsigned range_;
 };
 
-#endif // STRUCTURES_STRUCTURE_H_
+#endif  // STRUCTURES_STRUCTURE_H_

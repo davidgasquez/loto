@@ -5,14 +5,14 @@
 #include "engine/instance.h"
 
 class InGameUI : public Instance {
-public:
+ public:
   void Load();
 
-private:
+ private:
   sf::Sprite tower_button_;
 
   virtual void draw(sf::RenderTarget& target,
                     sf::RenderStates  states) const;
 };
 
-#endif
+#endif  // GAME_INGAME_UI_H_

@@ -6,9 +6,8 @@
 
 
 class ResourcesManager {
-public:
-
-  bool         Load();
+ public:
+  bool Load();
 
   sf::Texture* Map() {
     return &map_;
@@ -26,12 +25,11 @@ public:
     return &ui_tower_button_;
   }
 
-private:
-
+ private:
   sf::Texture map_;
   sf::Texture tower_;
   sf::Texture enemy_;
   sf::Texture ui_tower_button_;
 };
 
-#endif // BASE_RESOURCES_MANAGER_H_
+#endif  // BASE_RESOURCES_MANAGER_H_

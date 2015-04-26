@@ -8,15 +8,15 @@
 
 
 class Level {
-public:
+ public:
   Level(unsigned level)
     : level_(level) { }
 
   void Load();
 
-private:
+ private:
   unsigned level_;
   Wave *wave_;
 };
 
-#endif // LEVELS_LEVEL_H_
+#endif  // LEVELS_LEVEL_H_

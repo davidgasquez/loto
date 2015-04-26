@@ -6,8 +6,7 @@
 
 
 class Instance : public sf::Drawable {
-public:
-
+ public:
   Instance();
   virtual ~Instance();
 
@@ -15,12 +14,11 @@ public:
   virtual void KeyPressed(sf::Event::KeyEvent event) { }
   virtual void KeyReleased(sf::Event::KeyEvent event) { }
 
-protected:
-
+ protected:
   sf::Sprite sprite_;
 
   virtual void draw(sf::RenderTarget& target,
                     sf::RenderStates  states) const;
 };
 
-#endif // BASE_INSTANCES_H_
+#endif  // BASE_INSTANCES_H_

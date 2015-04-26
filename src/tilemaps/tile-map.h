@@ -2,19 +2,17 @@
 #ifndef TILES_TILE_MAP_H_
 #define TILES_TILE_MAP_H_
 
-#include <fstream>
-
 #include <SFML/Graphics.hpp>
+
+#include <fstream>
 
 
 class TileMap : public sf::Drawable, public sf::Transformable {
-public:
-
+ public:
   void Load(std::ifstream *f,
             sf::Vector2u   size);
 
-private:
-
+ private:
   unsigned *tiles_;
   sf::VertexArray vertices_;
 
@@ -22,4 +20,4 @@ private:
                     sf::RenderStates  states) const;
 };
 
-#endif // TILES_TILE_MAP_H_
+#endif  // TILES_TILE_MAP_H_

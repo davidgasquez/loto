@@ -3,6 +3,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <string>
 
 
 void Wave::Load() {
@@ -37,10 +38,10 @@ void Wave::Load() {
   }
 }
 
-void Wave::Start(){
+void Wave::Start() {
   clock_.restart();
 }
 
-void Wave::Step(sf::Time elapsed){
-  // Handle wave 
+void Wave::Step(sf::Time elapsed) {
+  // Handle wave
 }

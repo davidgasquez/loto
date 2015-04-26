@@ -2,16 +2,15 @@
 #ifndef BASE_INSTANCES_MANAGER_H_
 #define BASE_INSTANCES_MANAGER_H_
 
-#include <vector>
-
 #include <SFML/Graphics.hpp>
+
+#include <vector>
 
 #include "engine/instance.h"
 
 
 class InstancesManager {
-public:
-
+ public:
   void AddInstance(Instance *instance);
   void RemoveInstance(Instance *instance);
 
@@ -20,9 +19,8 @@ public:
   void KeyPressed(sf::Event::KeyEvent event);
   void KeyReleased(sf::Event::KeyEvent event);
 
-private:
-
+ private:
   std::vector < Instance * > instances_;
 };
 
-#endif // BASE_INSTANCES_MANAGER_H_
+#endif  // BASE_INSTANCES_MANAGER_H_

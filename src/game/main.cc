@@ -1,7 +1,7 @@
 
-#include <iostream>
-
 #include <SFML/Graphics.hpp>
+
+#include <iostream>
 
 #include "engine/game-manager.h"
 #include "structures/tower.h"
@@ -45,7 +45,7 @@ int main(int argc, char const *argv[]) {
 
   while (window.isOpen()) {
     GameManager::GetEventsManager()->EventsLoop(&window);
-    
+
     sf::Time elapsed = clock.restart();
     instances->Step(elapsed);
 

@@ -2,20 +2,20 @@
 #ifndef LEVELS_WAVE_H_
 #define LEVELS_WAVE_H_
 
-#include <vector>
-
 #include <SFML/Graphics.hpp>
+
+#include <vector>
 
 #include "engine/instance.h"
 
 class Enemy {
-public:
+ public:
   EnemyUnit *enemy;
   sf::Time spawn_time;
 };
 
 class Wave : public Instance {
-public:
+ public:
   Wave(unsigned level)
     : level_(level) { }
 
@@ -24,10 +24,10 @@ public:
   void Step(sf::Time elapsed);
   void Start();
 
-private:
+ private:
   std::vector <Enemy> wave_;
   unsigned level_;
   sf::Clock clock_;
 };
 
-#endif // LEVELS_WAVE_H_
+#endif  // LEVELS_WAVE_H_
