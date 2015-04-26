@@ -1,6 +1,3 @@
-
-# Lord Of The Orb
-
 ![Lord Of The Orb](/assets/textures/logo.png)
 
 Yet another Tower Defense game set in the epic world of [Insert some Epic
