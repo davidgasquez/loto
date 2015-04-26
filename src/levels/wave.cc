@@ -5,6 +5,8 @@
 #include <sstream>
 #include <string>
 
+#include "engine/game-manager.h"
+
 
 void Wave::Load() {
   // Create filename
@@ -21,7 +23,7 @@ void Wave::Load() {
     // Get spawn time
     unsigned seconds;
     wave_info >> seconds;
-    sf::Time spawn_time = sf::seconds(seconds);
+    new_enemy.spawn_time = sf::seconds(seconds);
 
     // Get enemy name
     std::string name;
@@ -34,7 +36,7 @@ void Wave::Load() {
     new_enemy.enemy->set_position(pos);
 
     // Add enemy to wave
-    wave_.push_back(enemy);
+    wave_.push_back(new_enemy);
   }
 }
 

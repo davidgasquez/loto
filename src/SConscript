@@ -21,6 +21,8 @@ srcs = '''
   tilemaps/tile-map.cc
   units/enemy-unit.cc
   units/unit.cc
+  levels/level.cc
+  levels/wave.cc
 '''
 
 

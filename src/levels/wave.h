@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "engine/instance.h"
+#include "units/enemy-unit.h"
 
 class Enemy {
  public:

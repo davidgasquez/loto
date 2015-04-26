@@ -8,6 +8,7 @@
 #include "tilemaps/map.h"
 #include "units/enemy-unit.h"
 #include "game/ingame-ui.h"
+#include "levels/level.h"
 
 
 int main(int argc, char const *argv[]) {
@@ -36,6 +37,9 @@ int main(int argc, char const *argv[]) {
   tower->Load();
   tower->set_position(sf::Vector2u(7, 5));
   instances->AddInstance(tower);
+
+  // auto level = new Level(1);
+  // level->Load();
 
   auto ui = new InGameUI();
   ui->Load();
