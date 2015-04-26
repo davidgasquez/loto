@@ -1,6 +1,8 @@
 
 # Lord Of The Orb
 
+![Lord Of The Orb](/assets/textures/logo.png)
+
 Yet another Tower Defense game set in the epic world of [Insert some Epic
 name here]. Defend your realm against hordes of orcs, trolls, evil wizards
 and other nasty fiends; armed with a mighty arsenal of warriors and your
