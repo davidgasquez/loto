@@ -16,8 +16,12 @@ class InstancesManager {
 
   void Draw(sf::RenderTarget *target);
   void Step(sf::Time elapsed);
+
   void KeyPressed(sf::Event::KeyEvent event);
   void KeyReleased(sf::Event::KeyEvent event);
+
+  void MousePressed(sf::Event::MouseButtonEvent event);
+  void MouseReleased(sf::Event::MouseButtonEvent event);
 
  private:
   std::vector < Instance * > instances_;

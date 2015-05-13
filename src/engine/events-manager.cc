@@ -22,6 +22,14 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
         instances->KeyReleased(event.key);
         break;
 
+      case sf::Event::MouseButtonPressed:
+        instances->MousePressed(event.mouseButton);
+        break;
+
+      case sf::Event::MouseButtonReleased:
+        instances->MousePressed(event.mouseButton);
+        break;
+
       default:
         break;
     }

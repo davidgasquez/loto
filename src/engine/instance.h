@@ -11,8 +11,12 @@ class Instance : public sf::Drawable {
   virtual ~Instance();
 
   virtual void Step(sf::Time elapsed) { }
+  
   virtual void KeyPressed(sf::Event::KeyEvent event) { }
   virtual void KeyReleased(sf::Event::KeyEvent event) { }
+
+  virtual void MousePressed(sf::Event::MouseButtonEvent event) { }
+  virtual void MouseReleased(sf::Event::MouseButtonEvent event) { }
 
  protected:
   sf::Sprite sprite_;
