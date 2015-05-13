@@ -6,6 +6,7 @@
 #include <string>
 
 #include "engine/game-manager.h"
+#include "base/debug.h"
 
 
 void Wave::Load() {
@@ -32,6 +33,7 @@ void Wave::Load() {
     std::string name;
     wave_info >> name;
     new_enemy.enemy = new EnemyUnit(name);
+    new_enemy.enemy->Load();
 
     // Get position
     sf::Vector2f pos(GameManager::GetWindowSize());
@@ -41,6 +43,8 @@ void Wave::Load() {
     // Add enemy to wave
     wave_.push_back(new_enemy);
   }
+
+  wave_.pop_back();
 }
 
 void Wave::Start() {

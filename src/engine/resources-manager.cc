@@ -11,7 +11,7 @@ bool ResourcesManager::Load() {
     return false;
   }
 
-  if (!enemy_.loadFromFile("assets/textures/enemy.png")) {
+  if (!enemy_.loadFromFile("assets/textures/bug.png")) {
     return false;
   }
 
