@@ -16,14 +16,17 @@ void Wave::Load() {
   // Open file
   std::ifstream wave_info(filename.str().c_str());
 
-  // Read filenamee
+  unsigned accum = 0;
+
+  // Read filename
   while (wave_info) {
     Enemy new_enemy;
 
     // Get spawn time
     unsigned seconds;
     wave_info >> seconds;
-    new_enemy.spawn_time = sf::seconds(seconds);
+    accum = seconds + accum;
+    new_enemy.spawn_time = sf::seconds(accum);
 
     // Get enemy name
     std::string name;
@@ -45,5 +48,23 @@ void Wave::Start() {
 }
 
 void Wave::Step(sf::Time elapsed) {
-  // Handle wave
+  auto instances = GameManager::GetInstancesManager();
+
+  auto elapsed_time = clock_.getElapsedTime();
+
+  while (true) {
+    if (elapsed_time < wave_[current_enemy_].spawn_time) {
+      break;
+    }
+
+    instances->AddInstance(wave_[current_enemy_].enemy);
+    current_enemy_++;
+
+    if (current_enemy_ >= wave_.size()) {
+      instances->RemoveInstance(this);
+      delete this;
+      return;
+    }
+  }
+
 }

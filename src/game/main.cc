@@ -40,7 +40,6 @@ int main(int argc, char const *argv[]) {
 
   auto level = new Level(1);
   level->Load();
-  // instances->AddInstance(level);
 
   auto ui = new InGameUI();
   ui->Load();
