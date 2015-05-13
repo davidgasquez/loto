@@ -48,7 +48,6 @@ void Wave::Load() {
     cout << pos.y << endl;
     new_enemy.enemy->set_position(pos);
 
-
     // Add enemy to wave
     wave_.push_back(new_enemy);
   }
