@@ -43,7 +43,7 @@ void Wave::Load() {
     pos.y = (position / 100) * GameManager::GetWindowSize().y;
 
     // See the spawn
-    pos.x = GameManager::GetWindowSize().x - 50;
+    pos.x = GameManager::GetWindowSize().x;
     cout << pos.x << " - ";
     cout << pos.y << endl;
     new_enemy.enemy->set_position(pos);
