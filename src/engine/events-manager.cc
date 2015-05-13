@@ -27,7 +27,11 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
         break;
 
       case sf::Event::MouseButtonReleased:
-        instances->MousePressed(event.mouseButton);
+        instances->MouseReleased(event.mouseButton);
+        break;
+
+      case sf::Event::MouseMoved:
+        instances->MouseMoved(event.mouseMove);
         break;
 
       default:

@@ -22,6 +22,7 @@ class InstancesManager {
 
   void MousePressed(sf::Event::MouseButtonEvent event);
   void MouseReleased(sf::Event::MouseButtonEvent event);
+  void MouseMoved(sf::Event::MouseMoveEvent event);
 
  private:
   std::vector < Instance * > instances_;

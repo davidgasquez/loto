@@ -17,6 +17,7 @@ class Instance : public sf::Drawable {
 
   virtual void MousePressed(sf::Event::MouseButtonEvent event) { }
   virtual void MouseReleased(sf::Event::MouseButtonEvent event) { }
+  virtual void MouseMoved(sf::Event::MouseMoveEvent event) { }
 
  protected:
   sf::Sprite sprite_;

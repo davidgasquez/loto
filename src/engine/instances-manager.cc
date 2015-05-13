@@ -1,6 +1,8 @@
 
 #include "engine/instances-manager.h"
 
+#include "base/debug.h"
+
 
 void InstancesManager::AddInstance(Instance *instance) {
   instances_.push_back(instance);
@@ -50,5 +52,12 @@ void InstancesManager::MousePressed(sf::Event::MouseButtonEvent event) {
 void InstancesManager::MouseReleased(sf::Event::MouseButtonEvent event) {
   for (Instance *instance : instances_) {
     instance->MouseReleased(event);
+  }
+}
+
+
+void InstancesManager::MouseMoved(sf::Event::MouseMoveEvent event) {
+  for (Instance *instance : instances_) {
+    instance->MouseMoved(event);
   }
 }
