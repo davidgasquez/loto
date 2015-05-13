@@ -51,7 +51,6 @@ void Wave::Load() {
     // Add enemy to wave
     wave_.push_back(new_enemy);
   }
-
   wave_.pop_back();
 }
 
@@ -60,9 +59,9 @@ void Wave::Start() {
 }
 
 void Wave::Step(sf::Time elapsed) {
-  auto instances = GameManager::GetInstancesManager();
-
   auto elapsed_time = clock_.getElapsedTime();
+
+  auto instances = GameManager::GetInstancesManager();
 
   while (true) {
     if (elapsed_time < wave_[current_enemy_].spawn_time) {
@@ -78,5 +77,4 @@ void Wave::Step(sf::Time elapsed) {
       return;
     }
   }
-
 }
