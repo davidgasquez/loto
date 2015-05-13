@@ -37,8 +37,17 @@ void Wave::Load() {
 
     // Get position
     sf::Vector2f pos(GameManager::GetWindowSize());
-    wave_info >> pos.y;
+    float position = 0;
+    wave_info >> position;
+
+    pos.y = (position / 100) * GameManager::GetWindowSize().y;
+
+    // See the spawn
+    pos.x = GameManager::GetWindowSize().x - 50;
+    cout << pos.x << " - ";
+    cout << pos.y << endl;
     new_enemy.enemy->set_position(pos);
+
 
     // Add enemy to wave
     wave_.push_back(new_enemy);
