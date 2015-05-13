@@ -15,6 +15,7 @@ ResourcesManager *GameManager::GetResourcesManager() {
   return resources_;
 }
 
+
 InstancesManager *GameManager::GetInstancesManager() {
   if (instances_ == NULL) {
     instances_ = new InstancesManager();
@@ -22,6 +23,7 @@ InstancesManager *GameManager::GetInstancesManager() {
 
   return instances_;
 }
+
 
 EventsManager *GameManager::GetEventsManager() {
   if (events_ == NULL) {

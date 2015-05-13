@@ -1,3 +1,7 @@
+
+Roadmap
+-------
+
 - Collisions
 - Player Manager
 - Wave Manager
@@ -5,3 +9,25 @@
 - Split movement_speed in direction and speed
 - Rotate sprite based on direction
 - Add button sprites
+
+
+Ernesto
+-------
+
+- Animated sprite.
+- Map controller.
+- Create towers.
+- Kill bugs with the towers.
+- Tower action radius when creating them.
+- Do not create towers above other towers.
+- Do not create towers in forbidden places.
+- Do not create towers in places with bugs.
+
+
+David
+-----
+
+- A*
+- Layers design.
+- Inform map controller of the position of the bugs.
+
