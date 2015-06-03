@@ -40,7 +40,7 @@ void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
 
 void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
   auto mapController = GameManager::GetMapController();
-  
+
   Vec2f mouse_pos(event.x, event.y);
 
   Vec2f tile_size(GameManager::GetTileSize());
@@ -57,7 +57,7 @@ void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
   if (mapController->CanPlaceTower(row, col)) {
     mouse_pos.x = col * tile_size.x;
     mouse_pos.y = row * tile_size.y;
-    
+
     tower_selection_.setPosition(mouse_pos);
   }
 }

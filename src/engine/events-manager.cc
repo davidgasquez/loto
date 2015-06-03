@@ -2,6 +2,8 @@
 #include "engine/events-manager.h"
 
 #include "engine/game-manager.h"
+#include "controllers/map-controller.h"
+#include "controllers/player-controller.h"
 
 void EventsManager::EventsLoop(sf::RenderWindow* window) {
   sf::Event event;
@@ -46,10 +48,10 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
 void EventsManager::Trigger(GameEvent event) {
   auto mapController = GameManager::GetMapController();
   mapController->EventTriggered(event);
-  
+
   auto playerController = GameManager::GetPlayerController();
   playerController->EventTriggered(event);
-  
+
   auto instances = GameManager::GetInstancesManager();
   instances->EventTriggered(event);
 }
