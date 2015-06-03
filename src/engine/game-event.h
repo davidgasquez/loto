@@ -4,6 +4,8 @@
 
 enum GameEventType {
   ENEMY_DIED,
+  TOWER_PLACED,
+  ENEMY_REACHED_CASTLE
 };
 
 
