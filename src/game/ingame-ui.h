@@ -19,7 +19,7 @@ class InGameUI : public Instance {
   sf::Sprite tower_selection_;
   bool active_;
 
-  void draw(sf::RenderTarget& target, sf::RenderStates  states) const;
+  void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
 
 #endif  // GAME_INGAME_UI_H_

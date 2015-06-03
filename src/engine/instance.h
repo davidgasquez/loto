@@ -11,7 +11,7 @@ class Instance : public sf::Drawable {
   virtual ~Instance();
 
   virtual void Step(sf::Time elapsed) { }
-  
+
   virtual void KeyPressed(sf::Event::KeyEvent event) { }
   virtual void KeyReleased(sf::Event::KeyEvent event) { }
 

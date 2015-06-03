@@ -13,7 +13,7 @@ class GameManager {
   static InstancesManager* GetInstancesManager();
   static EventsManager* GetEventsManager();
 
-  static sf::Vector2u      GetTileSize() {
+  static sf::Vector2u GetTileSize() {
     return sf::Vector2u(64, 64);
   }
 

@@ -5,7 +5,6 @@ Roadmap
 - Collisions
 - Player Manager
 - Wave Manager
-- Click to place tower
 - Split movement_speed in direction and speed
 - Rotate sprite based on direction
 - Add button sprites
