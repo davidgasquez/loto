@@ -11,6 +11,10 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!tower_bad_.loadFromFile("assets/textures/tower-bad.png")) {
+    return false;
+  }
+
   if (!enemy_.loadFromFile("assets/textures/enemy.png")) {
     return false;
   }

@@ -7,7 +7,7 @@
 class InGameUI : public Instance {
  public:
   InGameUI()
-  : active_(false) { }
+  : active_(false), bad_selection_(false) { }
 
   void Load();
 
@@ -17,7 +17,11 @@ class InGameUI : public Instance {
  private:
   sf::Sprite tower_button_;
   sf::Sprite tower_selection_;
+  sf::Sprite tower_selection_bad_;
   bool active_;
+
+  bool bad_selection_;
+  sf::Vector2u last_tower_position_;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 };
