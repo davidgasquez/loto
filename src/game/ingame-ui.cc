@@ -50,8 +50,6 @@ void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
   if (col < 2) {
     col = 2;
   }
-
-  cout << mapController->width() << endl;
   if (col > mapController->width() - 3) {
     col = mapController->width() - 3;
   }
