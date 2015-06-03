@@ -45,8 +45,9 @@ int main(int argc, char const *argv[]) {
   ui->Load();
   instances->AddInstance(ui);
 
-  GameManager::GetMapController()->Load();
-  GameManager::GetPlayerController()->Load();
+  auto map = GameManager::GetMapController();
+  auto player = GameManager::GetPlayerController();
+  player->Load();
 
   sf::Clock clock;
 
@@ -54,6 +55,9 @@ int main(int argc, char const *argv[]) {
     GameManager::GetEventsManager()->EventsLoop(&window);
 
     sf::Time elapsed = clock.restart();
+
+    map->Step(elapsed);
+    player->Step(elapsed);
     instances->Step(elapsed);
 
     window.clear(sf::Color::Black);
