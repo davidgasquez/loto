@@ -4,7 +4,6 @@
 
 #include <SFML/Graphics.hpp>
 
-#include "engine/game-manager.h"
 #include "engine/game-event.h"
 
 

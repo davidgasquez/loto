@@ -1,6 +1,7 @@
 
 #include "engine/events-manager.h"
 
+#include "engine/game-manager.h"
 
 void EventsManager::EventsLoop(sf::RenderWindow* window) {
   sf::Event event;
