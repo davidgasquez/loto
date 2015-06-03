@@ -17,6 +17,10 @@ class ResourcesManager {
     return &tower_;
   }
 
+  sf::Texture* TowerBad() {
+    return &tower_bad_;
+  }
+
   sf::Texture* Enemy() {
     return &enemy_;
   }
@@ -28,6 +32,7 @@ class ResourcesManager {
  private:
   sf::Texture map_;
   sf::Texture tower_;
+  sf::Texture tower_bad_;
   sf::Texture enemy_;
   sf::Texture ui_tower_button_;
 };
