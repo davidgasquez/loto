@@ -14,8 +14,8 @@ class PlayerController {
   void Step(sf::Time elapsed);
 
  private:
-    int life_;
-    int gold_;
+    unsigned life_;
+    unsigned gold_;
     sf::Clock clock_;
 };
 

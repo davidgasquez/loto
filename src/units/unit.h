@@ -14,7 +14,7 @@ class Unit : public Instance {
 
   virtual void Step(sf::Time elapsed);
 
-  void         set_life(unsigned life) {
+  void set_life(unsigned life) {
     life_ = life;
   }
 

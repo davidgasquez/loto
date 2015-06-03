@@ -14,7 +14,7 @@ class Structure : public Instance {
 
   virtual void Step(sf::Time elapsed);
 
-  void         set_life(unsigned life) {
+  void set_life(unsigned life) {
     life_ = life;
   }
 
@@ -34,11 +34,16 @@ class Structure : public Instance {
     attack_speed_ = attack_speed;
   }
 
+  void set_cost(unsigned cost) {
+    cost_ = cost;
+  }
+
  protected:
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
   unsigned range_;
+  unsigned cost_;
 };
 
 #endif  // STRUCTURES_STRUCTURE_H_
