@@ -22,6 +22,7 @@ class MapController {
 
  private:
   unsigned width_, height_;
+  
 };
 
 #endif  // CONTROLLERS_MAP_CONTROLLER_H_

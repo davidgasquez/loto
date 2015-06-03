@@ -11,8 +11,8 @@ void InGameUI::Load() {
   tower_selection_.setTexture(*GameManager::GetResourcesManager()->Tower());
 
   Vec2f pos(GameManager::GetWindowSize());
-  pos.x = (pos.x / 2) - 30;
-  pos.y = pos.y - 80;
+  pos.x = 10;
+  pos.y = (pos.y / 2) - 80;
   tower_button_.setPosition(pos);
 }
 
