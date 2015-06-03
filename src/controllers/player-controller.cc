@@ -15,13 +15,4 @@ void PlayerController::Load() {
 
 
 void PlayerController::Step(sf::Time elapsed) {
-  auto elapsed_time = clock_.getElapsedTime();
-
-  while (true) {
-    if (elapsed_time > sf::seconds(1)){
-      gold_++;
-      clock_.restart();
-    }
-  cout << "Gold:" << gold_ << endl;
-  }
 }
