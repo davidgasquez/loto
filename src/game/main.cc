@@ -4,7 +4,6 @@
 #include <iostream>
 
 #include "engine/game-manager.h"
-#include "structures/tower.h"
 #include "tilemaps/map.h"
 #include "units/enemy-unit.h"
 #include "game/ingame-ui.h"
@@ -32,11 +31,6 @@ int main(int argc, char const *argv[]) {
     return 1;
   }
   instances->AddInstance(map);
-
-  auto tower = new Tower();
-  tower->Load();
-  tower->set_position(sf::Vector2u(7, 5));
-  instances->AddInstance(tower);
 
   auto level = new Level(1);
   level->Load();
