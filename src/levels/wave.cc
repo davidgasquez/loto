@@ -44,8 +44,6 @@ void Wave::Load() {
 
     // See the spawn
     pos.x = GameManager::GetWindowSize().x;
-    cout << pos.x << " - ";
-    cout << pos.y << endl;
     new_enemy.enemy->set_position(pos);
 
     // Add enemy to wave
