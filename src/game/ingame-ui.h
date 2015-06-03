@@ -24,6 +24,8 @@ class InGameUI : public Instance {
   sf::Vector2u last_tower_position_;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+
+  void calcTowerPlace_(sf::Vector2f mouse_pos);
 };
 
 #endif  // GAME_INGAME_UI_H_

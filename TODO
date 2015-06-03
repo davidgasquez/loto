@@ -11,12 +11,8 @@ Roadmap
 Ernesto
 -------
 
-- Map controller.
-- Create towers.
 - Kill bugs with the towers.
 - Tower action radius when creating them.
-- Do not create towers above other towers.
-- Do not create towers in forbidden places.
 - Do not create towers in places with bugs.
 - Animated sprite.
 
