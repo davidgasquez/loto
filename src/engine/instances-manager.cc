@@ -10,7 +10,7 @@ void InstancesManager::AddInstance(Instance *instance) {
 
 
 void InstancesManager::RemoveInstance(Instance *instance) {
-  std::remove(instances_.begin(), instances_.end(), instance);
+  instances_.erase(std::remove(instances_.begin(), instances_.end(), instance), instances_.end());
 }
 
 

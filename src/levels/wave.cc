@@ -19,7 +19,6 @@ void Wave::Load() {
 
   unsigned accum = 0;
 
-  // Read filename
   while (wave_info) {
     Enemy new_enemy;
 
@@ -49,23 +48,22 @@ void Wave::Load() {
     // Add enemy to wave
     wave_.push_back(new_enemy);
   }
+
+  // The last one was a blank line
   wave_.pop_back();
 }
+
 
 void Wave::Start() {
   clock_.restart();
 }
 
+
 void Wave::Step(sf::Time elapsed) {
   auto elapsed_time = clock_.getElapsedTime();
 
   auto instances = GameManager::GetInstancesManager();
-
-  while (true) {
-    if (elapsed_time < wave_[current_enemy_].spawn_time) {
-      break;
-    }
-
+  while (wave_[current_enemy_].spawn_time < elapsed_time) {
     instances->AddInstance(wave_[current_enemy_].enemy);
     current_enemy_++;
 

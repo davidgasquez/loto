@@ -2,7 +2,6 @@
 Roadmap
 -------
 
-- Solve Wave Manager Bug
 - Rotate sprite based on direction
 - Split movement_speed in direction and speed
 - Sound
@@ -24,6 +23,5 @@ David
 - Reduce sprites size
 - Tower hover color/border
 - A*
-- Layers design.
 - Inform map controller of the position of the bugs.
 - Correct drawing(layers)

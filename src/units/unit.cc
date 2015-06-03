@@ -10,9 +10,11 @@ Unit::Unit()
   // empty
 }
 
+
 Unit::~Unit() {
   // empty
 }
+
 
 void Unit::Step(sf::Time elapsed) {
   sf::Vector2f pos(sprite_.getPosition());
