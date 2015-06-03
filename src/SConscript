@@ -8,21 +8,23 @@ flags = ['-Werror', '-Wall', '-g', '-std=c++0x']
 
 
 srcs = '''
+  controllers/map-controller.cc
+  controllers/player-controller.cc
+  engine/events-manager.cc
   engine/game-manager.cc
   engine/instance.cc
   engine/instances-manager.cc
   engine/resources-manager.cc
-  engine/events-manager.cc
   game/ingame-ui.cc
   game/main.cc
+  levels/level.cc
+  levels/wave.cc
   structures/structure.cc
   structures/tower.cc
   tilemaps/map.cc
   tilemaps/tile-map.cc
   units/enemy-unit.cc
   units/unit.cc
-  levels/level.cc
-  levels/wave.cc
 '''
 
 
