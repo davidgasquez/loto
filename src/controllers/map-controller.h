@@ -6,13 +6,14 @@
 
 class MapController {
  public:
-  MapController(){}
+  MapController() { }
 
-  void Load();
+  void Load(unsigned width, unsigned height);
 
   void Step(sf::Time elapsed);
 
  private:
+  unsigned width_, height_;
 };
 
 #endif  // CONTROLLERS_MAP_CONTROLLER_H_

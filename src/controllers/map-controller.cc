@@ -2,8 +2,9 @@
 #include "controllers/map-controller.h"
 
 
-void MapController::Load() {
-
+void MapController::Load(unsigned width, unsigned height) {
+  width_ = width;
+  height_ = height;
 }
 
 
