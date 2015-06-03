@@ -4,6 +4,8 @@
 
 #include <SFML/System.hpp>
 
+#include "engine/game-event.h"
+
 class MapController {
  public:
   MapController() { }

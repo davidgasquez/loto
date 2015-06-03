@@ -3,7 +3,10 @@
 #define CONTROLLERS_PLAYER_CONTROLLER_H_
 
 #include <SFML/System.hpp>
+
 #include "base/debug.h"
+
+#include "engine/game-event.h"
 
 class PlayerController {
  public:
