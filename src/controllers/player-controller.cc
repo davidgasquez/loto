@@ -15,4 +15,17 @@ void PlayerController::Load() {
 
 
 void PlayerController::Step(sf::Time elapsed) {
+  auto elapsed_time = clock_.getElapsedTime();
+
+  // Passively increase gold
+  if (elapsed_time > sf::seconds(2)) {
+    gold_++;
+    clock_.restart();
+  }
+
+  // Increase gold when killing an enemy
+
+  // Decrease gold when buying structures and units
+
+  // Decrease life each attack received
 }
