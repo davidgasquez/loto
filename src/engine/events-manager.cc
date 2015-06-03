@@ -44,4 +44,12 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
 }
 
 void EventsManager::Trigger(GameEvent event) {
+  auto mapController = GameManager::GetMapController();
+  mapController->EventTriggered(event);
+  
+  auto playerController = GameManager::GetPlayerController();
+  playerController->EventTriggered(event);
+  
+  auto instances = GameManager::GetInstancesManager();
+  instances->EventTriggered(event);
 }
