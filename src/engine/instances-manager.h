@@ -7,6 +7,7 @@
 #include <vector>
 
 #include "engine/instance.h"
+#include "engine/game-event.h"
 
 
 class InstancesManager {
@@ -23,6 +24,8 @@ class InstancesManager {
   void MousePressed(sf::Event::MouseButtonEvent event);
   void MouseReleased(sf::Event::MouseButtonEvent event);
   void MouseMoved(sf::Event::MouseMoveEvent event);
+
+  void GameEvent(GameEvent event);
 
  private:
   std::vector < Instance * > instances_;

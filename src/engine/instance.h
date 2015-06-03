@@ -4,11 +4,13 @@
 
 #include <SFML/Graphics.hpp>
 
+#include "engine/game-event.h"
+
 
 class Instance : public sf::Drawable {
  public:
-  Instance();
-  virtual ~Instance();
+  Instance() { }
+  virtual ~Instance() { }
 
   virtual void Step(sf::Time elapsed) { }
 
@@ -18,6 +20,8 @@ class Instance : public sf::Drawable {
   virtual void MousePressed(sf::Event::MouseButtonEvent event) { }
   virtual void MouseReleased(sf::Event::MouseButtonEvent event) { }
   virtual void MouseMoved(sf::Event::MouseMoveEvent event) { }
+
+  virtual void GameEvent(GameEvent event) { }
 
  protected:
   sf::Sprite sprite_;
