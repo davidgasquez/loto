@@ -12,6 +12,12 @@ class MapController {
 
   void Step(sf::Time elapsed);
 
+  bool CanPlaceTower(unsigned row, unsigned col);
+
+  unsigned width() {
+    return width_;
+  }
+
  private:
   unsigned width_, height_;
 };

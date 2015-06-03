@@ -11,3 +11,8 @@ void MapController::Load(unsigned width, unsigned height) {
 void MapController::Step(sf::Time elapsed) {
 
 }
+
+
+bool MapController::CanPlaceTower(unsigned row, unsigned col) {
+  return true;
+}

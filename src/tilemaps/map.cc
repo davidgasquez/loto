@@ -3,7 +3,7 @@
 
 #include <fstream>
 
-#include "base/debug.h"
+#include "engine/game-manager.h"
 
 
 bool Map::Load(std::string tilemapPath) {
@@ -20,6 +20,8 @@ bool Map::Load(std::string tilemapPath) {
   ground_.Load(&f, size);
   mid_.Load(&f, size);
   ceil_.Load(&f, size);
+
+  GameManager::GetMapController()->Load(width, height);
 
   return true;
 }

@@ -39,11 +39,27 @@ void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
 
 
 void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
+  auto mapController = GameManager::GetMapController();
+  
   Vec2f mouse_pos(event.x, event.y);
 
   Vec2f tile_size(GameManager::GetTileSize());
-  mouse_pos.x = static_cast<unsigned>(mouse_pos.x / tile_size.x) * tile_size.x;
-  mouse_pos.y = static_cast<unsigned>(mouse_pos.y / tile_size.y) * tile_size.y;
+  unsigned row = static_cast<unsigned>(mouse_pos.y / tile_size.y);
+  unsigned col = static_cast<unsigned>(mouse_pos.x / tile_size.x);
 
-  tower_selection_.setPosition(mouse_pos);
+  if (col < 2) {
+    col = 2;
+  }
+
+  cout << mapController->width() << endl;
+  if (col > mapController->width() - 3) {
+    col = mapController->width() - 3;
+  }
+
+  if (mapController->CanPlaceTower(row, col)) {
+    mouse_pos.x = col * tile_size.x;
+    mouse_pos.y = row * tile_size.y;
+    
+    tower_selection_.setPosition(mouse_pos);
+  }
 }
