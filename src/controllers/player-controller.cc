@@ -13,7 +13,21 @@ void PlayerController::Load() {
   clock_.restart();
 }
 
-void EventTriggered(GameEvent event) {
+void PlayerController::EventTriggered(GameEvent event) {
+  switch (event.type()) {
+    // Increase gold when killing an enemy
+    case ENEMY_DIED:
+      gold_ += 10;
+      break;
+    // Decrease gold when buying structures and units
+    case TOWER_PLACED:
+      gold_ -= 30;
+      break;
+    // Decrease life each time monster reach castle
+    case ENEMY_REACHED_CASTLE:
+      life_ -= 5;
+      break;
+  }
 }
 
 
@@ -25,10 +39,4 @@ void PlayerController::Step(sf::Time elapsed) {
     gold_++;
     clock_.restart();
   }
-
-  // Increase gold when killing an enemy
-
-  // Decrease gold when buying structures and units
-
-  // Decrease life each attack received
 }

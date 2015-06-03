@@ -10,7 +10,7 @@
 
 class PlayerController {
  public:
-  PlayerController(){}
+  PlayerController() {}
 
   void Load();
 
