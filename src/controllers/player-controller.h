@@ -11,6 +11,8 @@ class PlayerController {
 
   void Load();
 
+  void EventTriggered(GameEvent event);
+
   void Step(sf::Time elapsed);
 
  private:

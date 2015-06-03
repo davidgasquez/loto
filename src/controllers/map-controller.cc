@@ -9,7 +9,10 @@ void MapController::Load(unsigned width, unsigned height) {
 
 
 void MapController::Step(sf::Time elapsed) {
+}
 
+
+void EventTriggered(GameEvent event) {
 }
 
 

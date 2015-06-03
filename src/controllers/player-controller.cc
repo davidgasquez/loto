@@ -13,6 +13,9 @@ void PlayerController::Load() {
   clock_.restart();
 }
 
+void EventTriggered(GameEvent event) {
+}
+
 
 void PlayerController::Step(sf::Time elapsed) {
   auto elapsed_time = clock_.getElapsedTime();

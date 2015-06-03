@@ -12,6 +12,8 @@ class MapController {
 
   void Step(sf::Time elapsed);
 
+  void EventTriggered(GameEvent event);
+
   bool CanPlaceTower(unsigned row, unsigned col);
 
   unsigned width() {
