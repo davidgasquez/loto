@@ -5,8 +5,8 @@
 #include "engine/resources-manager.h"
 #include "engine/instances-manager.h"
 #include "engine/events-manager.h"
-#include "engine/map-controller.h"
-#include "engine/player-controller.h"
+#include "controllers/map-controller.h"
+#include "controllers/player-controller.h"
 
 
 class GameManager {

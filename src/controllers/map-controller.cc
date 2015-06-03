@@ -2,11 +2,6 @@
 #include "controllers/map-controller.h"
 
 
-MapController::MapController() {
-
-}
-
-
 void MapController::Load() {
 
 }

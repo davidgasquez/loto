@@ -6,7 +6,7 @@
 
 class MapController {
  public:
-  MapController();
+  MapController(){}
 
   void Load();
 

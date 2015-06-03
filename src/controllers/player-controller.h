@@ -6,13 +6,15 @@
 
 class PlayerController {
  public:
-  PlayerController();
+  PlayerController(){}
 
   void Load();
 
   void Step(sf::Time elapsed);
 
  private:
+    int life_;
+    int gold_;
 };
 
 #endif  // CONTROLLERS_PLAYER_CONTROLLER_H_
