@@ -2,6 +2,8 @@
 #ifndef CONTROLLERS_MAP_CONTROLLER_H_
 #define CONTROLLERS_MAP_CONTROLLER_H_
 
+#include <SFML/System.hpp>
+
 class MapController {
  public:
   MapController();
