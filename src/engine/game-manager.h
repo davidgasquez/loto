@@ -5,6 +5,8 @@
 #include "engine/resources-manager.h"
 #include "engine/instances-manager.h"
 #include "engine/events-manager.h"
+#include "engine/map-controller.h"
+#include "engine/player-controller.h"
 
 
 class GameManager {
@@ -12,6 +14,8 @@ class GameManager {
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();
   static EventsManager* GetEventsManager();
+  static MapController* GetMapController();
+  static PlayerController* GetPlayerController();
 
   static sf::Vector2u GetTileSize() {
     return sf::Vector2u(64, 64);
