@@ -5,6 +5,8 @@
 ResourcesManager *resources_ = NULL;
 InstancesManager *instances_ = NULL;
 EventsManager *events_ = NULL;
+MapController *map_ = NULL;
+PlayerController *player_ = NULL;
 
 
 ResourcesManager *GameManager::GetResourcesManager() {
@@ -31,4 +33,22 @@ EventsManager *GameManager::GetEventsManager() {
   }
 
   return events_;
+}
+
+
+MapController *GameManager::GetMapController() {
+  if (map_ == NULL) {
+    map_ = new MapController();
+  }
+
+  return map_;
+}
+
+
+PlayerController *GameManager::GetPlayerController() {
+  if (player_ == NULL) {
+    player_ = new PlayerController();
+  }
+
+  return player_;
 }
