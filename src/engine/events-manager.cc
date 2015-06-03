@@ -1,8 +1,6 @@
 
 #include "engine/events-manager.h"
 
-#include "engine/game-manager.h"
-
 
 void EventsManager::EventsLoop(sf::RenderWindow* window) {
   sf::Event event;
@@ -42,4 +40,7 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
   if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)) {
     window->close();
   }
+}
+
+void EventsManager::Trigger(GameEvent event) {
 }
