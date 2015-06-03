@@ -45,6 +45,9 @@ int main(int argc, char const *argv[]) {
   ui->Load();
   instances->AddInstance(ui);
 
+  GameManager::GetMapController()->Load();
+  GameManager::GetPlayerController()->Load();
+
   sf::Clock clock;
 
   while (window.isOpen()) {
