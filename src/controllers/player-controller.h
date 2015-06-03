@@ -3,6 +3,7 @@
 #define CONTROLLERS_PLAYER_CONTROLLER_H_
 
 #include <SFML/System.hpp>
+#include "base/debug.h"
 
 class PlayerController {
  public:
@@ -15,6 +16,7 @@ class PlayerController {
  private:
     int life_;
     int gold_;
+    sf::Clock clock_;
 };
 
 #endif  // CONTROLLERS_PLAYER_CONTROLLER_H_
