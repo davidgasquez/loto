@@ -21,7 +21,7 @@ class Instance : public sf::Drawable {
   virtual void MouseReleased(sf::Event::MouseButtonEvent event) { }
   virtual void MouseMoved(sf::Event::MouseMoveEvent event) { }
 
-  virtual void GameEvent(GameEvent event) { }
+  virtual void EventTriggered(GameEvent event) { }
 
  protected:
   sf::Sprite sprite_;

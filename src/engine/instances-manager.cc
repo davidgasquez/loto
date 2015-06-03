@@ -62,8 +62,8 @@ void InstancesManager::MouseMoved(sf::Event::MouseMoveEvent event) {
   }
 }
 
-void InstancesManager::GameEvent(GameEvent event) {
+void InstancesManager::EventTriggered(GameEvent event) {
   for (Instance *instance : instances_) {
-    instance->GameEvent(event);
+    instance->EventTriggered(event);
   }
 }
