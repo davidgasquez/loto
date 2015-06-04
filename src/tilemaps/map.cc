@@ -2,8 +2,10 @@
 #include "tilemaps/map.h"
 
 #include <fstream>
+#include <string>
 
 #include "engine/game-manager.h"
+#include "tilemaps/tile-map.h"
 
 
 bool Map::Load(std::string tilemapPath) {
@@ -17,17 +19,21 @@ bool Map::Load(std::string tilemapPath) {
   f >> width >> height;
   Vec2u size(width, height);
 
-  ground_.Load(&f, size);
-  mid_.Load(&f, size);
-  ceil_.Load(&f, size);
+  auto instances = GameManager::GetInstancesManager();
+
+  auto map = new TileMap();
+  map->Load(&f, size);
+  instances->AddInstance(map, kLayerBot);
+
+  map = new TileMap();
+  map->Load(&f, size);
+  instances->AddInstance(map, kLayerMid);
+
+  map = new TileMap();
+  map->Load(&f, size);
+  instances->AddInstance(map, kLayerTop);
 
   GameManager::GetMapController()->Load(width, height);
 
   return true;
-}
-
-void Map::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  target.draw(ground_);
-  target.draw(mid_);
-  target.draw(ceil_);
 }

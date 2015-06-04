@@ -6,9 +6,10 @@
 
 #include <fstream>
 
+#include "engine/instance.h"
 #include "base/aliases.h"
 
-class TileMap : public sf::Drawable, public sf::Transformable {
+class TileMap : public Instance {
  public:
   void Load(std::ifstream *f,
             Vec2u   size);

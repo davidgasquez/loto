@@ -6,19 +6,9 @@
 
 #include <string>
 
-#include "engine/instance.h"
-#include "tilemaps/tile-map.h"
-
-
-class Map : public Instance {
+class Map {
  public:
   bool Load(std::string tilemapPath);
-
- private:
-  TileMap ground_, mid_, ceil_;
-
-  virtual void draw(sf::RenderTarget& target,
-                    sf::RenderStates  states) const;
 };
 
 #endif  // TILEMAPS_MAP_H_

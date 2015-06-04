@@ -47,7 +47,6 @@ void TileMap::Load(std::ifstream *f, Vec2u size) {
 }
 
 void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  states.transform *= getTransform();
   states.texture    = GameManager::GetResourcesManager()->Map();
   target.draw(vertices_, states);
 }

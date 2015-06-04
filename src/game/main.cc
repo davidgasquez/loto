@@ -27,12 +27,10 @@ int main(int argc, char const *argv[]) {
   }
 
   auto map = new Map();
-
   if (!map->Load("assets/tilemaps/level_1.map")) {
     std::cerr << "Cannot load tilemap" << std::endl;
     return 1;
   }
-  instances->AddInstance(map, kLayerBot);
 
   auto level = new Level(1);
   level->Load();
