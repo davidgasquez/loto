@@ -64,7 +64,7 @@ void Wave::Step(sf::Time elapsed) {
 
   auto instances = GameManager::GetInstancesManager();
   while (wave_[current_enemy_].spawn_time < elapsed_time) {
-    instances->AddInstance(wave_[current_enemy_].enemy);
+    instances->AddInstance(wave_[current_enemy_].enemy, kLayerMid);
     current_enemy_++;
 
     if (current_enemy_ >= wave_.size()) {

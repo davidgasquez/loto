@@ -1,70 +1,94 @@
 
 #include "engine/instances-manager.h"
 
+#include <vector>
+
 #include "base/debug.h"
 
 
-void InstancesManager::AddInstance(Instance *instance) {
-  instances_.push_back(instance);
+InstancesManager::InstancesManager() {
+  layers_.resize(kLayers);
+}
+
+void InstancesManager::AddInstance(Instance *instance, Layer layer) {
+  layers_[layer].push_back(instance);
 }
 
 
 void InstancesManager::RemoveInstance(Instance *instance) {
-  instances_.erase(std::remove(instances_.begin(), instances_.end(), instance),
-                   instances_.end());
+  for (std::vector<Instance*>& layer : layers_) {
+    layer.erase(std::remove(layer.begin(), layer.end(), instance),
+                layer.end());
+  }
 }
 
 
 void InstancesManager::Draw(sf::RenderTarget *target) {
-  for (Instance *instance : instances_) {
-    target->draw(*instance);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      target->draw(*instance);
+    }
   }
 }
 
 
 void InstancesManager::Step(sf::Time elapsed) {
-  for (Instance *instance : instances_) {
-    instance->Step(elapsed);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->Step(elapsed);
+    }
   }
 }
 
 
 void InstancesManager::KeyPressed(sf::Event::KeyEvent event) {
-  for (Instance *instance : instances_) {
-    instance->KeyPressed(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->KeyPressed(event);
+    }
   }
 }
 
 
 void InstancesManager::KeyReleased(sf::Event::KeyEvent event) {
-  for (Instance *instance : instances_) {
-    instance->KeyReleased(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->KeyReleased(event);
+    }
   }
 }
 
 
 void InstancesManager::MousePressed(sf::Event::MouseButtonEvent event) {
-  for (Instance *instance : instances_) {
-    instance->MousePressed(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->MousePressed(event);
+    }
   }
 }
 
 
 void InstancesManager::MouseReleased(sf::Event::MouseButtonEvent event) {
-  for (Instance *instance : instances_) {
-    instance->MouseReleased(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->MouseReleased(event);
+    }
   }
 }
 
 
 void InstancesManager::MouseMoved(sf::Event::MouseMoveEvent event) {
-  for (Instance *instance : instances_) {
-    instance->MouseMoved(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->MouseMoved(event);
+    }
   }
 }
 
 void InstancesManager::EventTriggered(GameEvent event) {
-  for (Instance *instance : instances_) {
-    instance->EventTriggered(event);
+  for (auto layer : layers_) {
+    for (auto instance : layer) {
+      instance->EventTriggered(event);
+    }
   }
 }

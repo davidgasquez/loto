@@ -32,14 +32,14 @@ int main(int argc, char const *argv[]) {
     std::cerr << "Cannot load tilemap" << std::endl;
     return 1;
   }
-  instances->AddInstance(map);
+  instances->AddInstance(map, kLayerBot);
 
   auto level = new Level(1);
   level->Load();
 
   auto inGame = new InGame();
   inGame->Load();
-  instances->AddInstance(inGame);
+  instances->AddInstance(inGame, kLayerUI);
 
   GameManager::GetCursorManager()->Load();
 

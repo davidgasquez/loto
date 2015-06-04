@@ -8,5 +8,5 @@ void Level::Load() {
   wave_->Load();
 
   auto instances = GameManager::GetInstancesManager();
-  instances->AddInstance(wave_);
+  instances->AddInstance(wave_, kLayerHidden);
 }

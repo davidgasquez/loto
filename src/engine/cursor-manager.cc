@@ -10,7 +10,7 @@ void CursorManager::Load() {
 
   cursor_ = new Cursor();
   cursor_->Load();
-  GameManager::GetInstancesManager()->AddInstance(cursor_);
+  GameManager::GetInstancesManager()->AddInstance(cursor_, kLayerCursor);
 }
 
 
