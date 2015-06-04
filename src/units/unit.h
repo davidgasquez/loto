@@ -28,7 +28,7 @@ class Unit : public Instance {
   }
 
   Vec2f position() {
-    return sprite_.getPosition();
+    return sprite_.position();
   }
 
   void set_movement_speed(Vec2f movement_speed) {
