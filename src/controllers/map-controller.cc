@@ -18,6 +18,9 @@ void MapController::Load(unsigned width, unsigned height) {
 void MapController::Step(sf::Time elapsed) {
 }
 
+bool MapController::ReachedCastle(Vec2u tile) {
+  return (tile.x < 2);
+}
 
 void MapController::EventTriggered(GameEvent event) {
 }
