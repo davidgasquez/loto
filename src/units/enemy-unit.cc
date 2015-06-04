@@ -12,9 +12,7 @@ void EnemyUnit::Load() {
 
 void EnemyUnit::Attack() {
   life_--;
-  cout << "life_" << life_ << endl;
   if (life_ == 0) {
-    cout << "Atacando" << endl;
     Remove_(ENEMY_DIED);
     return;
   }
