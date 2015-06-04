@@ -10,7 +10,7 @@
 class TileMap : public sf::Drawable, public sf::Transformable {
  public:
   void Load(std::ifstream *f,
-            sf::Vector2u   size);
+            sf::Vec2u   size);
 
  private:
   unsigned *tiles_;

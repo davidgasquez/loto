@@ -15,7 +15,7 @@ bool Map::Load(std::string tilemapPath) {
 
   unsigned width, height;
   f >> width >> height;
-  sf::Vector2u size(width, height);
+  sf::Vec2u size(width, height);
 
   ground_.Load(&f, size);
   mid_.Load(&f, size);

@@ -21,7 +21,7 @@ class InGameUI : public Instance {
   bool active_;
 
   bool bad_selection_;
-  sf::Vector2u last_tower_position_;
+  sf::Vec2u last_tower_position_;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

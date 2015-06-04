@@ -9,7 +9,7 @@ class Tower : public Structure {
  public:
   void Load();
 
-  void set_position(sf::Vector2u pos);
+  void set_position(sf::Vec2u pos);
 
   void draw(sf::RenderTarget& target,
             sf::RenderStates  states) const;
