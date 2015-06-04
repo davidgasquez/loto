@@ -31,8 +31,16 @@ class Unit : public Instance {
     return sprite_.position();
   }
 
-  void set_movement_speed(Vec2f movement_speed) {
+  void set_movement_speed(float movement_speed) {
     movement_speed_ = movement_speed;
+  }
+
+  void set_rotation(float rotation) {
+    sprite_.set_rotation(rotation);
+  }
+
+  float rotation() {
+    return sprite_.rotation();
   }
 
   void set_attack_speed(unsigned attack_speed) {
@@ -43,7 +51,7 @@ class Unit : public Instance {
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
-  Vec2f movement_speed_;
+  float movement_speed_;
 };
 
 #endif  // UNITS_UNIT_H_

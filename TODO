@@ -3,8 +3,7 @@ Roadmap
 -------
 
 - Add sounds.
-- Rotate sprite based on direction.
-- A*.
+- A* + Triangle Diagonalization.
 - Basic start Menu with level selector
 - Hover cursor for the button.
 
@@ -20,6 +19,6 @@ Ernesto
 David
 -----
 
-- Show life and gold.
-- Load fonts.
+- Rotate sprite based on direction.
+- Design sprites and text
 - Split movement_speed in direction and speed.

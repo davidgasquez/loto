@@ -6,7 +6,8 @@
 
 void EnemyUnit::Load() {
   sprite_.set_texture(GameManager::GetResourcesManager()->Enemy());
-  set_movement_speed(sf::Vector2f(-50.f, 0.f));
+  set_movement_speed(50.f);
+  set_rotation(180);
 }
 
 void EnemyUnit::Step(sf::Time elapsed) {

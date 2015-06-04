@@ -20,7 +20,7 @@ class AnimatedSprite : public sf::Drawable {
   void Step(sf::Time elapsed);
 
   void set_animation(Animation* animation);
-  
+
   void set_texture(sf::Texture* texture) {
     sprite_.setTexture(*texture);
   }
@@ -31,6 +31,14 @@ class AnimatedSprite : public sf::Drawable {
 
   void set_position(Vec2f position) {
     sprite_.setPosition(position);
+  }
+
+  void set_rotation(float rotation) {
+    sprite_.setRotation(rotation);
+  }
+
+  float rotation() {
+    return sprite_.getRotation();
   }
 
   void move(Vec2f diff) {

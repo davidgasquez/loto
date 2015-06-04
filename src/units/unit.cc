@@ -1,12 +1,14 @@
 
 #include "units/unit.h"
 
+#include <cmath>
+
 #include "base/debug.h"
 
 
 Unit::Unit()
   : life_(0), damage_(0), attack_speed_(0),
-  movement_speed_(sf::Vector2f(0.f, 0.f)) {
+    movement_speed_(0) {
   // empty
 }
 
@@ -17,5 +19,7 @@ Unit::~Unit() {
 
 
 void Unit::Step(sf::Time elapsed) {
-  sprite_.move(movement_speed_ * elapsed.asSeconds());
+  float angle = rotation();
+  Vec2f v(cos(angle * (M_PI / 180)), sin(angle * (M_PI / 180)));
+  sprite_.move(v * movement_speed_ * elapsed.asSeconds());
 }
