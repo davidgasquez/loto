@@ -68,8 +68,7 @@ void Wave::Step(sf::Time elapsed) {
     current_enemy_++;
 
     if (current_enemy_ >= wave_.size()) {
-      instances->RemoveInstance(this);
-      delete this;
+      instances->MarkToRemoveAndDelete(this);
       return;
     }
   }

@@ -61,6 +61,8 @@ int main(int argc, char const *argv[]) {
     instances->Draw(&window);
 
     window.display();
+
+    instances->RemovePass();
   }
 
   return 0;

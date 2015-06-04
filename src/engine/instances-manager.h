@@ -23,7 +23,7 @@ class InstancesManager {
   InstancesManager();
 
   void AddInstance(Instance *instance, Layer layer);
-  void RemoveInstance(Instance *instance);
+  void MarkToRemoveAndDelete(Instance *instance);
 
   void Draw(sf::RenderTarget *target);
   void Step(sf::Time elapsed);
@@ -37,8 +37,11 @@ class InstancesManager {
 
   void EventTriggered(GameEvent event);
 
+  void RemovePass();
+
  private:
-  std::vector <std::vector<Instance* > > layers_;
+  std::vector<std::vector<Instance*> > layers_;
+  std::vector<Instance*> markedDelete_;
 };
 
 #endif  // BASE_INSTANCES_MANAGER_H_

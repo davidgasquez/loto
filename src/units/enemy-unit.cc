@@ -24,11 +24,11 @@ void EnemyUnit::Remove_(GameEventType type) {
   auto events = GameManager::GetEventsManager();
   events->Trigger(GameEvent(type));
   auto instances = GameManager::GetInstancesManager();
-  instances->RemoveInstance(this);
+  instances->MarkToRemoveAndDelete(this);
   auto map_controller = GameManager::GetMapController();
   map_controller->RemoveEnemy(this);
-  delete this;
 }
+
 
 void EnemyUnit::Step(sf::Time elapsed) {
   Unit::Step(elapsed);

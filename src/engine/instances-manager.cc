@@ -16,11 +16,8 @@ void InstancesManager::AddInstance(Instance *instance, Layer layer) {
 }
 
 
-void InstancesManager::RemoveInstance(Instance *instance) {
-  for (std::vector<Instance*>& layer : layers_) {
-    layer.erase(std::remove(layer.begin(), layer.end(), instance),
-                layer.end());
-  }
+void InstancesManager::MarkToRemoveAndDelete(Instance* instance) {
+  markedDelete_.push_back(instance);
 }
 
 
@@ -93,4 +90,18 @@ void InstancesManager::EventTriggered(GameEvent event) {
       instance->EventTriggered(event);
     }
   }
+}
+
+
+void InstancesManager::RemovePass() {
+  for (Instance* instance : markedDelete_) {
+    for (std::vector<Instance*>& layer : layers_) {
+      layer.erase(std::remove(layer.begin(), layer.end(), instance),
+                  layer.end());
+    }
+
+    delete instance;
+  }
+
+  markedDelete_.clear();
 }
