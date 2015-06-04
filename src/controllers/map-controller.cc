@@ -23,8 +23,20 @@ void MapController::EventTriggered(GameEvent event) {
 }
 
 void MapController::PlaceEnemy(Vec2u tile, EnemyUnit* enemy) {
-  enemies_[Index_(tile)].push_back(enemy);
-  enemy_position_.insert(std::pair<EnemyUnit*, unsigned>(enemy, Index_(tile)));
+  unsigned n = Index_(tile);
+
+  auto pos = enemy_position_.find(enemy);
+  if (pos != enemy_position_.end()) {
+    if (pos->second == n) {
+      return;
+    }
+
+    auto removed = std::remove(enemies_[pos->second].begin(), enemies_[pos->second].end(), enemy);
+    enemies_[pos->second].erase(removed, enemies_[pos->second].end());
+  }
+
+  enemies_[n].push_back(enemy);
+  enemy_position_[enemy] = Index_(tile);
 }
 
 
