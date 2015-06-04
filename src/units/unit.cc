@@ -17,8 +17,5 @@ Unit::~Unit() {
 
 
 void Unit::Step(sf::Time elapsed) {
-  sf::Vector2f pos(sprite_.position());
-
-  pos += movement_speed_ * elapsed.asSeconds();
-  sprite_.set_position(pos);
+  sprite_.move(movement_speed_ * elapsed.asSeconds());
 }

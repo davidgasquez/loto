@@ -33,6 +33,10 @@ class AnimatedSprite : public sf::Drawable {
     sprite_.setPosition(position);
   }
 
+  void move(Vec2f diff) {
+    sprite_.move(diff);
+  }
+
  private:
   sf::Sprite sprite_;
   std::vector<sf::IntRect> frames_;
