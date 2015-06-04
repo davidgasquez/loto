@@ -20,7 +20,6 @@ Ernesto
 David
 -----
 
-- Correct drawing(layers).
 - Show life and gold.
 - Load fonts.
 - Split movement_speed in direction and speed.

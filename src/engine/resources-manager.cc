@@ -31,5 +31,17 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!font_.loadFromFile("assets/textures/ui/font.ttf")) {
+    return false;
+  }
+
+  if (!heart_.loadFromFile("assets/textures/ui/heart.png")) {
+    return false;
+  }
+
+  if (!coin_.loadFromFile("assets/textures/ui/coin.png")) {
+    return false;
+  }
+
   return true;
 }

@@ -1,6 +1,8 @@
 
 #include "ui/ingame.h"
 
+#include <sstream>
+
 #include "engine/game-manager.h"
 #include "base/debug.h"
 
@@ -9,6 +11,12 @@ void InGame::Load() {
   tower_button_.setTexture(*GameManager::GetResourcesManager()->UITowerButton());
   tower_selection_.setTexture(*GameManager::GetResourcesManager()->TowerSelected());
   tower_selection_bad_.setTexture(*GameManager::GetResourcesManager()->TowerBad());
+
+  heart_.setTexture(*GameManager::GetResourcesManager()->Heart());
+  heart_.setPosition(Vec2f(10.f, 40.f));
+
+  coin_.setTexture(*GameManager::GetResourcesManager()->Coin());
+  coin_.setPosition(Vec2f(180.f, 200.f));
 
   Vec2f pos(GameManager::GetWindowSize());
   pos.x = 10;
@@ -19,6 +27,8 @@ void InGame::Load() {
 
 void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
   target.draw(tower_button_);
+  target.draw(heart_);
+  target.draw(coin_);
 
   if (active_) {
     if (bad_selection_) {
@@ -27,6 +37,20 @@ void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
       target.draw(tower_selection_);
     }
   }
+
+  auto font = *GameManager::GetResourcesManager()->Font();
+
+  std::stringstream player_life;
+  auto player_controller = GameManager::GetPlayerController();
+  player_life << player_controller->life();
+  sf::Text life(player_life.str(), font, 30);
+  target.draw(life);
+
+  std::stringstream player_gold;
+  player_gold << player_controller->gold();
+  sf::Text gold(player_gold.str(), font, 30);
+  gold.setPosition(200, 200);
+  target.draw(gold);
 }
 
 

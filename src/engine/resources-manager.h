@@ -37,6 +37,18 @@ class ResourcesManager {
     return &ui_cursor_;
   }
 
+  sf::Texture* Coin() {
+    return &coin_;
+  }
+
+  sf::Texture* Heart() {
+    return &heart_;
+  }
+
+  sf::Font* Font() {
+    return &font_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -45,6 +57,10 @@ class ResourcesManager {
   sf::Texture enemy_;
   sf::Texture ui_tower_button_;
   sf::Texture ui_cursor_;
+  sf::Texture heart_;
+  sf::Texture coin_;
+
+  sf::Font font_;
 };
 
 #endif  // BASE_RESOURCES_MANAGER_H_

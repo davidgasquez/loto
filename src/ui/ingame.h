@@ -19,6 +19,8 @@ class InGame : public Instance {
   sf::Sprite tower_button_;
   sf::Sprite tower_selection_;
   sf::Sprite tower_selection_bad_;
+  sf::Sprite heart_;
+  sf::Sprite coin_;
   bool active_;
 
   bool bad_selection_;
