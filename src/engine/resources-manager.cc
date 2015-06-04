@@ -11,7 +11,11 @@ bool ResourcesManager::Load() {
     return false;
   }
 
-  if (!tower_bad_.loadFromFile("assets/textures/tower-bad.png")) {
+  if (!tower_bad_.loadFromFile("assets/textures/ui/tower-bad.png")) {
+    return false;
+  }
+
+  if (!tower_selected_.loadFromFile("assets/textures/ui/tower-selected.png")) {
     return false;
   }
 

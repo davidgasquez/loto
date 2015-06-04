@@ -7,7 +7,7 @@
 
 void InGameUI::Load() {
   tower_button_.setTexture(*GameManager::GetResourcesManager()->UITowerButton());
-  tower_selection_.setTexture(*GameManager::GetResourcesManager()->Tower());
+  tower_selection_.setTexture(*GameManager::GetResourcesManager()->TowerSelected());
   tower_selection_bad_.setTexture(*GameManager::GetResourcesManager()->TowerBad());
 
   Vec2f pos(GameManager::GetWindowSize());

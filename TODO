@@ -2,10 +2,12 @@
 Roadmap
 -------
 
+- Correct drawing(layers).
 - Rotate sprite based on direction.
 - Split movement_speed in direction and speed.
 - Sound.
 - Circle to see range.
+- Mouse sprite.
 
 
 Ernesto
@@ -20,9 +22,7 @@ Ernesto
 David
 -----
 
-- Player Manager.
-- Inform map controller of the position of the bugs.
+- Show life and gold.
 - Reduce sprites size.
 - Tower hover color/border.
 - A*.
-- Correct drawing(layers).
