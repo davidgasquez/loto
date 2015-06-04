@@ -11,7 +11,7 @@
 
 
 int main(int argc, char const *argv[]) {
-  sf::Vec2u window_size(GameManager::GetWindowSize());
+  Vec2u window_size(GameManager::GetWindowSize());
   sf::RenderWindow window(sf::VideoMode(window_size.x, window_size.y),
                           "Lord of the Orb",
                           sf::Style::None);

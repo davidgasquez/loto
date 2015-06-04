@@ -6,11 +6,12 @@
 
 #include <fstream>
 
+#include "base/aliases.h"
 
 class TileMap : public sf::Drawable, public sf::Transformable {
  public:
   void Load(std::ifstream *f,
-            sf::Vec2u   size);
+            Vec2u   size);
 
  private:
   unsigned *tiles_;

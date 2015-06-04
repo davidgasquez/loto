@@ -17,12 +17,12 @@ class GameManager {
   static MapController* GetMapController();
   static PlayerController* GetPlayerController();
 
-  static sf::Vec2u GetTileSize() {
-    return sf::Vec2u(64, 64);
+  static Vec2u GetTileSize() {
+    return Vec2u(64, 64);
   }
 
-  static sf::Vec2u GetWindowSize() {
-    return sf::Vec2u(1280, 704);
+  static Vec2u GetWindowSize() {
+    return Vec2u(1280, 704);
   }
 };
 

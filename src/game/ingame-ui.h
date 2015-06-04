@@ -2,6 +2,7 @@
 #ifndef GAME_INGAME_UI_H_
 #define GAME_INGAME_UI_H_
 
+#include "base/aliases.h"
 #include "engine/instance.h"
 
 class InGameUI : public Instance {
@@ -21,7 +22,7 @@ class InGameUI : public Instance {
   bool active_;
 
   bool bad_selection_;
-  sf::Vec2u last_tower_position_;
+  Vec2u last_tower_position_;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

@@ -4,7 +4,7 @@
 #include "engine/game-manager.h"
 
 
-void TileMap::Load(std::ifstream *f, sf::Vec2u size) {
+void TileMap::Load(std::ifstream *f, Vec2u size) {
   unsigned int width  = size.x;
   unsigned int height = size.y;
   unsigned int wTile  = GameManager::GetTileSize().x;

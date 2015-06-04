@@ -2,7 +2,6 @@
 #include "game/ingame-ui.h"
 
 #include "engine/game-manager.h"
-#include "base/aliases.h"
 #include "base/debug.h"
 
 
