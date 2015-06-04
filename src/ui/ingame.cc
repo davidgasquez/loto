@@ -69,6 +69,7 @@ void InGame::MouseReleased(sf::Event::MouseButtonEvent event) {
     tower->Load();
     tower->set_position(last_tower_position_);
 
+    GameManager::GetEventsManager()->Trigger(GameEvent(TOWER_PLACED));
     GameManager::GetInstancesManager()->AddInstance(tower, kLayerMid);
 
     map_controller->PlaceTower(last_tower_position_, tower);

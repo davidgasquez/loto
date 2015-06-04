@@ -21,7 +21,7 @@ void PlayerController::EventTriggered(GameEvent event) {
     break;
   // Decrease gold when buying structures and units
   case TOWER_PLACED:
-    gold_ -= 30;
+    gold_ -= kTowerCost;
     break;
   // Decrease life each time monster reach castle
   case ENEMY_REACHED_CASTLE:

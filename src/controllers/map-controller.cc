@@ -52,6 +52,11 @@ bool MapController::CanPlaceTower(Vec2u tile) {
     return false;
   }
 
+  auto player_controller = GameManager::GetPlayerController();
+  if (player_controller->gold() < kTowerCost) {
+    return false;
+  }
+
   unsigned min_row = tile.y;
   if (min_row > 0) {
     min_row--;

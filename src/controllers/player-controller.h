@@ -8,6 +8,8 @@
 
 #include "engine/game-event.h"
 
+const unsigned kTowerCost = 30;
+
 class PlayerController {
  public:
   PlayerController() {}
