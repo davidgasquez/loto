@@ -40,14 +40,14 @@ void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
     active_ = !active_;
     calcTowerPlace_(mouse_pos);
   } else if (active_ && !bad_selection_) {
-    auto mapController = GameManager::GetMapController();
+    auto map_controller = GameManager::GetMapController();
     auto tower = new Tower();
     tower->Load();
     tower->set_position(last_tower_position_);
 
     GameManager::GetInstancesManager()->AddInstance(tower);
 
-    mapController->PlaceTower(last_tower_position_, tower);
+    map_controller->PlaceTower(last_tower_position_, tower);
     active_ = false;
   }
 }
@@ -63,11 +63,11 @@ void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
 
 
 void InGameUI::calcTowerPlace_(Vec2f mouse_pos) {
-  auto mapController = GameManager::GetMapController();
+  auto map_controller = GameManager::GetMapController();
 
-  last_tower_position_ = mapController->CalcRowCol(mouse_pos);
+  last_tower_position_ = map_controller->CalcRowCol(mouse_pos);
 
-  bad_selection_ = !mapController->CanPlaceTower(last_tower_position_);
+  bad_selection_ = !map_controller->CanPlaceTower(last_tower_position_);
   Vec2u a(last_tower_position_);
   Vec2u b(GameManager::GetTileSize());
   Vec2f pos(a.x * b.x, a.y * b.y);
