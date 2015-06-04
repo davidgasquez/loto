@@ -11,6 +11,7 @@ Roadmap
 Ernesto
 -------
 
+- Animated Sprite and animations.
 - Kill bugs with the towers.
 - Tower action radius when creating them.
 - Do not create towers in places with bugs.
@@ -20,8 +21,8 @@ David
 -----
 
 - Player Manager.
+- Inform map controller of the position of the bugs.
 - Reduce sprites size.
 - Tower hover color/border.
 - A*.
-- Inform map controller of the position of the bugs.
 - Correct drawing(layers).

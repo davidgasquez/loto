@@ -1,6 +1,8 @@
 
 #include "controllers/map-controller.h"
 
+#include <utility>
+
 #include "base/debug.h"
 #include "engine/game-manager.h"
 
@@ -22,6 +24,7 @@ void MapController::EventTriggered(GameEvent event) {
 
 void MapController::PlaceEnemy(Vec2u tile, EnemyUnit* enemy) {
   enemies_[Index_(tile)].push_back(enemy);
+  enemy_position_.insert(std::pair<EnemyUnit*, unsigned>(enemy, Index_(tile)));
 }
 
 

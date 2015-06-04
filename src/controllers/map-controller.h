@@ -4,6 +4,7 @@
 
 #include <SFML/System.hpp>
 #include <vector>
+#include <map>
 
 #include "engine/game-event.h"
 #include "structures/tower.h"
@@ -31,6 +32,8 @@ class MapController {
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
+
+  std::map<EnemyUnit*, unsigned> enemy_position_;
 
   unsigned Index_(Vec2u tile);
 };

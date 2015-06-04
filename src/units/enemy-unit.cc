@@ -11,5 +11,8 @@ void EnemyUnit::Load() {
 
 void EnemyUnit::Step(sf::Time elapsed) {
   Unit::Step(elapsed);
-  // Vec2u tile(GameManager::GetMapController()->CalcRowCol(position()));
+
+  auto map_controller = GameManager::GetMapController();
+  Vec2u tile(map_controller->CalcRowCol(position()));
+  map_controller->PlaceEnemy(tile, this);
 }
