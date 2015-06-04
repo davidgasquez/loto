@@ -5,7 +5,7 @@
 
 
 void EnemyUnit::Load() {
-  sprite_.setTexture(*GameManager::GetResourcesManager()->Enemy());
+  sprite_.set_texture(GameManager::GetResourcesManager()->Enemy());
   set_movement_speed(sf::Vector2f(-50.f, 0.f));
 }
 

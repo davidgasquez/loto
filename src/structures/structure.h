@@ -22,10 +22,6 @@ class Structure : public Instance {
     return life_;
   }
 
-  void set_position(sf::Vector2f pos) {
-    sprite_.setPosition(pos);
-  }
-
   void set_range(unsigned range) {
     range_ = range;
   }

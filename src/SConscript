@@ -12,6 +12,8 @@ srcs = '''
   controllers/player-controller.cc
   engine/events-manager.cc
   engine/game-manager.cc
+  engine/animation.cc
+  engine/animated-sprite.cc
   engine/instance.cc
   engine/instances-manager.cc
   engine/resources-manager.cc

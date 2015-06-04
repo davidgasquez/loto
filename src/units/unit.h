@@ -24,7 +24,7 @@ class Unit : public Instance {
   }
 
   void set_position(Vec2f pos) {
-    sprite_.setPosition(pos);
+    sprite_.set_position(pos);
   }
 
   Vec2f position() {

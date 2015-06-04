@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "engine/game-event.h"
+#include "engine/animated-sprite.h"
 
 
 class Instance : public sf::Drawable {
@@ -24,7 +25,7 @@ class Instance : public sf::Drawable {
   virtual void EventTriggered(GameEvent event) { }
 
  protected:
-  sf::Sprite sprite_;
+  AnimatedSprite sprite_;
 
   virtual void draw(sf::RenderTarget& target,
                     sf::RenderStates  states) const;

@@ -1,6 +1,6 @@
 
-#ifndef BASE_EVENTS_MANAGER_H_
-#define BASE_EVENTS_MANAGER_H_
+#ifndef ENGINE_EVENTS_MANAGER_H_
+#define ENGINE_EVENTS_MANAGER_H_
 
 #include <SFML/Graphics.hpp>
 
@@ -15,4 +15,4 @@ class EventsManager {
  private:
 };
 
-#endif  // BASE_EVENTS_MANAGER_H_
+#endif  // ENGINE_EVENTS_MANAGER_H_
