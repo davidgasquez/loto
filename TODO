@@ -2,19 +2,15 @@
 Roadmap
 -------
 
-- Correct drawing(layers).
 - Rotate sprite based on direction.
-- Split movement_speed in direction and speed.
-- Sound.
-- Circle to see range.
-- Mouse sprite.
+- A*.
 
 
 Ernesto
 -------
 
+- Kill bugs with the towers(Circle to see range).
 - Animated Sprite and animations.
-- Kill bugs with the towers.
 - Tower action radius when creating them.
 - Do not create towers in places with bugs.
 
@@ -22,7 +18,8 @@ Ernesto
 David
 -----
 
+- Correct drawing(layers).
 - Show life and gold.
-- Reduce sprites size.
-- Tower hover color/border.
-- A*.
+- Load fonts.
+- Add sounds.
+- Split movement_speed in direction and speed.
