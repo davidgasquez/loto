@@ -1,14 +1,14 @@
 
 #include "engine/events-manager.h"
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 #include "controllers/map-controller.h"
 #include "controllers/player-controller.h"
 
 void EventsManager::EventsLoop(sf::RenderWindow* window) {
   sf::Event event;
 
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
   while (window->pollEvent(event)) {
     switch (event.type) {
       case sf::Event::Closed:
@@ -47,12 +47,12 @@ void EventsManager::EventsLoop(sf::RenderWindow* window) {
 
 
 void EventsManager::Trigger(GameEvent event) {
-  auto map_controller = GameManager::GetMapController();
+  auto map_controller = Game::GetMapController();
   map_controller->EventTriggered(event);
 
-  auto player_controller = GameManager::GetPlayerController();
+  auto player_controller = Game::GetPlayerController();
   player_controller->EventTriggered(event);
 
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
   instances->EventTriggered(event);
 }

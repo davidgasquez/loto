@@ -11,7 +11,7 @@
 #include "base/aliases.h"
 
 
-class GameManager {
+class Game {
  public:
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();

@@ -3,7 +3,7 @@
 
 #include <iostream>
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 #include "levels/level.h"
 #include "tilemaps/map.h"
 #include "ui/cursor.h"
@@ -12,15 +12,15 @@
 
 
 int main(int argc, char const *argv[]) {
-  Vec2u window_size(GameManager::GetWindowSize());
+  Vec2u window_size(Game::GetWindowSize());
   sf::RenderWindow window(sf::VideoMode(window_size.x, window_size.y),
                           "Lord of the Orb",
                           sf::Style::None);
-  GameManager::SetWindow(&window);
+  Game::SetWindow(&window);
 
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
 
-  auto resources = GameManager::GetResourcesManager();
+  auto resources = Game::GetResourcesManager();
   if (!resources->Load()) {
     std::cerr << "Cannot load game resources!" << std::endl;
     return 1;
@@ -39,16 +39,16 @@ int main(int argc, char const *argv[]) {
   inGame->Load();
   instances->AddInstance(inGame, kLayerUI);
 
-  GameManager::GetCursorManager()->Load();
+  Game::GetCursorManager()->Load();
 
-  auto map_controller = GameManager::GetMapController();
-  auto player_controller = GameManager::GetPlayerController();
+  auto map_controller = Game::GetMapController();
+  auto player_controller = Game::GetPlayerController();
   player_controller->Load();
 
   sf::Clock clock;
 
   while (window.isOpen()) {
-    GameManager::GetEventsManager()->EventsLoop(&window);
+    Game::GetEventsManager()->EventsLoop(&window);
 
     sf::Time elapsed = clock.restart();
 

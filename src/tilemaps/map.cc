@@ -4,7 +4,7 @@
 #include <fstream>
 #include <string>
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 #include "tilemaps/tile-map.h"
 
 
@@ -19,7 +19,7 @@ bool Map::Load(std::string tilemapPath) {
   f >> width >> height;
   Vec2u size(width, height);
 
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
 
   auto map = new TileMap();
   map->Load(&f, size);
@@ -33,7 +33,7 @@ bool Map::Load(std::string tilemapPath) {
   map->Load(&f, size);
   instances->AddInstance(map, kLayerTop);
 
-  GameManager::GetMapController()->Load(width, height);
+  Game::GetMapController()->Load(width, height);
 
   return true;
 }

@@ -4,7 +4,7 @@
 #include <utility>
 #include <vector>
 #include "base/debug.h"
-#include "engine/game-manager.h"
+#include "engine/game.h"
 
 
 void MapController::Load(unsigned width, unsigned height) {
@@ -69,7 +69,7 @@ bool MapController::CanPlaceTower(Vec2u tile) {
     return false;
   }
 
-  auto player_controller = GameManager::GetPlayerController();
+  auto player_controller = Game::GetPlayerController();
   if (player_controller->gold() < kTowerCost) {
     return false;
   }
@@ -134,7 +134,7 @@ unsigned MapController::Index_(Vec2u tile) {
 }
 
 Vec2u MapController::CalcRowCol(Vec2f position) {
-  sf::Vector2f tile_size(GameManager::GetTileSize());
+  sf::Vector2f tile_size(Game::GetTileSize());
 
   unsigned row = static_cast<unsigned>(position.y / tile_size.y);
   unsigned col = static_cast<unsigned>(position.x / tile_size.x);

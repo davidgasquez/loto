@@ -1,14 +1,14 @@
 
 #include "tilemaps/tile-map.h"
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 
 
 void TileMap::Load(std::ifstream *f, Vec2u size) {
   unsigned int width  = size.x;
   unsigned int height = size.y;
-  unsigned int wTile  = GameManager::GetTileSize().x;
-  unsigned int hTile  = GameManager::GetTileSize().y;
+  unsigned int wTile  = Game::GetTileSize().x;
+  unsigned int hTile  = Game::GetTileSize().y;
 
   tiles_ = new unsigned[width * height];
 
@@ -34,7 +34,7 @@ void TileMap::Load(std::ifstream *f, Vec2u size) {
       quad[2].position = sf::Vector2f((i + 1) * wTile, (j + 1) * hTile);
       quad[3].position = sf::Vector2f(i * wTile, (j + 1) * hTile);
 
-      sf::Texture *tileset = GameManager::GetResourcesManager()->Map();
+      sf::Texture *tileset = Game::GetResourcesManager()->Map();
       int tu               = tile % (tileset->getSize().x / wTile);
       int tv               = tile / (tileset->getSize().x / wTile);
 
@@ -47,6 +47,6 @@ void TileMap::Load(std::ifstream *f, Vec2u size) {
 }
 
 void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  states.texture    = GameManager::GetResourcesManager()->Map();
+  states.texture    = Game::GetResourcesManager()->Map();
   target.draw(vertices_, states);
 }

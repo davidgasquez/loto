@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 #include "base/debug.h"
 
 
@@ -35,14 +35,14 @@ void Wave::Load() {
     new_enemy.enemy->Load();
 
     // Get position
-    sf::Vector2f pos(GameManager::GetWindowSize());
+    sf::Vector2f pos(Game::GetWindowSize());
     float position = 0;
     wave_info >> position;
 
-    pos.y = (position / 100) * GameManager::GetWindowSize().y;
+    pos.y = (position / 100) * Game::GetWindowSize().y;
 
     // See the spawn
-    pos.x = GameManager::GetWindowSize().x;
+    pos.x = Game::GetWindowSize().x;
     new_enemy.enemy->set_position(pos);
 
     // Add enemy to wave
@@ -62,7 +62,7 @@ void Wave::Start() {
 void Wave::Step(sf::Time elapsed) {
   auto elapsed_time = clock_.getElapsedTime();
 
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
   while (wave_[current_enemy_].spawn_time < elapsed_time) {
     instances->AddInstance(wave_[current_enemy_].enemy, kLayerMid);
     current_enemy_++;

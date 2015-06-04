@@ -1,7 +1,7 @@
 
 #include "ui/cursor.h"
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 
 
 Cursor::Cursor() {
@@ -10,9 +10,9 @@ Cursor::Cursor() {
 
 
 void Cursor::Load() {
-  sprite_.set_texture(GameManager::GetResourcesManager()->UICursor());
+  sprite_.set_texture(Game::GetResourcesManager()->UICursor());
 
-  Vec2f pos(GameManager::GetWindowSize());
+  Vec2f pos(Game::GetWindowSize());
   sprite_.set_position(pos / 2.f);
 }
 

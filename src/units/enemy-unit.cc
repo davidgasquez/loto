@@ -1,11 +1,11 @@
 
 #include "units/enemy-unit.h"
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 
 
 void EnemyUnit::Load() {
-  sprite_.set_texture(GameManager::GetResourcesManager()->Enemy());
+  sprite_.set_texture(Game::GetResourcesManager()->Enemy());
   set_movement_speed(50.f);
   set_rotation(180);
 }
@@ -21,11 +21,11 @@ void EnemyUnit::Attack() {
 }
 
 void EnemyUnit::Remove_(GameEventType type) {
-  auto events = GameManager::GetEventsManager();
+  auto events = Game::GetEventsManager();
   events->Trigger(GameEvent(type));
-  auto instances = GameManager::GetInstancesManager();
+  auto instances = Game::GetInstancesManager();
   instances->MarkToRemoveAndDelete(this);
-  auto map_controller = GameManager::GetMapController();
+  auto map_controller = Game::GetMapController();
   map_controller->RemoveEnemy(this);
 }
 
@@ -33,7 +33,7 @@ void EnemyUnit::Remove_(GameEventType type) {
 void EnemyUnit::Step(sf::Time elapsed) {
   Unit::Step(elapsed);
 
-  auto map_controller = GameManager::GetMapController();
+  auto map_controller = Game::GetMapController();
   Vec2u tile(map_controller->CalcRowCol(position()));
   map_controller->PlaceEnemy(tile, this);
 

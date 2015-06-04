@@ -14,7 +14,7 @@ srcs = '''
   engine/animation.cc
   engine/cursor-manager.cc
   engine/events-manager.cc
-  engine/game-manager.cc
+  engine/game.cc
   engine/instance.cc
   engine/instances-manager.cc
   engine/resources-manager.cc

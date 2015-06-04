@@ -1,5 +1,5 @@
 
-#include "engine/game-manager.h"
+#include "engine/game.h"
 
 
 ResourcesManager *gResources = nullptr;
@@ -13,7 +13,7 @@ PlayerController *gPlayerController = nullptr;
 sf::RenderWindow* gWindow = nullptr;
 
 
-ResourcesManager *GameManager::GetResourcesManager() {
+ResourcesManager *Game::GetResourcesManager() {
   if (gResources == NULL) {
     gResources = new ResourcesManager();
   }
@@ -22,7 +22,7 @@ ResourcesManager *GameManager::GetResourcesManager() {
 }
 
 
-InstancesManager *GameManager::GetInstancesManager() {
+InstancesManager *Game::GetInstancesManager() {
   if (gInstances == NULL) {
     gInstances = new InstancesManager();
   }
@@ -31,7 +31,7 @@ InstancesManager *GameManager::GetInstancesManager() {
 }
 
 
-EventsManager *GameManager::GetEventsManager() {
+EventsManager *Game::GetEventsManager() {
   if (gEvents == NULL) {
     gEvents = new EventsManager();
   }
@@ -40,7 +40,7 @@ EventsManager *GameManager::GetEventsManager() {
 }
 
 
-CursorManager *GameManager::GetCursorManager() {
+CursorManager *Game::GetCursorManager() {
   if (gCursor == NULL) {
     gCursor = new CursorManager();
   }
@@ -49,7 +49,7 @@ CursorManager *GameManager::GetCursorManager() {
 }
 
 
-MapController *GameManager::GetMapController() {
+MapController *Game::GetMapController() {
   if (gMapController == NULL) {
     gMapController = new MapController();
   }
@@ -58,7 +58,7 @@ MapController *GameManager::GetMapController() {
 }
 
 
-PlayerController *GameManager::GetPlayerController() {
+PlayerController *Game::GetPlayerController() {
   if (gPlayerController == NULL) {
     gPlayerController = new PlayerController();
   }
@@ -67,11 +67,11 @@ PlayerController *GameManager::GetPlayerController() {
 }
 
 
-sf::RenderWindow* GameManager::GetWindow() {
+sf::RenderWindow* Game::GetWindow() {
   return gWindow;
 }
 
 
-void GameManager::SetWindow(sf::RenderWindow* window) {
+void Game::SetWindow(sf::RenderWindow* window) {
   gWindow = window;
 }
