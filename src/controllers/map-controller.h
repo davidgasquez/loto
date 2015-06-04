@@ -20,10 +20,13 @@ class MapController {
 
   void EventTriggered(GameEvent event);
 
+  std::vector<EnemyUnit *> GetNearEnemies(Vec2u tile);
+
   bool CanPlaceTower(Vec2u tile);
   void PlaceTower(Vec2u tile, Tower *tower);
 
   void PlaceEnemy(Vec2u tile, EnemyUnit* enemy);
+  void RemoveEnemy(EnemyUnit* enemy);
   bool ReachedCastle(Vec2u tile);
 
   Vec2u CalcRowCol(Vec2f position);

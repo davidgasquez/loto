@@ -10,6 +10,26 @@ void EnemyUnit::Load() {
   set_rotation(180);
 }
 
+void EnemyUnit::Attack() {
+  life_--;
+  cout << "life_" << life_ << endl;
+  if (life_ == 0) {
+    cout << "Atacando" << endl;
+    Remove_(ENEMY_DIED);
+    return;
+  }
+}
+
+void EnemyUnit::Remove_(GameEventType type) {
+  auto events = GameManager::GetEventsManager();
+  events->Trigger(GameEvent(type));
+  auto instances = GameManager::GetInstancesManager();
+  instances->RemoveInstance(this);
+  auto map_controller = GameManager::GetMapController();
+  map_controller->RemoveEnemy(this);
+  delete this;
+}
+
 void EnemyUnit::Step(sf::Time elapsed) {
   Unit::Step(elapsed);
 
@@ -18,13 +38,7 @@ void EnemyUnit::Step(sf::Time elapsed) {
   map_controller->PlaceEnemy(tile, this);
 
   if (map_controller->ReachedCastle(tile)) {
-    auto events = GameManager::GetEventsManager();
-    auto instances = GameManager::GetInstancesManager();
-
-    events->Trigger(GameEvent(ENEMY_REACHED_CASTLE));
-
-    instances->RemoveInstance(this);
-    delete this;
+    Remove_(ENEMY_REACHED_CASTLE);
     return;
   }
 }

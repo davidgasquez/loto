@@ -10,6 +10,7 @@ InstancesManager::InstancesManager() {
   layers_.resize(kLayers);
 }
 
+
 void InstancesManager::AddInstance(Instance *instance, Layer layer) {
   layers_[layer].push_back(instance);
 }
@@ -84,6 +85,7 @@ void InstancesManager::MouseMoved(sf::Event::MouseMoveEvent event) {
     }
   }
 }
+
 
 void InstancesManager::EventTriggered(GameEvent event) {
   for (auto layer : layers_) {

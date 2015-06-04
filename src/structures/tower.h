@@ -14,6 +14,8 @@ class Tower : public Structure {
 
   void draw(sf::RenderTarget& target,
             sf::RenderStates  states) const;
+
+  void Step(sf::Time elapsed);
 };
 
 #endif  // STRUCTURES_TOWER_H_

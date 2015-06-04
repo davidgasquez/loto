@@ -12,7 +12,7 @@ Roadmap
 Ernesto
 -------
 
-- Kill bugs with the towers.
+- Animate arrow tower and slow down tower attacks(1 hit per second).
 - Animated Sprite and animations.
 - Tower action radius when creating them.
 - Hover cursor for the button.

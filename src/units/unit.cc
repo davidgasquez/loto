@@ -7,7 +7,7 @@
 
 
 Unit::Unit()
-  : life_(0), damage_(0), attack_speed_(0),
+  : life_(1), damage_(0), attack_speed_(0),
     movement_speed_(0) {
   // empty
 }

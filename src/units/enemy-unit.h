@@ -16,10 +16,14 @@ class EnemyUnit : public Unit {
 
   void Load();
 
+  void Attack();
+
   void Step(sf::Time elapsed);
 
  private:
   std::string name_;
+
+  void Remove_(GameEventType type);
 };
 
 #endif  // UNITS_ENEMY_H_
