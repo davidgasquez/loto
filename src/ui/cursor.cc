@@ -23,5 +23,4 @@ void Cursor::MouseMoved(sf::Event::MouseMoveEvent event) {
 
 
 void Cursor::SetDefault() {
-
 }

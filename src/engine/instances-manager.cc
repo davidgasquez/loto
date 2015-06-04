@@ -20,7 +20,6 @@ void InstancesManager::MarkToRemoveAndDelete(Instance* instance) {
   markedDelete_.push_back(instance);
 }
 
-
 void InstancesManager::Draw(sf::RenderTarget *target) {
   for (auto layer : layers_) {
     for (auto instance : layer) {

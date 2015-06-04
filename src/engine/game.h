@@ -17,7 +17,7 @@ class Game {
   static InstancesManager* GetInstancesManager();
   static EventsManager* GetEventsManager();
   static CursorManager* GetCursorManager();
-  
+
   static MapController* GetMapController();
   static PlayerController* GetPlayerController();
 

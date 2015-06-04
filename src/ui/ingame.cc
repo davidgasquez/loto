@@ -13,10 +13,10 @@ void InGame::Load() {
   tower_selection_bad_.setTexture(*Game::GetResourcesManager()->TowerBad());
 
   heart_.setTexture(*Game::GetResourcesManager()->Heart());
-  heart_.setPosition(Vec2f(10.f, 40.f));
+  heart_.setPosition(Vec2f(5.f, 5.f));
 
   coin_.setTexture(*Game::GetResourcesManager()->Coin());
-  coin_.setPosition(Vec2f(180.f, 200.f));
+  coin_.setPosition(Vec2f(6.f, 60.f));
 
   Vec2f pos(Game::GetWindowSize());
   pos.x = 10;
@@ -43,13 +43,14 @@ void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
   std::stringstream player_life;
   auto player_controller = Game::GetPlayerController();
   player_life << player_controller->life();
-  sf::Text life(player_life.str(), font, 30);
+  sf::Text life(player_life.str(), font, 32);
+  life.setPosition(65.f, 5.f);
   target.draw(life);
 
   std::stringstream player_gold;
   player_gold << player_controller->gold();
-  sf::Text gold(player_gold.str(), font, 30);
-  gold.setPosition(200, 200);
+  sf::Text gold(player_gold.str(), font, 32);
+  gold.setPosition(65.f, 62.f);
   target.draw(gold);
 }
 
