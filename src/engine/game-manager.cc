@@ -2,53 +2,65 @@
 #include "engine/game-manager.h"
 
 
-ResourcesManager *resources_ = NULL;
-InstancesManager *instances_ = NULL;
-EventsManager *events_ = NULL;
-MapController *map_ = NULL;
-PlayerController *player_ = NULL;
+ResourcesManager *gResources = nullptr;
+InstancesManager *gInstances = nullptr;
+EventsManager *gEvents = nullptr;
+MapController *gMap = nullptr;
+PlayerController *gPlayer = nullptr;
+
+sf::RenderWindow* gWindow = nullptr;
 
 
 ResourcesManager *GameManager::GetResourcesManager() {
-  if (resources_ == NULL) {
-    resources_ = new ResourcesManager();
+  if (gResources == NULL) {
+    gResources = new ResourcesManager();
   }
 
-  return resources_;
+  return gResources;
 }
 
 
 InstancesManager *GameManager::GetInstancesManager() {
-  if (instances_ == NULL) {
-    instances_ = new InstancesManager();
+  if (gInstances == NULL) {
+    gInstances = new InstancesManager();
   }
 
-  return instances_;
+  return gInstances;
 }
 
 
 EventsManager *GameManager::GetEventsManager() {
-  if (events_ == NULL) {
-    events_ = new EventsManager();
+  if (gEvents == NULL) {
+    gEvents = new EventsManager();
   }
 
-  return events_;
+  return gEvents;
 }
 
 
 MapController *GameManager::GetMapController() {
-  if (map_ == NULL) {
-    map_ = new MapController();
+  if (gMap == NULL) {
+    gMap = new MapController();
   }
 
-  return map_;
+  return gMap;
 }
 
 
 PlayerController *GameManager::GetPlayerController() {
-  if (player_ == NULL) {
-    player_ = new PlayerController();
+  if (gPlayer == NULL) {
+    gPlayer = new PlayerController();
   }
 
-  return player_;
+  return gPlayer;
+}
+
+
+sf::RenderWindow* GameManager::GetWindow() {
+  return gWindow;
+}
+
+
+void GameManager::SetWindow(sf::RenderWindow* window) {
+  gWindow = window;
 }

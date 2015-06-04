@@ -50,6 +50,8 @@ void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
     map_controller->PlaceTower(last_tower_position_, tower);
     active_ = false;
   }
+
+  GameManager::GetWindow()->setMouseCursorVisible(!active_);
 }
 
 

@@ -25,6 +25,9 @@ class GameManager {
   static Vec2u GetWindowSize() {
     return Vec2u(1280, 704);
   }
+
+  static sf::RenderWindow* GetWindow();
+  static void SetWindow(sf::RenderWindow* window);
 };
 
 #endif  // BASE_GAME_MANAGER_H_
