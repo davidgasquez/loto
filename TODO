@@ -2,17 +2,18 @@
 Roadmap
 -------
 
+- Add sounds.
 - Rotate sprite based on direction.
 - A*.
+- Basic start Menu with level selector
 
 
 Ernesto
 -------
 
-- Kill bugs with the towers(Circle to see range).
+- Kill bugs with the towers.
 - Animated Sprite and animations.
 - Tower action radius when creating them.
-- Do not create towers in places with bugs.
 
 
 David
@@ -21,5 +22,4 @@ David
 - Correct drawing(layers).
 - Show life and gold.
 - Load fonts.
-- Add sounds.
 - Split movement_speed in direction and speed.
