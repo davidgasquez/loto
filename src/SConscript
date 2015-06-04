@@ -10,14 +10,14 @@ flags = ['-Werror', '-Wall', '-g', '-std=c++0x']
 srcs = '''
   controllers/map-controller.cc
   controllers/player-controller.cc
+  engine/animated-sprite.cc
+  engine/animation.cc
+  engine/cursor-manager.cc
   engine/events-manager.cc
   engine/game-manager.cc
-  engine/animation.cc
-  engine/animated-sprite.cc
   engine/instance.cc
   engine/instances-manager.cc
   engine/resources-manager.cc
-  game/ingame-ui.cc
   game/main.cc
   levels/level.cc
   levels/wave.cc
@@ -25,6 +25,8 @@ srcs = '''
   structures/tower.cc
   tilemaps/map.cc
   tilemaps/tile-map.cc
+  ui/cursor.cc
+  ui/ingame.cc
   units/enemy-unit.cc
   units/unit.cc
 '''

@@ -5,6 +5,7 @@
 #include "engine/resources-manager.h"
 #include "engine/instances-manager.h"
 #include "engine/events-manager.h"
+#include "engine/cursor-manager.h"
 #include "controllers/map-controller.h"
 #include "controllers/player-controller.h"
 #include "base/aliases.h"
@@ -15,6 +16,8 @@ class GameManager {
   static ResourcesManager* GetResourcesManager();
   static InstancesManager* GetInstancesManager();
   static EventsManager* GetEventsManager();
+  static CursorManager* GetCursorManager();
+  
   static MapController* GetMapController();
   static PlayerController* GetPlayerController();
 

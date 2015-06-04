@@ -4,10 +4,11 @@
 #include <iostream>
 
 #include "engine/game-manager.h"
-#include "tilemaps/map.h"
-#include "units/enemy-unit.h"
-#include "game/ingame-ui.h"
 #include "levels/level.h"
+#include "tilemaps/map.h"
+#include "ui/cursor.h"
+#include "ui/ingame.h"
+#include "units/enemy-unit.h"
 
 
 int main(int argc, char const *argv[]) {
@@ -36,9 +37,11 @@ int main(int argc, char const *argv[]) {
   auto level = new Level(1);
   level->Load();
 
-  auto ui = new InGameUI();
-  ui->Load();
-  instances->AddInstance(ui);
+  auto inGame = new InGame();
+  inGame->Load();
+  instances->AddInstance(inGame);
+
+  GameManager::GetCursorManager()->Load();
 
   auto map_controller = GameManager::GetMapController();
   auto player_controller = GameManager::GetPlayerController();

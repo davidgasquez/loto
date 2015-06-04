@@ -1,13 +1,13 @@
 
-#ifndef GAME_INGAME_UI_H_
-#define GAME_INGAME_UI_H_
+#ifndef UI_INGAME_H_
+#define UI_INGAME_H_
 
 #include "base/aliases.h"
 #include "engine/instance.h"
 
-class InGameUI : public Instance {
+class InGame : public Instance {
  public:
-  InGameUI()
+  InGame()
   : active_(false), bad_selection_(false) { }
 
   void Load();
@@ -29,4 +29,4 @@ class InGameUI : public Instance {
   void calcTowerPlace_(sf::Vector2f mouse_pos);
 };
 
-#endif  // GAME_INGAME_UI_H_
+#endif  // UI_INGAME_H_

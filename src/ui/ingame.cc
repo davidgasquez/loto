@@ -1,11 +1,11 @@
 
-#include "game/ingame-ui.h"
+#include "ui/ingame.h"
 
 #include "engine/game-manager.h"
 #include "base/debug.h"
 
 
-void InGameUI::Load() {
+void InGame::Load() {
   tower_button_.setTexture(*GameManager::GetResourcesManager()->UITowerButton());
   tower_selection_.setTexture(*GameManager::GetResourcesManager()->TowerSelected());
   tower_selection_bad_.setTexture(*GameManager::GetResourcesManager()->TowerBad());
@@ -17,7 +17,7 @@ void InGameUI::Load() {
 }
 
 
-void InGameUI::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
+void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
   target.draw(tower_button_);
 
   if (active_) {
@@ -30,7 +30,7 @@ void InGameUI::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
 }
 
 
-void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
+void InGame::MouseReleased(sf::Event::MouseButtonEvent event) {
   if (!event.button == sf::Mouse::Button::Left) {
     return;
   }
@@ -55,7 +55,7 @@ void InGameUI::MouseReleased(sf::Event::MouseButtonEvent event) {
 }
 
 
-void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
+void InGame::MouseMoved(sf::Event::MouseMoveEvent event) {
   if (!active_) {
     return;
   }
@@ -64,7 +64,7 @@ void InGameUI::MouseMoved(sf::Event::MouseMoveEvent event) {
 }
 
 
-void InGameUI::calcTowerPlace_(Vec2f mouse_pos) {
+void InGame::calcTowerPlace_(Vec2f mouse_pos) {
   auto map_controller = GameManager::GetMapController();
 
   last_tower_position_ = map_controller->CalcRowCol(mouse_pos);

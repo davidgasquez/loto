@@ -5,8 +5,10 @@
 ResourcesManager *gResources = nullptr;
 InstancesManager *gInstances = nullptr;
 EventsManager *gEvents = nullptr;
-MapController *gMap = nullptr;
-PlayerController *gPlayer = nullptr;
+CursorManager *gCursor = nullptr;
+
+MapController *gMapController = nullptr;
+PlayerController *gPlayerController = nullptr;
 
 sf::RenderWindow* gWindow = nullptr;
 
@@ -38,21 +40,30 @@ EventsManager *GameManager::GetEventsManager() {
 }
 
 
-MapController *GameManager::GetMapController() {
-  if (gMap == NULL) {
-    gMap = new MapController();
+CursorManager *GameManager::GetCursorManager() {
+  if (gCursor == NULL) {
+    gCursor = new CursorManager();
   }
 
-  return gMap;
+  return gCursor;
+}
+
+
+MapController *GameManager::GetMapController() {
+  if (gMapController == NULL) {
+    gMapController = new MapController();
+  }
+
+  return gMapController;
 }
 
 
 PlayerController *GameManager::GetPlayerController() {
-  if (gPlayer == NULL) {
-    gPlayer = new PlayerController();
+  if (gPlayerController == NULL) {
+    gPlayerController = new PlayerController();
   }
 
-  return gPlayer;
+  return gPlayerController;
 }
 
 
