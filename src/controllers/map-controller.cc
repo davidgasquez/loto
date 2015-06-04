@@ -16,14 +16,6 @@ void MapController::Step(sf::Time elapsed) {
 
 
 void MapController::EventTriggered(GameEvent event) {
-  switch (event.type()) {
-    case ENEMY_DIED:
-      break;
-    case TOWER_PLACED:
-      break;
-    case ENEMY_REACHED_CASTLE:
-      break;
-  }
 }
 
 

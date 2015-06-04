@@ -19,12 +19,13 @@ class MapController {
   void EventTriggered(GameEvent event);
 
   bool CanPlaceTower(unsigned row, unsigned col);
-  void PlaceTower(unsigned row, unsigned col, Tower* tower);
+  void PlaceTower(unsigned row, unsigned col, Tower *tower);
 
  private:
   unsigned width_, height_;
 
-  std::vector<Tower*> towers_;
+  std::vector<Tower *> towers_;
+  std::vector<std::vector<EnemyUnit *> > enemies_;
 
   unsigned index_(unsigned row, unsigned col);
 };
