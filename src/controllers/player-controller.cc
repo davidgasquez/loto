@@ -25,7 +25,9 @@ void PlayerController::EventTriggered(GameEvent event) {
     break;
   // Decrease life each time monster reach castle
   case ENEMY_REACHED_CASTLE:
-    life_ -= 5;
+    if (life_ >=5) {
+      life_ -= 5;
+    }
     break;
   }
 }
