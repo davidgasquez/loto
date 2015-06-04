@@ -4,8 +4,9 @@ Roadmap
 
 - Add sounds.
 - Basic start Menu with level selector
-- Lose when life is <= 0
-- Mobs spawn in less tower populated areas
+- A* + Triangle Diagonalization.
+- Mobs spawn in less tower populated areas.
+- Try placing towers without restrictions.
 
 
 Ernesto
@@ -19,6 +20,6 @@ Ernesto
 
 David
 -----
-- A* + Triangle Diagonalization.
 - Hover mouse and button pressed sprites
 - Design sprites and text
+- Lose when life is <= 0
