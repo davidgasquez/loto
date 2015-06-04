@@ -51,7 +51,11 @@ void InGame::MouseReleased(sf::Event::MouseButtonEvent event) {
     active_ = false;
   }
 
-  GameManager::GetWindow()->setMouseCursorVisible(!active_);
+  if (active_) {
+    GameManager::GetCursorManager()->Hide();
+  } else {
+    GameManager::GetCursorManager()->Show();
+  }
 }
 
 

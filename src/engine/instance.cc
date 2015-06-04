@@ -3,5 +3,7 @@
 
 
 void Instance::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
-  target.draw(sprite_);
+  if (visible_) {
+    target.draw(sprite_);
+  }
 }

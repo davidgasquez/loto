@@ -9,6 +9,9 @@ class CursorManager {
  public:
   void Load();
 
+  void Show();
+  void Hide();
+
  private:
   Cursor* cursor_;
 };

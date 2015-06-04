@@ -15,12 +15,11 @@ class Cursor : public Instance {
 
   void Load();
 
+  void MouseMoved(sf::Event::MouseMoveEvent event);
+
   void SetDefault();
 
-  void set_visible(bool visible);
-
  protected:
-  bool visible_;
 };
 
 #endif  // UI_CURSOR_H_

@@ -10,7 +10,8 @@
 
 class Instance : public sf::Drawable {
  public:
-  Instance() { }
+  Instance()
+  : visible_(true) { }
   virtual ~Instance() { }
 
   virtual void Step(sf::Time elapsed) { }
@@ -24,8 +25,17 @@ class Instance : public sf::Drawable {
 
   virtual void EventTriggered(GameEvent event) { }
 
+  void set_visible(bool visible) {
+    visible_ = visible;
+  }
+
+  bool visible() {
+    return visible_;
+  }
+
  protected:
   AnimatedSprite sprite_;
+  bool visible_;
 
   virtual void draw(sf::RenderTarget& target,
                     sf::RenderStates  states) const;

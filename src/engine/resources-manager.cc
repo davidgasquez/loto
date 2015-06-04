@@ -27,5 +27,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!ui_cursor_.loadFromFile("assets/textures/ui/cursor.png")) {
+    return false;
+  }
+
   return true;
 }

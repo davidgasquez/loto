@@ -33,6 +33,10 @@ class ResourcesManager {
     return &ui_tower_button_;
   }
 
+  sf::Texture* UICursor() {
+    return &ui_cursor_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -40,6 +44,7 @@ class ResourcesManager {
   sf::Texture tower_selected_;
   sf::Texture enemy_;
   sf::Texture ui_tower_button_;
+  sf::Texture ui_cursor_;
 };
 
 #endif  // BASE_RESOURCES_MANAGER_H_

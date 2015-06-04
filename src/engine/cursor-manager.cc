@@ -6,9 +6,19 @@
 
 
 void CursorManager::Load() {
-  // GameManager::GetWindow()->setMouseCursorVisible(false);
+  GameManager::GetWindow()->setMouseCursorVisible(false);
 
   cursor_ = new Cursor();
   cursor_->Load();
   GameManager::GetInstancesManager()->AddInstance(cursor_);
+}
+
+
+void CursorManager::Show() {
+  cursor_->set_visible(true);
+}
+
+
+void CursorManager::Hide() {
+  cursor_->set_visible(false);
 }
