@@ -16,6 +16,9 @@ class Tower : public Structure {
             sf::RenderStates  states) const;
 
   void Step(sf::Time elapsed);
+
+ private:
+  sf::Clock attack_clock_;
 };
 
 #endif  // STRUCTURES_TOWER_H_

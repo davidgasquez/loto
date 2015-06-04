@@ -8,7 +8,9 @@ void EnemyUnit::Load() {
   sprite_.set_texture(Game::GetResourcesManager()->Enemy());
   set_movement_speed(50.f);
   set_rotation(180);
+  life_ = 3;
 }
+
 
 void EnemyUnit::Attack() {
   life_--;
@@ -17,6 +19,7 @@ void EnemyUnit::Attack() {
     return;
   }
 }
+
 
 void EnemyUnit::Remove_(GameEventType type) {
   auto events = Game::GetEventsManager();
