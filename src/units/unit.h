@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 
 #include "engine/instance.h"
+#include "base/aliases.h"
 
 
 class Unit : public Instance {
@@ -22,11 +23,15 @@ class Unit : public Instance {
     return life_;
   }
 
-  void set_position(sf::Vector2f pos) {
+  void set_position(Vec2f pos) {
     sprite_.setPosition(pos);
   }
 
-  void set_movement_speed(sf::Vector2f movement_speed) {
+  Vec2f position() {
+    return sprite_.getPosition();
+  }
+
+  void set_movement_speed(Vec2f movement_speed) {
     movement_speed_ = movement_speed;
   }
 
@@ -38,7 +43,7 @@ class Unit : public Instance {
   unsigned life_;
   unsigned damage_;
   unsigned attack_speed_;
-  sf::Vector2f movement_speed_;
+  Vec2f movement_speed_;
 };
 
 #endif  // UNITS_UNIT_H_

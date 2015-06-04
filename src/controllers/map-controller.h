@@ -7,6 +7,7 @@
 
 #include "engine/game-event.h"
 #include "structures/tower.h"
+#include "units/enemy-unit.h"
 
 class MapController {
  public:
@@ -18,8 +19,12 @@ class MapController {
 
   void EventTriggered(GameEvent event);
 
-  bool CanPlaceTower(unsigned row, unsigned col);
-  void PlaceTower(unsigned row, unsigned col, Tower *tower);
+  bool CanPlaceTower(Vec2u tile);
+  void PlaceTower(Vec2u tile, Tower *tower);
+
+  void PlaceEnemy(Vec2u tile, EnemyUnit* enemy);
+
+  Vec2u CalcRowCol(Vec2f position);
 
  private:
   unsigned width_, height_;
@@ -27,7 +32,7 @@ class MapController {
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
 
-  unsigned index_(unsigned row, unsigned col);
+  unsigned Index_(Vec2u tile);
 };
 
 #endif  // CONTROLLERS_MAP_CONTROLLER_H_

@@ -7,6 +7,7 @@
 #include "engine/events-manager.h"
 #include "controllers/map-controller.h"
 #include "controllers/player-controller.h"
+#include "base/aliases.h"
 
 
 class GameManager {
