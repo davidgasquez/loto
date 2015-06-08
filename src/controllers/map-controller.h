@@ -9,6 +9,8 @@
 #include "engine/game-event.h"
 #include "structures/tower.h"
 #include "units/enemy-unit.h"
+#include "ai/graph.h"
+
 
 class MapController {
  public:
@@ -20,7 +22,7 @@ class MapController {
 
   void EventTriggered(GameEvent event);
 
-  std::vector<EnemyUnit *> GetNearEnemies(Vec2u tile);
+  EnemyUnit* GetNearEnemy(Vec2u tile);
 
   bool CanPlaceTower(Vec2u tile);
   void PlaceTower(Vec2u tile, Tower *tower);
@@ -36,6 +38,7 @@ class MapController {
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
+  Graph graph_;
 
   std::map<EnemyUnit*, unsigned> enemy_position_;
 

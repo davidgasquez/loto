@@ -12,6 +12,7 @@ void MapController::Load(unsigned width, unsigned height) {
   height_ = height;
   towers_.resize(width * height, nullptr);
   enemies_.resize(width * height);
+  graph_.Load(width, height);
 }
 
 
@@ -45,6 +46,7 @@ void MapController::PlaceEnemy(Vec2u tile, EnemyUnit* enemy) {
   enemies_[n].push_back(enemy);
   enemy_position_[enemy] = Index_(tile);
 }
+
 
 void MapController::RemoveEnemy(EnemyUnit* enemy) {
   auto pos = enemy_position_.find(enemy);
@@ -98,9 +100,7 @@ bool MapController::CanPlaceTower(Vec2u tile) {
 
 
 
-std::vector<EnemyUnit *> MapController::GetNearEnemies(Vec2u tile) {
-  std::vector<EnemyUnit *> near_enemies;
-
+EnemyUnit* MapController::GetNearEnemy(Vec2u tile) {
   unsigned min_row = tile.y;
   if (min_row > 0) {
     min_row--;
@@ -114,13 +114,14 @@ std::vector<EnemyUnit *> MapController::GetNearEnemies(Vec2u tile) {
 
   for (unsigned i = min_row; i <= max_row; ++i) {
     for (unsigned j = min_col; j <= max_col; ++j) {
-      for (EnemyUnit * enemy : enemies_[Index_(Vec2u(j, i))]) {
-        near_enemies.push_back(enemy);
+      unsigned pos = Index_(Vec2u(j, i));
+      for (EnemyUnit * enemy : enemies_[pos]) {
+        return enemy;
       }
     }
   }
 
-  return near_enemies;
+  return nullptr;
 }
 
 
@@ -132,6 +133,7 @@ void MapController::PlaceTower(Vec2u tile, Tower * tower) {
 unsigned MapController::Index_(Vec2u tile) {
   return tile.y * width_ + tile.x;
 }
+
 
 Vec2u MapController::CalcRowCol(Vec2f position) {
   sf::Vector2f tile_size(Game::GetTileSize());

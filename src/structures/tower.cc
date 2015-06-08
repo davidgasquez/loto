@@ -29,25 +29,12 @@ void Tower::Step(sf::Time elapsed) {
   attack_clock_.restart();
 
   auto map_controller = Game::GetMapController();
-  Vec2u row_col = map_controller->CalcRowCol(sprite_.position());
-  auto near_enemies = map_controller->GetNearEnemies(row_col);
+  Vec2u tile = map_controller->CalcRowCol(sprite_.position());
 
-  if (near_enemies.size() == 0) {
+  auto near_enemy = map_controller->GetNearEnemy(tile);
+  if (near_enemy == nullptr) {
     return;
   }
 
-  EnemyUnit* nearest_enemy;
-  float min_distance = 9999999;
-  for (EnemyUnit* enemy : near_enemies) {
-    float dx = enemy->position().x - sprite_.position().x;
-    float dy = enemy->position().y - sprite_.position().y;
-    float distance = dx * dx + dy * dy;
-
-    if (distance < min_distance) {
-      nearest_enemy = enemy;
-      min_distance = distance;
-    }
-  }
-
-  nearest_enemy->Attack();
+  near_enemy->Attack();
 }
