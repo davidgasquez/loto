@@ -8,7 +8,6 @@ void AnimatedSprite::Load(sf::Texture* texture) {
 
 
 void AnimatedSprite::Step(sf::Time elapsed) {
-
 }
 
 
