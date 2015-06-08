@@ -11,16 +11,11 @@ Ernesto
 
 - Path finding using Dijkstra.
 - Animate arrow tower.
-
 - Animated Sprite and animations.
 - Tower action radius when creating them.
 - Hover cursor for the button.
-- Se pueden colocar torres si es un sitio vacio y el bicho llega despues.
+- Bug when placing towers just before the bug enters the tile
 
 
 David
 -----
-
-- Create spawn forest
-- Lose when life is <= 0
-
