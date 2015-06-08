@@ -29,8 +29,8 @@ class AnimatedSprite : public sf::Drawable {
     sprite_.setPosition(position);
   }
 
-  void set_rotation(float rotation) {
-    sprite_.setRotation(rotation);
+  void set_rotation(float deg) {
+    sprite_.setRotation(deg);
   }
 
   float rotation() {

@@ -1,7 +1,10 @@
 
 #include "units/enemy-unit.h"
 
+#include <cmath>
+
 #include "engine/game.h"
+#include "ai/dijkstra.h"
 
 
 void EnemyUnit::Load() {
@@ -9,6 +12,7 @@ void EnemyUnit::Load() {
   set_movement_speed(50.f);
   set_rotation(180);
   life_ = 3;
+  clock_.restart();
 }
 
 
@@ -36,9 +40,19 @@ void EnemyUnit::Step(sf::Time elapsed) {
     return;
   }
 
+  auto map_controller = Game::GetMapController();
+  auto graph = map_controller->graph();
+  if (path_.size() == 0 || clock_.getElapsedTime().asMilliseconds() > 500) {
+    clock_.restart();
+    path_ = DijkstraPathFinding(graph->CalcNode(position()));
+
+    Vec2f dest(graph->CalcPos(path_[0]));
+    auto rad = atan2(dest.y - position().y, dest.x - position().x);
+    set_rotation(rad * (180 / M_PI));
+  }
+  
   Unit::Step(elapsed);
 
-  auto map_controller = Game::GetMapController();
   Vec2u tile(map_controller->CalcRowCol(position()));
   map_controller->PlaceEnemy(tile, this);
 
