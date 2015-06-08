@@ -15,15 +15,11 @@ class AnimatedSprite : public sf::Drawable {
   AnimatedSprite()
   : animation_(nullptr) { }
 
-  void Load(sf::Texture* texture);
-
   void Step(sf::Time elapsed);
 
   void set_animation(Animation* animation);
 
-  void set_texture(sf::Texture* texture) {
-    sprite_.setTexture(*texture);
-  }
+  void set_texture(sf::Texture* texture);
 
   Vec2f position() {
     return sprite_.getPosition();

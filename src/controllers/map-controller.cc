@@ -12,7 +12,9 @@ void MapController::Load(unsigned width, unsigned height) {
   height_ = height;
   towers_.resize(width * height, nullptr);
   enemies_.resize(width * height);
-  graph_.Load(width, height);
+
+  graph_ = new Graph(width, height);
+  graph_->Load();
 }
 
 

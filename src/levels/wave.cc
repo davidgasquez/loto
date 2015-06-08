@@ -34,15 +34,12 @@ void Wave::Load() {
     new_enemy.enemy = new EnemyUnit(name);
     new_enemy.enemy->Load();
 
-    // Get position
-    sf::Vector2f pos(Game::GetWindowSize());
-    float position = 0;
-    wave_info >> position;
+    // Get start graph node
+    unsigned row = 0;
+    wave_info >> row;
 
-    pos.y = (position / 100) * Game::GetWindowSize().y;
-
-    // See the spawn
-    pos.x = Game::GetWindowSize().x;
+    unsigned max_cols = Game::GetMapSize().x * 2 - 1;
+    Vec2f pos(Game::GetMapController()->graph()->CalcPos(Vec2u(max_cols, row)));
     new_enemy.enemy->set_position(pos);
 
     // Add enemy to wave

@@ -29,6 +29,12 @@ class Game {
     return Vec2u(1280, 704);
   }
 
+  static Vec2u GetMapSize() {
+    Vec2u window(GetWindowSize());
+    Vec2u tile(GetTileSize());
+    return Vec2u(window.x / tile.x, window.y / tile.y);
+  }
+
   static sf::RenderWindow* GetWindow();
   static void SetWindow(sf::RenderWindow* window);
 };

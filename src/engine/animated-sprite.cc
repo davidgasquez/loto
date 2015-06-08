@@ -1,9 +1,14 @@
 
 #include "engine/animated-sprite.h"
 
+#include "base/debug.h"
 
-void AnimatedSprite::Load(sf::Texture* texture) {
-  sprite_.setTexture(*texture);
+
+void AnimatedSprite::set_texture(sf::Texture* texture) {
+  sprite_.setTexture(*texture, true);
+
+  Vec2u size(texture->getSize());
+  sprite_.setOrigin(Vec2f(size.x / 2.f, size.y / 2.f));
 }
 
 

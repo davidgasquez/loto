@@ -8,6 +8,8 @@ flags = ['-Werror', '-Wall', '-g', '-std=c++0x']
 
 
 srcs = '''
+  ai/dijkstra.cc
+  ai/graph.cc
   controllers/map-controller.cc
   controllers/player-controller.cc
   engine/animated-sprite.cc

@@ -33,12 +33,16 @@ class MapController {
 
   Vec2u CalcRowCol(Vec2f position);
 
+  Graph* graph() {
+    return graph_;
+  }
+
  private:
   unsigned width_, height_;
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
-  Graph graph_;
+  Graph* graph_;
 
   std::map<EnemyUnit*, unsigned> enemy_position_;
 
