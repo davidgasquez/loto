@@ -4,29 +4,23 @@ Roadmap
 
 - Add sounds.
 - Basic start Menu with level selector
-- A* + Triangle Diagonalization.
-- Mobs spawn in less tower populated areas.
-- Try placing towers without restrictions.
 
 
 Ernesto
 -------
 
-- Animate arrow tower and slow down tower attacks(1 hit per second).
+- Path finding using Dijkstra.
+- Animate arrow tower.
+
 - Animated Sprite and animations.
 - Tower action radius when creating them.
 - Hover cursor for the button.
+- Se pueden colocar torres si es un sitio vacio y el bicho llega despues.
 
 
 David
 -----
 
 - Create spawn forest
-- Hover mouse and button pressed sprites
 - Lose when life is <= 0
 
-
-Bugs
-----
-
-- Se pueden colocar torres si es un sitio vacio y el bicho llega despues.
