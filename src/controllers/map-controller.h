@@ -37,6 +37,11 @@ class MapController {
     return graph_;
   }
 
+  // TODO(ernesto): Remove this
+  void set_graph(Graph* graph) {
+    graph_ = graph;
+  }
+
  private:
   unsigned width_, height_;
 

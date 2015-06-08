@@ -36,12 +36,26 @@ public:
   Vec2f CalcPos(Vec2u node);
   Vec2u CalcNode(Vec2f pos);
 
+  std::vector<std::vector<Neighbour> > neighbours() {
+    return neighbours_;
+  }
+
+  unsigned rows() {
+    return rows_;
+  }
+
+  unsigned cols() {
+    return cols_;
+  }
+
+  unsigned VertexIndex(Vec2u node);
+  Vec2u IndexToVertex(unsigned index);
+
 private:
   unsigned rows_, cols_;
   std::vector<std::vector<Neighbour> > neighbours_;
 
   void AddEdge_(unsigned from, Neighbour neighbour);
-  unsigned VertexIndex_(Vec2u node);
 };
 
 

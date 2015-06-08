@@ -9,9 +9,16 @@
 #include "ui/cursor.h"
 #include "ui/ingame.h"
 #include "units/enemy-unit.h"
+#include "ai/dijkstra.h"
 
 
 int main(int argc, char const *argv[]) {
+  // Graph* graph = new Graph(2, 2);
+  // graph->Load();
+  // Game::GetMapController()->set_graph(graph);
+  // DijkstraPathFinding(Vec2u(3, 0));
+  // return 0;
+
   Vec2u window_size(Game::GetWindowSize());
   sf::RenderWindow window(sf::VideoMode(window_size.x, window_size.y),
                           "Lord of the Orb",
