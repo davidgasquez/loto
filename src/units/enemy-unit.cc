@@ -32,6 +32,10 @@ void EnemyUnit::Remove_(GameEventType type) {
 
 
 void EnemyUnit::Step(sf::Time elapsed) {
+  if (life_ == 0) {
+    return;
+  }
+
   Unit::Step(elapsed);
 
   auto map_controller = Game::GetMapController();
