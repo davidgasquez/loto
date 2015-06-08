@@ -52,6 +52,23 @@ void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
   sf::Text gold(player_gold.str(), font, 32);
   gold.setPosition(65.f, 67.f);
   target.draw(gold);
+
+  if (player_controller->life() <=0 || player_controller->life() > 100) {
+    std::stringstream lose;
+    lose << "Game Over";
+    sf::Text game_over(lose.str(), font, 200);
+    game_over.setColor(sf::Color::Black);
+    game_over.setStyle(sf::Text::Bold);
+    game_over.setPosition(270, 100);
+    target.draw(game_over);
+
+    sf::Text sad_face(":(", font, 200);
+    sad_face.setColor(sf::Color::Black);
+    sad_face.setStyle(sf::Text::Bold);
+    sad_face.setPosition(800, 400);
+    sad_face.setRotation(90);
+    target.draw(sad_face);
+  }
 }
 
 
