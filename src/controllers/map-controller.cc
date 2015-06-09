@@ -5,8 +5,10 @@
 
 #include <utility>
 #include <vector>
+
 #include "base/debug.h"
 #include "engine/game.h"
+#include "ui/victory.h"
 
 
 void MapController::Load(unsigned width, unsigned height) {
@@ -19,6 +21,8 @@ void MapController::Load(unsigned width, unsigned height) {
   graph_->Load();
 
   game_over_.setBuffer(*Game::GetResourcesManager()->GameOver());
+
+  victory_.setBuffer(*Game::GetResourcesManager()->Victory());
 
   loop_.setBuffer(*Game::GetResourcesManager()->Loop());
   loop_.play();
@@ -42,8 +46,17 @@ void MapController::EventTriggered(GameEvent event) {
     game_over_.play();
     break;
 
+  case VICTORY: {
+    loop_.stop();
+    victory_.play();
+
+    auto instances = Game::GetInstancesManager();
+    instances->AddInstance(new Victory(), kLayerUI);
+    break;
+  }
+
   default:
-    {}
+    break;
   }
 }
 
@@ -78,6 +91,10 @@ void MapController::RemoveEnemy(EnemyUnit* enemy) {
   enemies_[pos->second].erase(removed, enemies_[pos->second].end());
 
   enemy_position_.erase(pos);
+
+  if (all_enemies_ && enemy_position_.size() == 0) {
+    Game::GetEventsManager()->Trigger(GameEvent(VICTORY));
+  }
 }
 
 

@@ -17,7 +17,8 @@
 
 class MapController {
  public:
-  MapController() { }
+  MapController()
+  : all_enemies_(false) { }
 
   void Load(unsigned width, unsigned height);
 
@@ -45,15 +46,20 @@ class MapController {
     graph_ = graph;
   }
 
+  void set_all_enemies(bool all_enemies) {
+    all_enemies_ = all_enemies;
+  }
+
  private:
   unsigned width_, height_;
-  sf::Sound loop_, game_over_;
+  sf::Sound loop_, game_over_, victory_;
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
   Graph* graph_;
 
   std::map<EnemyUnit*, unsigned> enemy_position_;
+  bool all_enemies_;
 
   unsigned Index_(Vec2u tile);
 };

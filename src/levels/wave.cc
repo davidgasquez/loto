@@ -68,6 +68,7 @@ void Wave::Step(sf::Time elapsed) {
 
     if (current_enemy_ >= wave_.size()) {
       instances->MarkToRemoveAndDelete(this);
+      Game::GetMapController()->set_all_enemies(true);
       return;
     }
   }

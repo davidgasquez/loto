@@ -57,5 +57,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!victory_.loadFromFile("assets/sounds/victory.ogg")) {
+    return false;
+  }
+
   return true;
 }
