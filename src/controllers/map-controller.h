@@ -4,6 +4,7 @@
 #ifndef CONTROLLERS_MAP_CONTROLLER_H_
 #define CONTROLLERS_MAP_CONTROLLER_H_
 
+#include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
 #include <vector>
 #include <map>
@@ -46,6 +47,7 @@ class MapController {
 
  private:
   unsigned width_, height_;
+  sf::Sound sound_;
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;

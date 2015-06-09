@@ -45,5 +45,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!loop_.loadFromFile("assets/sounds/loop.wav")) {
+    return false;
+  }
+
   return true;
 }

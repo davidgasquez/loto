@@ -3,7 +3,7 @@ import os
 
 
 appname = 'loto'
-libs = ['sfml-graphics', 'sfml-window', 'sfml-system']
+libs = ['sfml-graphics', 'sfml-window', 'sfml-system', 'sfml-audio']
 if 'production' in os.environ:
   flags = ['-Werror', '-Wall', '-O3', '-std=c++0x']
 else:
