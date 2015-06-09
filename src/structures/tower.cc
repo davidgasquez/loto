@@ -43,5 +43,5 @@ void Tower::Step(sf::Time elapsed) {
   auto arrow = new TowerArrow();
   arrow->Load(sprite_.position());
   arrow->set_enemy(near_enemy);
-  Game::GetInstancesManager()->AddInstance(arrow, kLayerMidElevated);
+  Game::GetInstancesManager()->AddInstance(arrow, kLayerProjectiles);
 }
