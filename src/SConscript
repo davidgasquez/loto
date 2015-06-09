@@ -4,7 +4,7 @@ import os
 
 appname = 'loto'
 libs = ['sfml-graphics', 'sfml-window', 'sfml-system']
-flags = ['-Werror', '-Wall', '-g', '-std=c++0x']
+flags = ['-Werror', '-Wall', '-O3', '-std=c++0x']
 
 
 srcs = '''
