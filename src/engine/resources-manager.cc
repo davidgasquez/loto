@@ -53,5 +53,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!game_over_.loadFromFile("assets/sounds/game-over.ogg")) {
+    return false;
+  }
+
   return true;
 }

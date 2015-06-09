@@ -60,6 +60,10 @@ class ResourcesManager {
     return &arrow_;
   }
 
+  sf::SoundBuffer* GameOver() {
+    return &game_over_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -72,6 +76,7 @@ class ResourcesManager {
   sf::Texture coin_;
   sf::SoundBuffer loop_;
   sf::Texture arrow_;
+  sf::SoundBuffer game_over_;
 
   sf::Font font_;
 };

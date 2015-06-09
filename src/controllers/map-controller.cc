@@ -18,9 +18,11 @@ void MapController::Load(unsigned width, unsigned height) {
   graph_ = new Graph(width, height);
   graph_->Load();
 
-  sound_.setBuffer(*Game::GetResourcesManager()->Loop());
-  // sound_.play();
-  sound_.setLoop(true);
+  game_over_.setBuffer(*Game::GetResourcesManager()->GameOver());
+
+  loop_.setBuffer(*Game::GetResourcesManager()->Loop());
+  loop_.play();
+  loop_.setLoop(true);
 }
 
 
@@ -34,6 +36,15 @@ bool MapController::ReachedCastle(Vec2u tile) {
 
 
 void MapController::EventTriggered(GameEvent event) {
+  switch (event.type()) {
+  case GAME_OVER:
+    loop_.stop();
+    game_over_.play();
+    break;
+
+  default:
+    {}
+  }
 }
 
 

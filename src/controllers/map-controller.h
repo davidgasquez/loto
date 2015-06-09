@@ -47,7 +47,7 @@ class MapController {
 
  private:
   unsigned width_, height_;
-  sf::Sound sound_;
+  sf::Sound loop_, game_over_;
 
   std::vector<Tower *> towers_;
   std::vector<std::vector<EnemyUnit *> > enemies_;
