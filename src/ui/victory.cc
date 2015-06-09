@@ -12,8 +12,15 @@ void Victory::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   auto font = *Game::GetResourcesManager()->Font();
 
   sf::Text victory("Victory", font, 200);
-  victory.setColor(sf::Color::Green);
+  victory.setColor(sf::Color(33, 150, 243));
   victory.setStyle(sf::Text::Bold);
-  victory.setPosition(270, 100);
+  victory.setPosition(315, 100);
   target.draw(victory);
+
+  sf::Text smile(":)", font, 200);
+  smile.setColor(sf::Color(33, 150, 243));
+  smile.setStyle(sf::Text::Bold);
+  smile.setPosition(800, 400);
+  smile.setRotation(90);
+  target.draw(smile);
 }
