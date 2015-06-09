@@ -10,9 +10,9 @@
 
 
 class GraphNode {
- public:
-  GraphNode(unsigned vertex, unsigned distance)
-    : vertex_(vertex), distance_(distance) { }
+public:
+  GraphNode(unsigned vertex, float distance)
+  : vertex_(vertex), distance_(distance) { }
 
   GraphNode(const GraphNode& other)
     : vertex_(other.vertex_), distance_(other.distance_) { }
@@ -21,7 +21,7 @@ class GraphNode {
     return vertex_;
   }
 
-  unsigned distance() const {
+  float distance() const {
     return distance_;
   }
 
@@ -32,7 +32,7 @@ class GraphNode {
 
 
 bool operator<(const GraphNode& a, const GraphNode& b) {
-  if (a.distance() - b.distance() < .001f) {
+  if (a.distance() == b.distance()) {
     return a.vertex() < b.vertex();
   }
 
@@ -63,13 +63,8 @@ std::vector<Vec2u> DijkstraPathFinding(Vec2u from) {
       continue;
     }
 
-    Vec2u vertex(graph->IndexToVertex(node.vertex()));
-    if (vertex.x < 2) {
-      break;
-    }
-
     for (auto& neighbour : neighbours[node.vertex()]) {
-      auto distance = node.distance() + 1.f * neighbour.weight();
+      float distance = node.distance() + 1.f * neighbour.weight();
       if (distance < min_distance[neighbour.vertex()]) {
         min_distance[neighbour.vertex()] = distance;
         previous[neighbour.vertex()] = node.vertex();
@@ -79,12 +74,11 @@ std::vector<Vec2u> DijkstraPathFinding(Vec2u from) {
     }
   }
 
-  unsigned dest;
+  unsigned dest = 1;
   for (unsigned row = 0; row < graph->rows(); ++row) {
     unsigned v = graph->VertexIndex(Vec2u(1, row));
-    if (min_distance[v] < std::numeric_limits<float>::max()) {
+    if (min_distance[v] < min_distance[dest]) {
       dest = v;
-      break;
     }
   }
 
@@ -94,15 +88,5 @@ std::vector<Vec2u> DijkstraPathFinding(Vec2u from) {
   }
   std::reverse(path.begin(), path.end());
 
-  // static unsigned j = 0;
-  // j++;
-  // if (j == 10) {
-  //   for (unsigned i = 0; i < path.size(); ++i) {
-  //     cout << "path[" << i << "] = " << path[i].x << " " << path[i].y << endl;
-  //   }
-  //   exit(0);
-  // }
-
-  path.push_back(Vec2u(8, 11));
   return path;
 }
