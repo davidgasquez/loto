@@ -49,5 +49,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!arrow_.loadFromFile("assets/textures/arrow.png")) {
+    return false;
+  }
+
   return true;
 }

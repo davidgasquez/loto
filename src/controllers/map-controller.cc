@@ -19,7 +19,7 @@ void MapController::Load(unsigned width, unsigned height) {
   graph_->Load();
 
   sound_.setBuffer(*Game::GetResourcesManager()->Loop());
-  sound_.play();
+  // sound_.play();
   sound_.setLoop(true);
 }
 

@@ -56,6 +56,10 @@ class ResourcesManager {
     return &loop_;
   }
 
+  sf::Texture* Arrow() {
+    return &arrow_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -67,6 +71,7 @@ class ResourcesManager {
   sf::Texture heart_;
   sf::Texture coin_;
   sf::SoundBuffer loop_;
+  sf::Texture arrow_;
 
   sf::Font font_;
 };

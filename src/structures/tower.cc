@@ -4,6 +4,7 @@
 #include "structures/tower.h"
 
 #include "engine/game.h"
+#include "projectiles/tower-arrow.h"
 
 
 void Tower::Load() {
@@ -39,5 +40,8 @@ void Tower::Step(sf::Time elapsed) {
     return;
   }
 
-  near_enemy->Attack();
+  auto arrow = new TowerArrow();
+  arrow->Load(sprite_.position());
+  arrow->set_enemy(near_enemy);
+  Game::GetInstancesManager()->AddInstance(arrow, kLayerMidElevated);
 }
