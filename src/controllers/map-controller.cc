@@ -20,19 +20,21 @@ void MapController::Load(unsigned width, unsigned height) {
   graph_ = new Graph(width, height);
   graph_->Load();
 
-  game_over_.setBuffer(*Game::GetResourcesManager()->GameOver());
+  auto resources = Game::GetResourcesManager();
+
+  game_over_.setBuffer(*resources->GameOver());
   game_over_.setVolume(50);
 
-  victory_.setBuffer(*Game::GetResourcesManager()->Victory());
+  victory_.setBuffer(*resources->Victory());
   victory_.setVolume(50);
 
-  loop_.setBuffer(*Game::GetResourcesManager()->Loop());
+  loop_.setBuffer(*resources->Loop());
   loop_.play();
   loop_.setVolume(50);
   loop_.setLoop(true);
 
-  enemy_dead_.setBuffer(*Game::GetResourcesManager()->EnemyDead());
-  enemy_reached_castle_.setBuffer(*Game::GetResourcesManager()->EnemyReachedCastle());
+  enemy_dead_.setBuffer(*resources->EnemyDead());
+  enemy_reached_castle_.setBuffer(*resources->EnemyReachedCastle());
 }
 
 

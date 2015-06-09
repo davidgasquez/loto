@@ -4,8 +4,11 @@
 #ifndef UI_INGAME_H_
 #define UI_INGAME_H_
 
+#include <SFML/Audio.hpp>
+
 #include "base/aliases.h"
 #include "engine/instance.h"
+
 
 class InGame : public Instance {
  public:
@@ -33,6 +36,8 @@ class InGame : public Instance {
   Vec2u last_tower_position_;
 
   Vec2f mouse_pos_;
+  
+  sf::Sound place_tower_;
 
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 

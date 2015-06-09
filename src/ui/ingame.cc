@@ -10,20 +10,25 @@
 
 
 void InGame::Load() {
-  tower_button_.setTexture(*Game::GetResourcesManager()->UITowerButton());
-  tower_selection_.setTexture(*Game::GetResourcesManager()->TowerSelected());
-  tower_selection_bad_.setTexture(*Game::GetResourcesManager()->TowerBad());
+  auto resources = Game::GetResourcesManager();
 
-  heart_.setTexture(*Game::GetResourcesManager()->Heart());
+  tower_button_.setTexture(*resources->UITowerButton());
+  tower_selection_.setTexture(*resources->TowerSelected());
+  tower_selection_bad_.setTexture(*resources->TowerBad());
+
+  heart_.setTexture(*resources->Heart());
   heart_.setPosition(Vec2f(5.f, 10.f));
 
-  coin_.setTexture(*Game::GetResourcesManager()->Coin());
+  coin_.setTexture(*resources->Coin());
   coin_.setPosition(Vec2f(6.f, 65.f));
 
   Vec2f pos(Game::GetWindowSize());
   pos.x = 10;
   pos.y = (pos.y / 2) - 80;
   tower_button_.setPosition(pos);
+
+  place_tower_.setBuffer(*resources->PlaceTower());
+  place_tower_.setVolume(30);
 }
 
 
@@ -84,6 +89,8 @@ void InGame::MouseReleased(sf::Event::MouseButtonEvent event) {
 
       Game::GetEventsManager()->Trigger(GameEvent(TOWER_PLACED));
       Game::GetInstancesManager()->AddInstance(tower, kLayerMidElevated);
+
+      place_tower_.play();
 
       map_controller->PlaceTower(last_tower_position_, tower);
       active_ = false;
