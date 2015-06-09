@@ -14,6 +14,8 @@ PlayerController *gPlayerController = nullptr;
 
 sf::RenderWindow* gWindow = nullptr;
 
+bool gHardcore = false;
+
 
 ResourcesManager *Game::GetResourcesManager() {
   if (gResources == NULL) {
@@ -76,4 +78,14 @@ sf::RenderWindow* Game::GetWindow() {
 
 void Game::SetWindow(sf::RenderWindow* window) {
   gWindow = window;
+}
+
+
+void Game::set_hardcore(bool hardcore) {
+  gHardcore = hardcore;
+}
+
+
+bool Game::hardcore() {
+  return gHardcore;
 }

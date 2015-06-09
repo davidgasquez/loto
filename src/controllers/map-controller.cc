@@ -8,6 +8,10 @@
 
 #include "engine/game.h"
 #include "ui/victory.h"
+#include "base/debug.h"
+
+
+const float kTowerGraphWeight = 100.f;
 
 
 void MapController::Load(unsigned width, unsigned height) {
@@ -185,6 +189,26 @@ void MapController::PlaceTower(Vec2u tile, Tower* tower) {
   graph_->RemoveEdges(Vec2u(gpos.x + 1, gpos.y));
   graph_->RemoveEdges(Vec2u(gpos.x, gpos.y + 1));
   graph_->RemoveEdges(Vec2u(gpos.x + 1, gpos.y + 1));
+
+  if (Game::hardcore()) {
+    float min_row = gpos.y;
+    if (min_row > 2) {
+      min_row -= 4;
+    } else if (min_row > 0) {
+      min_row -= 2;
+    }
+    float max_row = gpos.y + 1;
+    if (max_row < Game::GetMapSize().y * 2 - 2) {
+      max_row += 4;
+    } else if (max_row < Game::GetMapSize().y * 2 - 1) {
+      max_row += 2;
+    }
+    for (unsigned i = gpos.x - 4; i < gpos.x + 4; ++i) {
+      for (unsigned j = min_row; j < max_row; ++j) {
+        graph_->AddWeight(Vec2u(i, j), kTowerGraphWeight);
+      }
+    }
+  }
 }
 
 

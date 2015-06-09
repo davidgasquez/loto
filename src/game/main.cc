@@ -15,6 +15,10 @@
 
 
 int main(int argc, char const *argv[]) {
+  if (argc > 1 && std::string(argv[1]) == "--hardcore") {
+    Game::set_hardcore(true);
+  }
+  
   Vec2u window_size(Game::GetWindowSize());
   sf::RenderWindow window(sf::VideoMode(window_size.x, window_size.y),
                           "Lord of the Orb",

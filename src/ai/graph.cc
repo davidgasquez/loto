@@ -4,6 +4,7 @@
 #include "ai/graph.h"
 
 #include "engine/game.h"
+#include "base/debug.h"
 
 
 const float kSquareMoveWeight = 1.f;
@@ -96,4 +97,21 @@ void Graph::RemoveEdges(Vec2u node) {
   }
 
   neighbours_[index].clear();
+}
+
+
+void Graph::AddWeight(Vec2u node, float weight) {
+  auto index = VertexIndex(node);
+
+  for (Neighbour neighbour : neighbours_[index]) {
+    auto& nconns = neighbours_[neighbour.vertex()];
+    for (unsigned i = 0; i < nconns.size(); ++i) {
+      if (nconns[i].vertex() == index) {
+        nconns[i].add_weight(weight);
+        break;
+      }
+    }
+
+    neighbour.add_weight(weight);
+  }
 }

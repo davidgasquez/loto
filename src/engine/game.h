@@ -39,6 +39,9 @@ class Game {
 
   static sf::RenderWindow* GetWindow();
   static void SetWindow(sf::RenderWindow* window);
+
+  static void set_hardcore(bool hardcore);
+  static bool hardcore();
 };
 
 #endif  // BASE_GAME_MANAGER_H_

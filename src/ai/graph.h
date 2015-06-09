@@ -22,6 +22,10 @@ class Neighbour {
     return weight_;
   }
 
+  void add_weight(float weight) {
+    weight_ += weight;
+  }
+
  private:
   unsigned vertex_;
   float weight_;
@@ -54,6 +58,7 @@ class Graph {
   Vec2u IndexToVertex(unsigned index);
 
   void RemoveEdges(Vec2u node);
+  void AddWeight(Vec2u node, float weight);
 
  private:
   unsigned rows_, cols_;
