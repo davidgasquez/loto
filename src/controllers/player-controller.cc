@@ -45,7 +45,7 @@ void PlayerController::EventTriggered(GameEvent event) {
     break;
 
   default:
-    ;
+    {}
   }
 }
 
