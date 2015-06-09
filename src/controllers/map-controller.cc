@@ -92,7 +92,7 @@ void MapController::RemoveEnemy(EnemyUnit* enemy) {
 
   enemy_position_.erase(pos);
 
-  if (all_enemies_ && enemy_position_.size() == 0) {
+  if (all_enemies_ && !game_over_flag_ && enemy_position_.size() == 0) {
     Game::GetEventsManager()->Trigger(GameEvent(VICTORY));
   }
 }

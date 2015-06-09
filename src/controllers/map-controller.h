@@ -18,7 +18,7 @@
 class MapController {
  public:
   MapController()
-  : all_enemies_(false) { }
+  : all_enemies_(false), game_over_flag_(false) { }
 
   void Load(unsigned width, unsigned height);
 
@@ -50,6 +50,10 @@ class MapController {
     all_enemies_ = all_enemies;
   }
 
+  void set_game_over(bool game_over) {
+    game_over_flag_ = game_over;
+  }
+
  private:
   unsigned width_, height_;
   sf::Sound loop_, game_over_, victory_;
@@ -60,6 +64,7 @@ class MapController {
 
   std::map<EnemyUnit*, unsigned> enemy_position_;
   bool all_enemies_;
+  bool game_over_flag_;
 
   unsigned Index_(Vec2u tile);
 };

@@ -34,6 +34,8 @@ void PlayerController::EventTriggered(GameEvent event) {
   // Decrease life each time monster reach castle
   case ENEMY_REACHED_CASTLE:
     if (life_ == 0) {
+      Game::GetMapController()->set_game_over(true);
+
       auto events = Game::GetEventsManager();
       events->Trigger(GameEvent(GAME_OVER));
 
