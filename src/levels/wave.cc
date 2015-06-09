@@ -28,7 +28,7 @@ void Wave::Load() {
     unsigned seconds;
     wave_info >> seconds;
     accum = seconds + accum;
-    new_enemy.spawn_time = sf::milliseconds(accum * 1000 + rand() % 1000);
+    new_enemy.spawn_time = sf::milliseconds(accum * 1000 + rand() % 2000);
 
     // Get enemy name
     std::string name;
