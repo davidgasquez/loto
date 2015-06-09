@@ -11,7 +11,7 @@ void Tower::Load() {
   auto resources = Game::GetResourcesManager();
   sprite_.set_texture(resources->Tower());
   arrow_.setBuffer(*resources->ArrowSound());
-  arrow_.setVolume(20);
+  arrow_.setVolume(15);
 }
 
 
