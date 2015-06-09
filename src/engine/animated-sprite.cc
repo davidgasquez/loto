@@ -5,6 +5,8 @@
 
 
 void AnimatedSprite::set_texture(sf::Texture* texture) {
+  texture_ = texture;
+  
   sprite_.setTexture(*texture, true);
 
   Vec2u size(texture->getSize());

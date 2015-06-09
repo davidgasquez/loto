@@ -41,10 +41,15 @@ class AnimatedSprite : public sf::Drawable {
     sprite_.move(diff);
   }
 
+  Vec2u size() {
+    return texture_->getSize();
+  }
+
  private:
   sf::Sprite sprite_;
   std::vector<sf::IntRect> frames_;
   Animation* animation_;
+  sf::Texture* texture_;
 
   virtual void draw(sf::RenderTarget& target,
                     sf::RenderStates  states) const;

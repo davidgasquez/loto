@@ -11,8 +11,8 @@ void Tower::Load() {
 
 void Tower::set_position(Vec2u pos) {
   Vec2u tile_size = Game::GetTileSize();
-
-  sprite_.set_position(Vec2f(tile_size.x * pos.x, tile_size.y * pos.y));
+  Vec2u size(sprite_.size());
+  sprite_.set_position(Vec2f(tile_size.x * pos.x + size.x / 2, tile_size.y * pos.y + size.y / 2));
 }
 
 
