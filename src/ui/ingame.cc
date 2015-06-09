@@ -62,27 +62,33 @@ void InGame::MouseReleased(sf::Event::MouseButtonEvent event) {
     return;
   }
 
-  Vec2f mouse_pos(event.x, event.y);
-  if (tower_button_.getGlobalBounds().contains(mouse_pos)) {
+  mouse_pos_ = Vec2f(event.x, event.y);
+  if (tower_button_.getGlobalBounds().contains(mouse_pos_)) {
     active_ = !active_;
-    calcTowerPlace_(mouse_pos);
-  } else if (active_ && !bad_selection_) {
-    auto map_controller = Game::GetMapController();
-    auto tower = new Tower();
-    tower->Load();
-    tower->set_position(last_tower_position_);
-
-    Game::GetEventsManager()->Trigger(GameEvent(TOWER_PLACED));
-    Game::GetInstancesManager()->AddInstance(tower, kLayerMidElevated);
-
-    map_controller->PlaceTower(last_tower_position_, tower);
-    active_ = false;
+    if (active_) {
+      Game::GetCursorManager()->Hide();
+      calcTowerPlace_();
+      return;
+    } else {
+      Game::GetCursorManager()->Show();
+    }
   }
 
   if (active_) {
-    Game::GetCursorManager()->Hide();
-  } else {
-    Game::GetCursorManager()->Show();
+    calcTowerPlace_();
+    if (!bad_selection_) {
+      auto map_controller = Game::GetMapController();
+      auto tower = new Tower();
+      tower->Load();
+      tower->set_position(last_tower_position_);
+
+      Game::GetEventsManager()->Trigger(GameEvent(TOWER_PLACED));
+      Game::GetInstancesManager()->AddInstance(tower, kLayerMidElevated);
+
+      map_controller->PlaceTower(last_tower_position_, tower);
+      active_ = false;
+      Game::GetCursorManager()->Show();
+    }
   }
 }
 
@@ -92,7 +98,8 @@ void InGame::MouseMoved(sf::Event::MouseMoveEvent event) {
     return;
   }
 
-  calcTowerPlace_(Vec2f(event.x, event.y));
+  mouse_pos_ = Vec2f(event.x, event.y);
+  calcTowerPlace_();
 }
 
 
@@ -111,10 +118,15 @@ void InGame::EventTriggered(GameEvent event) {
 }
 
 
-void InGame::calcTowerPlace_(Vec2f mouse_pos) {
+void InGame::Step(sf::Time elapsed) {
+  calcTowerPlace_();
+}
+
+
+void InGame::calcTowerPlace_() {
   auto map_controller = Game::GetMapController();
 
-  last_tower_position_ = map_controller->CalcRowCol(mouse_pos);
+  last_tower_position_ = map_controller->CalcRowCol(mouse_pos_);
 
   bad_selection_ = !map_controller->CanPlaceTower(last_tower_position_);
   Vec2u a(last_tower_position_);

@@ -16,8 +16,10 @@ class InGame : public Instance {
 
   void MouseReleased(sf::Event::MouseButtonEvent event);
   void MouseMoved(sf::Event::MouseMoveEvent event);
-
+  
   void EventTriggered(GameEvent event);
+  
+  void Step(sf::Time elapsed);
 
  private:
   sf::Sprite tower_button_;
@@ -30,9 +32,11 @@ class InGame : public Instance {
   bool bad_selection_;
   Vec2u last_tower_position_;
 
+  Vec2f mouse_pos_;
+
   void draw(sf::RenderTarget& target, sf::RenderStates states) const;
 
-  void calcTowerPlace_(sf::Vector2f mouse_pos);
+  void calcTowerPlace_();
 };
 
 #endif  // UI_INGAME_H_
