@@ -8,10 +8,9 @@
 
 #include "engine/game.h"
 #include "ui/victory.h"
-#include "base/debug.h"
 
 
-const float kTowerGraphWeight = 100.f;
+const float kTowerGraphWeight = 50.f;
 
 
 void MapController::Load(unsigned width, unsigned height) {

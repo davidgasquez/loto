@@ -4,7 +4,6 @@
 #include "ai/graph.h"
 
 #include "engine/game.h"
-#include "base/debug.h"
 
 
 const float kSquareMoveWeight = 1.f;
