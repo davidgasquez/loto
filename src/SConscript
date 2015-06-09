@@ -29,6 +29,8 @@ srcs = '''
   tilemaps/tile-map.cc
   ui/cursor.cc
   ui/ingame.cc
+  ui/victory.cc
+  ui/game-over.cc
   units/enemy-unit.cc
   units/unit.cc
 '''

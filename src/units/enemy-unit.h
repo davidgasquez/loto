@@ -19,13 +19,14 @@ class EnemyUnit : public Unit {
   void Attack();
 
   void Step(sf::Time elapsed);
+  void EventTriggered(GameEvent event);
 
  private:
   std::string name_;
   sf::Clock clock_;
   std::vector<Vec2u> path_;
 
-  void Remove_(GameEventType type);
+  void Remove_();
 };
 
 #endif  // UNITS_ENEMY_H_

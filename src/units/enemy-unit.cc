@@ -19,15 +19,15 @@ void EnemyUnit::Load() {
 void EnemyUnit::Attack() {
   life_--;
   if (life_ == 0) {
-    Remove_(ENEMY_DIED);
+    auto events = Game::GetEventsManager();
+    events->Trigger(GameEvent(ENEMY_DIED));
+    Remove_();
     return;
   }
 }
 
 
-void EnemyUnit::Remove_(GameEventType type) {
-  auto events = Game::GetEventsManager();
-  events->Trigger(GameEvent(type));
+void EnemyUnit::Remove_() {
   auto instances = Game::GetInstancesManager();
   instances->MarkToRemoveAndDelete(this);
   auto map_controller = Game::GetMapController();
@@ -57,7 +57,16 @@ void EnemyUnit::Step(sf::Time elapsed) {
   map_controller->PlaceEnemy(tile, this);
 
   if (map_controller->ReachedCastle(tile)) {
-    Remove_(ENEMY_REACHED_CASTLE);
+    auto events = Game::GetEventsManager();
+    events->Trigger(GameEvent(ENEMY_REACHED_CASTLE));
+    Remove_();
     return;
+  }
+}
+
+
+void EnemyUnit::EventTriggered(GameEvent event) {
+  if (event.type() == GAME_OVER) {
+    Remove_();
   }
 }

@@ -14,6 +14,8 @@ class InGame : public Instance {
 
   void MouseReleased(sf::Event::MouseButtonEvent event);
   void MouseMoved(sf::Event::MouseMoveEvent event);
+  
+  void EventTriggered(GameEvent event);
 
  private:
   sf::Sprite tower_button_;

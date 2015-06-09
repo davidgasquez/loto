@@ -25,7 +25,7 @@ void InGame::Load() {
 }
 
 
-void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
+void InGame::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   target.draw(tower_button_);
   target.draw(heart_);
   target.draw(coin_);
@@ -52,23 +52,6 @@ void InGame::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
   sf::Text gold(player_gold.str(), font, 32);
   gold.setPosition(65.f, 67.f);
   target.draw(gold);
-
-  if (player_controller->life() <=0 || player_controller->life() > 100) {
-    std::stringstream lose;
-    lose << "Game Over";
-    sf::Text game_over(lose.str(), font, 200);
-    game_over.setColor(sf::Color::Black);
-    game_over.setStyle(sf::Text::Bold);
-    game_over.setPosition(270, 100);
-    target.draw(game_over);
-
-    sf::Text sad_face(":(", font, 200);
-    sad_face.setColor(sf::Color::Black);
-    sad_face.setStyle(sf::Text::Bold);
-    sad_face.setPosition(800, 400);
-    sad_face.setRotation(90);
-    target.draw(sad_face);
-  }
 }
 
 
@@ -108,6 +91,21 @@ void InGame::MouseMoved(sf::Event::MouseMoveEvent event) {
   }
 
   calcTowerPlace_(Vec2f(event.x, event.y));
+}
+
+
+void InGame::EventTriggered(GameEvent event) {
+  switch (event.type()) {
+  case GAME_OVER:
+  case VICTORY: {
+    auto instances = Game::GetInstancesManager();
+    instances->MarkToRemoveAndDelete(this);
+    break;
+  }
+
+  default:
+    ;
+  }
 }
 
 

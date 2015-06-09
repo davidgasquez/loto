@@ -17,7 +17,9 @@ void InstancesManager::AddInstance(Instance *instance, Layer layer) {
 
 
 void InstancesManager::MarkToRemoveAndDelete(Instance* instance) {
-  markedDelete_.push_back(instance);
+  if (std::find(markedDelete_.begin(), markedDelete_.end(), instance) == markedDelete_.end()) {
+    markedDelete_.push_back(instance);
+  }
 }
 
 
