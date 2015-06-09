@@ -3,8 +3,6 @@
 
 #include "engine/animated-sprite.h"
 
-#include "base/debug.h"
-
 
 void AnimatedSprite::set_texture(sf::Texture* texture) {
   texture_ = texture;

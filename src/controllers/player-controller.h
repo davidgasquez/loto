@@ -6,11 +6,11 @@
 
 #include <SFML/System.hpp>
 
-#include "base/debug.h"
-
 #include "engine/game-event.h"
 
+
 const unsigned kTowerCost = 30;
+
 
 class PlayerController {
  public:

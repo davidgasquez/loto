@@ -8,7 +8,6 @@
 #include <string>
 
 #include "engine/game.h"
-#include "base/debug.h"
 
 
 void Wave::Load() {

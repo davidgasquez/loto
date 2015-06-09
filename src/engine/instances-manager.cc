@@ -5,8 +5,6 @@
 
 #include <vector>
 
-#include "base/debug.h"
-
 
 InstancesManager::InstancesManager() {
   layers_.resize(kLayers);

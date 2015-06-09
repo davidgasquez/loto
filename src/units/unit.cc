@@ -5,8 +5,6 @@
 
 #include <cmath>
 
-#include "base/debug.h"
-
 
 Unit::Unit()
   : life_(0), damage_(0), attack_speed_(0),
