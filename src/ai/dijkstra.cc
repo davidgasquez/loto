@@ -48,6 +48,10 @@ std::vector<Vec2u> DijkstraPathFinding(Vec2u from) {
 
   std::vector<std::vector<Neighbour> > neighbours(graph->neighbours());
 
+  if (neighbours[from_vertex].size() == 0) {
+    from_vertex++;
+  }
+
   std::set<GraphNode> queue;
   queue.insert(GraphNode(from_vertex, 0));
 
