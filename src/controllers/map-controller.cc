@@ -65,6 +65,7 @@ void MapController::EventTriggered(GameEvent event) {
 
   case ENEMY_DIED:
     enemy_dead_.play();
+    enemy_dead_.setVolume(50);
     break;
 
   case ENEMY_REACHED_CASTLE:
