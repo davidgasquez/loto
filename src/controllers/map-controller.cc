@@ -197,9 +197,9 @@ void MapController::PlaceTower(Vec2u tile, Tower* tower) {
       min_row -= 2;
     }
     float max_row = gpos.y + 1;
-    if (max_row < Game::GetMapSize().y * 2 - 2) {
+    if (max_row < Game::GetMapSize().y * 2 - 3) {
       max_row += 4;
-    } else if (max_row < Game::GetMapSize().y * 2 - 1) {
+    } else if (max_row < Game::GetMapSize().y * 2 - 2) {
       max_row += 2;
     }
     for (unsigned i = gpos.x - 4; i < gpos.x + 4; ++i) {
