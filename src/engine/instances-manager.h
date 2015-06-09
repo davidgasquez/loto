@@ -14,6 +14,7 @@ enum Layer {
   kLayerHidden,
   kLayerBot,
   kLayerMid,
+  kLayerMidElevated,
   kLayerTop,
   kLayerUI,
   kLayerCursor,
