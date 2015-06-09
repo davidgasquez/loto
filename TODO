@@ -12,10 +12,12 @@ Ernesto
 - Path finding using Dijkstra.
 - Animate arrow tower.
 - Animated Sprite and animations.
-- Tower action radius when creating them.
-- Hover cursor for the button.
 - Bug when placing towers just before the bug enters the tile
 
 
 David
 -----
+
+- Hover cursor for the button.
+- Design wave.
+- Tower action radius when creating them.
