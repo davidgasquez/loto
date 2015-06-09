@@ -10,4 +10,4 @@
 std::vector<Vec2u> DijkstraPathFinding(Vec2u from);
 
 
-#endif // AI_DIJKSTRA_H_
+#endif  // AI_DIJKSTRA_H_

@@ -2,17 +2,20 @@
 #include "ai/dijkstra.h"
 
 #include <set>
+#include <limits>
+#include <vector>
+
 
 #include "engine/game.h"
 
 
 class GraphNode {
-public:
+ public:
   GraphNode(unsigned vertex, unsigned distance)
-  : vertex_(vertex), distance_(distance) { }
+    : vertex_(vertex), distance_(distance) { }
 
   GraphNode(const GraphNode& other)
-  : vertex_(other.vertex_), distance_(other.distance_) { }
+    : vertex_(other.vertex_), distance_(other.distance_) { }
 
   unsigned vertex() const {
     return vertex_;
@@ -22,7 +25,7 @@ public:
     return distance_;
   }
 
-private:
+ private:
   unsigned vertex_;
   float distance_;
 };
@@ -40,13 +43,14 @@ bool operator<(const GraphNode& a, const GraphNode& b) {
 std::vector<Vec2u> DijkstraPathFinding(Vec2u from) {
   auto graph = Game::GetMapController()->graph();
   auto from_vertex = graph->VertexIndex(from);
-  
+
   std::vector<std::vector<Neighbour> > neighbours(graph->neighbours());
 
   std::set<GraphNode> queue;
   queue.insert(GraphNode(from_vertex, 0));
 
-  std::vector<float> min_distance(neighbours.size(), std::numeric_limits<float>::max());
+  std::vector<float> min_distance(neighbours.size(),
+                                  std::numeric_limits<float>::max());
   min_distance[from_vertex] = 0.f;
 
   std::vector<unsigned> previous(neighbours.size(), 0);
