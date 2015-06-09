@@ -73,5 +73,9 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!arrow_sound_.loadFromFile("assets/sounds/arrow.wav")) {
+    return false;
+  }
+
   return true;
 }

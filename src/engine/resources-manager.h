@@ -80,6 +80,10 @@ class ResourcesManager {
     return &place_tower_;
   }
 
+  sf::SoundBuffer* ArrowSound() {
+    return &arrow_sound_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -97,6 +101,7 @@ class ResourcesManager {
   sf::SoundBuffer enemy_dead_;
   sf::SoundBuffer enemy_reached_castle_;
   sf::SoundBuffer place_tower_;
+  sf::SoundBuffer arrow_sound_;
 
   sf::Font font_;
 };

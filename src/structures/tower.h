@@ -4,6 +4,8 @@
 #ifndef STRUCTURES_TOWER_H_
 #define STRUCTURES_TOWER_H_
 
+#include <SFML/Audio.hpp>
+
 #include "base/aliases.h"
 #include "structures/structure.h"
 
@@ -21,6 +23,7 @@ class Tower : public Structure {
 
  private:
   sf::Clock attack_clock_;
+  sf::Sound arrow_;
 };
 
 #endif  // STRUCTURES_TOWER_H_

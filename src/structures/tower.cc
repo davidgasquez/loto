@@ -8,7 +8,10 @@
 
 
 void Tower::Load() {
-  sprite_.set_texture(Game::GetResourcesManager()->Tower());
+  auto resources = Game::GetResourcesManager();
+  sprite_.set_texture(resources->Tower());
+  arrow_.setBuffer(*resources->ArrowSound());
+  arrow_.setVolume(50);
 }
 
 
@@ -40,6 +43,7 @@ void Tower::Step(sf::Time elapsed) {
     return;
   }
 
+  arrow_.play();
   auto arrow = new TowerArrow();
   arrow->Load(sprite_.position());
   arrow->set_enemy(near_enemy);
