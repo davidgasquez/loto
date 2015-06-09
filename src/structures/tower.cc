@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "structures/tower.h"
 
@@ -12,7 +14,8 @@ void Tower::Load() {
 void Tower::set_position(Vec2u pos) {
   Vec2u tile_size = Game::GetTileSize();
   Vec2u size(sprite_.size());
-  sprite_.set_position(Vec2f(tile_size.x * pos.x + size.x / 2, tile_size.y * pos.y + size.y / 2));
+  sprite_.set_position(Vec2f(tile_size.x * pos.x + size.x / 2,
+                             tile_size.y * pos.y + size.y / 2));
 }
 
 

@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef ENGINE_ANIMATED_SPRITE_H_
 #define ENGINE_ANIMATED_SPRITE_H_

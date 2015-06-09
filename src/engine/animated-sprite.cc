@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "engine/animated-sprite.h"
 
@@ -6,7 +8,7 @@
 
 void AnimatedSprite::set_texture(sf::Texture* texture) {
   texture_ = texture;
-  
+
   sprite_.setTexture(*texture, true);
 
   Vec2u size(texture->getSize());
@@ -18,7 +20,8 @@ void AnimatedSprite::Step(sf::Time elapsed) {
 }
 
 
-void AnimatedSprite::draw(sf::RenderTarget& target, sf::RenderStates  states) const {
+void AnimatedSprite::draw(sf::RenderTarget& target,
+                          sf::RenderStates  states) const {
   target.draw(sprite_);
 }
 

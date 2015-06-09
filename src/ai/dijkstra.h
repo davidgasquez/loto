@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef AI_DIJKSTRA_H_
 #define AI_DIJKSTRA_H_

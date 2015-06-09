@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef STRUCTURES_TOWER_H_
 #define STRUCTURES_TOWER_H_
@@ -13,7 +15,7 @@ class Tower : public Structure {
   void set_position(Vec2u pos);
 
   void draw(sf::RenderTarget& target,
-            sf::RenderStates  states) const;
+            sf::RenderStates states) const;
 
   void Step(sf::Time elapsed);
 

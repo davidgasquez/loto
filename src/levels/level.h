@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef LEVELS_LEVEL_H_
 #define LEVELS_LEVEL_H_
@@ -9,7 +11,7 @@
 
 class Level {
  public:
-  Level(unsigned level)
+  explicit Level(unsigned level)
     : level_(level) { }
 
   void Load();

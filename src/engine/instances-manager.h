@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef BASE_INSTANCES_MANAGER_H_
 #define BASE_INSTANCES_MANAGER_H_

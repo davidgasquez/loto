@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "tilemaps/tile-map.h"
 
@@ -35,8 +37,8 @@ void TileMap::Load(std::ifstream *f, Vec2u size) {
       quad[3].position = sf::Vector2f(i * wTile, (j + 1) * hTile);
 
       sf::Texture *tileset = Game::GetResourcesManager()->Map();
-      int tu               = tile % (tileset->getSize().x / wTile);
-      int tv               = tile / (tileset->getSize().x / wTile);
+      int tu = tile % (tileset->getSize().x / wTile);
+      int tv = tile / (tileset->getSize().x / wTile);
 
       quad[0].texCoords = sf::Vector2f(tu * wTile, tv * hTile);
       quad[1].texCoords = sf::Vector2f((tu + 1) * wTile, tv * hTile);
@@ -47,6 +49,6 @@ void TileMap::Load(std::ifstream *f, Vec2u size) {
 }
 
 void TileMap::draw(sf::RenderTarget& target, sf::RenderStates states) const {
-  states.texture    = Game::GetResourcesManager()->Map();
+  states.texture = Game::GetResourcesManager()->Map();
   target.draw(vertices_, states);
 }

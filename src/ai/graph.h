@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef AI_GRAPH_H_
 #define AI_GRAPH_H_
@@ -8,7 +10,7 @@
 
 
 class Neighbour {
-public:
+ public:
   Neighbour(unsigned vertex, float weight)
   : vertex_(vertex), weight_(weight) { }
 
@@ -20,14 +22,14 @@ public:
     return weight_;
   }
 
-private:
+ private:
   unsigned vertex_;
   float weight_;
 };
 
 
 class Graph {
-public:
+ public:
   Graph(unsigned width, unsigned height)
   : rows_(height * 2), cols_(width * 2), neighbours_(rows_ * cols_) { }
 
@@ -53,12 +55,11 @@ public:
 
   void RemoveEdges(Vec2u node);
 
-private:
+ private:
   unsigned rows_, cols_;
   std::vector<std::vector<Neighbour> > neighbours_;
 
   void AddEdge_(unsigned from, Neighbour neighbour);
 };
 
-
-#endif // AI_GRAPH_H_
+#endif  // AI_GRAPH_H_

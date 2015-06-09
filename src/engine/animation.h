@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef ENGINE_ANIMATION_H_
 #define ENGINE_ANIMATION_H_

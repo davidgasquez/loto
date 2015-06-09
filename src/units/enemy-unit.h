@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef UNITS_ENEMY_H_
 #define UNITS_ENEMY_H_
@@ -5,6 +7,7 @@
 #include <SFML/System.hpp>
 
 #include <string>
+#include <vector>
 
 #include "units/unit.h"
 

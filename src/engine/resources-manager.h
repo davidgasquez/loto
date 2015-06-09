@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef BASE_RESOURCES_MANAGER_H_
 #define BASE_RESOURCES_MANAGER_H_

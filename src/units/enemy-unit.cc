@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "units/enemy-unit.h"
 
@@ -50,7 +52,7 @@ void EnemyUnit::Step(sf::Time elapsed) {
     auto rad = atan2(dest.y - position().y, dest.x - position().x);
     set_rotation(rad * (180 / M_PI));
   }
-  
+
   Unit::Step(elapsed);
 
   Vec2u tile(map_controller->CalcRowCol(position()));

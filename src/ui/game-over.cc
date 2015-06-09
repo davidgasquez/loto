@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "ui/game-over.h"
 
@@ -6,7 +8,7 @@
 
 void GameOver::draw(sf::RenderTarget& target, sf::RenderStates states) const {
   Game::GetCursorManager()->Show();
-  
+
   auto font = *Game::GetResourcesManager()->Font();
 
   sf::Text game_over("Game Over", font, 200);

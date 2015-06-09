@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef ENGINE_GAME_EVENT_H_
 #define ENGINE_GAME_EVENT_H_
@@ -13,7 +15,7 @@ enum GameEventType {
 
 class GameEvent {
  public:
-  GameEvent(GameEventType type)
+  explicit GameEvent(GameEventType type)
   : type_(type) { }
 
   GameEventType type() {

@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "ai/dijkstra.h"
 
@@ -10,7 +12,7 @@
 
 
 class GraphNode {
-public:
+ public:
   GraphNode(unsigned vertex, float distance)
   : vertex_(vertex), distance_(distance) { }
 

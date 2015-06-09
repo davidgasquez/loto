@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef TILEMAPS_MAP_H_
 #define TILEMAPS_MAP_H_

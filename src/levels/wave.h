@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef LEVELS_WAVE_H_
 #define LEVELS_WAVE_H_
@@ -19,7 +21,7 @@ class Enemy {
 
 class Wave : public Instance {
  public:
-  Wave(unsigned level)
+  explicit Wave(unsigned level)
     : level_(level), current_enemy_(0) { }
 
   void Load();

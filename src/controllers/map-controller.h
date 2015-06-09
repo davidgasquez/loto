@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef CONTROLLERS_MAP_CONTROLLER_H_
 #define CONTROLLERS_MAP_CONTROLLER_H_

@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef UI_INGAME_H_
 #define UI_INGAME_H_
@@ -14,7 +16,7 @@ class InGame : public Instance {
 
   void MouseReleased(sf::Event::MouseButtonEvent event);
   void MouseMoved(sf::Event::MouseMoveEvent event);
-  
+
   void EventTriggered(GameEvent event);
 
  private:

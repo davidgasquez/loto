@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "ai/graph.h"
 
@@ -31,7 +33,7 @@ void Graph::Load() {
       }
     }
   }
-  
+
   for (unsigned row = 1; row < rows_; ++row) {
     for (unsigned col = 0; col < cols_ - 1; ++col) {
       unsigned vertex = VertexIndex(Vec2u(col, row));
@@ -60,7 +62,7 @@ Vec2u Graph::IndexToVertex(unsigned index) {
 
   return pos;
 }
-  
+
 
 Vec2f Graph::CalcPos(Vec2u node) {
   Vec2f tile(Game::GetTileSize());
@@ -83,7 +85,7 @@ Vec2u Graph::CalcNode(Vec2f pos) {
 
 void Graph::RemoveEdges(Vec2u node) {
   auto index = VertexIndex(node);
-  
+
   for (Neighbour neighbour : neighbours_[index]) {
     auto& nconns = neighbours_[neighbour.vertex()];
     for (unsigned i = 0; i < nconns.size(); ++i) {

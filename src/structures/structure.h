@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef STRUCTURES_STRUCTURE_H_
 #define STRUCTURES_STRUCTURE_H_

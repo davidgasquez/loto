@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #ifndef TILES_TILE_MAP_H_
 #define TILES_TILE_MAP_H_

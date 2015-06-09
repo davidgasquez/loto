@@ -1,3 +1,5 @@
+// Copyright (c) 2015 Ernesto Alejo and David Gasquez.
+// Distributed under the MIT software license, see LICENSE
 
 #include "controllers/player-controller.h"
 
@@ -23,7 +25,7 @@ void PlayerController::EventTriggered(GameEvent event) {
   case ENEMY_DIED:
     gold_ += 10;
     break;
-  
+
   // Decrease gold when buying structures and units
   case TOWER_PLACED:
     gold_ -= kTowerCost;
