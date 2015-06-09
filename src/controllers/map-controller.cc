@@ -21,12 +21,18 @@ void MapController::Load(unsigned width, unsigned height) {
   graph_->Load();
 
   game_over_.setBuffer(*Game::GetResourcesManager()->GameOver());
+  game_over_.setVolume(50);
 
   victory_.setBuffer(*Game::GetResourcesManager()->Victory());
+  victory_.setVolume(50);
 
   loop_.setBuffer(*Game::GetResourcesManager()->Loop());
   loop_.play();
+  loop_.setVolume(50);
   loop_.setLoop(true);
+
+  enemy_dead_.setBuffer(*Game::GetResourcesManager()->EnemyDead());
+  enemy_reached_castle_.setBuffer(*Game::GetResourcesManager()->EnemyReachedCastle());
 }
 
 
@@ -54,6 +60,14 @@ void MapController::EventTriggered(GameEvent event) {
     instances->AddInstance(new Victory(), kLayerUI);
     break;
   }
+
+  case ENEMY_DIED:
+    enemy_dead_.play();
+    break;
+
+  case ENEMY_REACHED_CASTLE:
+    enemy_reached_castle_.play();
+    break;
 
   default:
     break;

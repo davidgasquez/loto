@@ -68,6 +68,18 @@ class ResourcesManager {
     return &victory_;
   }
 
+  sf::SoundBuffer* EnemyDead() {
+    return &enemy_dead_;
+  }
+
+  sf::SoundBuffer* EnemyReachedCastle() {
+    return &enemy_reached_castle_;
+  }
+
+  sf::SoundBuffer* PlaceTower() {
+    return &place_tower_;
+  }
+
  private:
   sf::Texture map_;
   sf::Texture tower_;
@@ -82,6 +94,9 @@ class ResourcesManager {
   sf::Texture arrow_;
   sf::SoundBuffer game_over_;
   sf::SoundBuffer victory_;
+  sf::SoundBuffer enemy_dead_;
+  sf::SoundBuffer enemy_reached_castle_;
+  sf::SoundBuffer place_tower_;
 
   sf::Font font_;
 };

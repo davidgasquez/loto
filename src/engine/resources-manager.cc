@@ -61,5 +61,17 @@ bool ResourcesManager::Load() {
     return false;
   }
 
+  if (!enemy_dead_.loadFromFile("assets/sounds/enemy-dead.ogg")) {
+    return false;
+  }
+
+  if (!enemy_reached_castle_.loadFromFile("assets/sounds/enemy-reached-castle.ogg")) {
+    return false;
+  }
+
+  if (!place_tower_.loadFromFile("assets/sounds/place-tower.ogg")) {
+    return false;
+  }
+
   return true;
 }

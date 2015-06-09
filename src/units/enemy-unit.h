@@ -4,6 +4,7 @@
 #ifndef UNITS_ENEMY_H_
 #define UNITS_ENEMY_H_
 
+#include <SFML/Audio.hpp>
 #include <SFML/System.hpp>
 
 #include <string>
