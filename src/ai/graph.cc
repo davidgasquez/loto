@@ -79,3 +79,20 @@ Vec2u Graph::CalcNode(Vec2f pos) {
 
   return node;
 }
+
+
+void Graph::RemoveEdges(Vec2u node) {
+  auto index = VertexIndex(node);
+  
+  for (Neighbour neighbour : neighbours_[index]) {
+    auto& nconns = neighbours_[neighbour.vertex()];
+    for (unsigned i = 0; i < nconns.size(); ++i) {
+      if (nconns[i].vertex() == index) {
+        nconns.erase(nconns.begin() + i);
+        break;
+      }
+    }
+  }
+
+  neighbours_[index].clear();
+}

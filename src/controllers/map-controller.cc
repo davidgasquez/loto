@@ -127,8 +127,14 @@ EnemyUnit* MapController::GetNearEnemy(Vec2u tile) {
 }
 
 
-void MapController::PlaceTower(Vec2u tile, Tower * tower) {
+void MapController::PlaceTower(Vec2u tile, Tower* tower) {
   towers_[Index_(tile)] = tower;
+
+  Vec2u gpos(tile.x * 2, tile.y * 2);
+  graph_->RemoveEdges(gpos);
+  graph_->RemoveEdges(Vec2u(gpos.x + 1, gpos.y));
+  graph_->RemoveEdges(Vec2u(gpos.x, gpos.y + 1));
+  graph_->RemoveEdges(Vec2u(gpos.x + 1, gpos.y + 1));
 }
 
 

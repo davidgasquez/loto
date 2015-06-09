@@ -51,6 +51,8 @@ public:
   unsigned VertexIndex(Vec2u node);
   Vec2u IndexToVertex(unsigned index);
 
+  void RemoveEdges(Vec2u node);
+
 private:
   unsigned rows_, cols_;
   std::vector<std::vector<Neighbour> > neighbours_;
