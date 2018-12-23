@@ -13,8 +13,8 @@ enemy take your Magical Orb!
 #### Immense
 **Unleash Your Power.** *A mystical bond connects you and The Orb, a magical
 artifact too powerful for a single mortal. Protect your Orb as your
-armies charges across the battlefield, then release his epic power and see it
-crush your enemies.*
+army charges across the battlefield, then release his epic power and see it
+crushing your enemies.*
 
 
 #### Tactical
